@@ -178,7 +178,7 @@
             // 
             // btn_confirm
             // 
-            this.btn_confirm.Location = new System.Drawing.Point(197, 380);
+            this.btn_confirm.Location = new System.Drawing.Point(262, 384);
             this.btn_confirm.Name = "btn_confirm";
             this.btn_confirm.Size = new System.Drawing.Size(102, 28);
             this.btn_confirm.TabIndex = 15;
