@@ -33,12 +33,14 @@
             this.btnLogin_Click = new System.Windows.Forms.Button();
             this.l = new System.Windows.Forms.Label();
             this.pass = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtLoginPassword
             // 
             this.txtLoginPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLoginPassword.Location = new System.Drawing.Point(316, 222);
+            this.txtLoginPassword.Location = new System.Drawing.Point(94, 152);
             this.txtLoginPassword.Name = "txtLoginPassword";
             this.txtLoginPassword.Size = new System.Drawing.Size(220, 31);
             this.txtLoginPassword.TabIndex = 3;
@@ -46,14 +48,14 @@
             // txtLoginEmail
             // 
             this.txtLoginEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLoginEmail.Location = new System.Drawing.Point(316, 149);
+            this.txtLoginEmail.Location = new System.Drawing.Point(94, 79);
             this.txtLoginEmail.Name = "txtLoginEmail";
             this.txtLoginEmail.Size = new System.Drawing.Size(220, 31);
             this.txtLoginEmail.TabIndex = 2;
             // 
             // btnLogin_Click
             // 
-            this.btnLogin_Click.Location = new System.Drawing.Point(340, 299);
+            this.btnLogin_Click.Location = new System.Drawing.Point(118, 229);
             this.btnLogin_Click.Name = "btnLogin_Click";
             this.btnLogin_Click.Size = new System.Drawing.Size(175, 30);
             this.btnLogin_Click.TabIndex = 4;
@@ -65,7 +67,7 @@
             // 
             this.l.AutoSize = true;
             this.l.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l.Location = new System.Drawing.Point(232, 153);
+            this.l.Location = new System.Drawing.Point(10, 83);
             this.l.Name = "l";
             this.l.Size = new System.Drawing.Size(57, 24);
             this.l.TabIndex = 5;
@@ -75,26 +77,35 @@
             // 
             this.pass.AutoSize = true;
             this.pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pass.Location = new System.Drawing.Point(197, 226);
+            this.pass.Location = new System.Drawing.Point(-25, 156);
             this.pass.Name = "pass";
             this.pass.Size = new System.Drawing.Size(92, 24);
             this.pass.TabIndex = 6;
             this.pass.Text = "Password";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txtLoginPassword);
+            this.panel1.Controls.Add(this.pass);
+            this.panel1.Controls.Add(this.txtLoginEmail);
+            this.panel1.Controls.Add(this.l);
+            this.panel1.Controls.Add(this.btnLogin_Click);
+            this.panel1.Location = new System.Drawing.Point(200, 64);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(588, 293);
+            this.panel1.TabIndex = 7;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pass);
-            this.Controls.Add(this.l);
-            this.Controls.Add(this.btnLogin_Click);
-            this.Controls.Add(this.txtLoginPassword);
-            this.Controls.Add(this.txtLoginEmail);
+            this.Controls.Add(this.panel1);
             this.Name = "Login";
             this.Text = "Login";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -105,5 +116,6 @@
         private System.Windows.Forms.Button btnLogin_Click;
         private System.Windows.Forms.Label l;
         private System.Windows.Forms.Label pass;
+        private System.Windows.Forms.Panel panel1;
     }
 }
