@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BOOKSTORE
@@ -17,7 +11,15 @@ namespace BOOKSTORE
             InitializeComponent();
         }
 
-        public void SetBookData(Image cover, string title, string author, string category, string isbn, decimal price, int stock, string description)
+        public void SetBookData(
+        Image cover,
+        string title,
+        string author,
+        string category,
+        string isbn,
+        decimal price,
+        int stock,
+        string description)
         {
             pictureBoxCover.Image = cover;
             lblTitle.Text = title;
@@ -28,7 +30,5 @@ namespace BOOKSTORE
             lblStock.Text = $"({stock}) on stock";
             txtDescription.Text = description;
         }
-
-
     }
 }

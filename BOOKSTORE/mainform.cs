@@ -92,7 +92,7 @@ namespace BOOKSTORE
             panel.Controls.Add(titleLabel);
             panel.Controls.Add(authorLabel);
 
-           // flowLayoutPanel1.Controls.Add(panel);
+            flowLayoutPanel1.Controls.Add(panel);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -102,7 +102,10 @@ namespace BOOKSTORE
             this.Hide();
         }
 
-       
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
 }
