@@ -104,6 +104,7 @@
     <Compile Include="Admin_Main.Designer.cs">
       <DependentUpon>Admin_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Book.cs" />
     <Compile Include="BookCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
