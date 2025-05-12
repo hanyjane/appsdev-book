@@ -1,70 +1,71 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
 
 namespace BOOKSTORE
 {
     public partial class Bookcreation : Form
     {
-        
+       
+        string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\reyneil\Desktop\Database11.accdb";
         public Bookcreation()
         {
             InitializeComponent();
-
         }
 
         private void btn_choosefile_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
-            if (ofd.ShowDialog() == DialogResult.OK)
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+
+            if (fileDialog.ShowDialog() == DialogResult.OK)
             {
-                imagepath.Text = ofd.FileName;
-                pictureBox1.Image = Image.FromFile(ofd.FileName); 
+                imagepath.Text = fileDialog.FileName;
+                pictureBox1.Image = Image.FromFile(fileDialog.FileName);
             }
         }
 
+        // Confirm and save the book data into the database
         private void btn_confirm_Click(object sender, EventArgs e)
         {
             try
             {
+                // Convert the image to byte array
                 byte[] imageBytes = null;
-
                 if (!string.IsNullOrEmpty(imagepath.Text))
                 {
                     imageBytes = File.ReadAllBytes(imagepath.Text);
                 }
 
-                using (OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\reyneil\Desktop\Database11.accdb"))
+                using (OleDbConnection conn = new OleDbConnection(connectionString))
                 {
                     conn.Open();
 
-                    string query = "INSERT INTO Books (Category, Title, ISBN, Author, Stock, Price, BookCover) " +
-                                   "VALUES (?, ?, ?, ?, ?, ?, ?)";
+                    
+                    string insertQuery = @"INSERT INTO Books 
+                        (Category, Title, ISBN, Author, Stock, Price, BookCover)
+                        VALUES (?, ?, ?, ?, ?, ?, ?)";
 
-                    using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                    using (OleDbCommand cmd = new OleDbCommand(insertQuery, conn))
                     {
-                        cmd.Parameters.AddWithValue("?", cmbCategory.Text);
-                        cmd.Parameters.AddWithValue("?", txtTitle.Text);
-                        cmd.Parameters.AddWithValue("?", txtISBN.Text);
-                        cmd.Parameters.AddWithValue("?", txtAuthor.Text);
-                        cmd.Parameters.AddWithValue("?", int.Parse(txtStock.Text));
-                        cmd.Parameters.AddWithValue("?", decimal.Parse(txtPrice.Text));
+                       
+                        cmd.Parameters.AddWithValue("Category", cmbCategory.Text);
+                        cmd.Parameters.AddWithValue("Title", txtTitle.Text);
+                        cmd.Parameters.AddWithValue("ISBN", txtISBN.Text);
+                        cmd.Parameters.AddWithValue("Author", txtAuthor.Text);
+                        cmd.Parameters.AddWithValue("Stock", int.Parse(txtStock.Text));
+                        cmd.Parameters.AddWithValue("Price", decimal.Parse(txtPrice.Text));
+
                         
-
                         if (imageBytes != null)
-                            cmd.Parameters.Add("?", OleDbType.Binary).Value = imageBytes;
+                            cmd.Parameters.Add("BookCover", OleDbType.Binary).Value = imageBytes;
                         else
-                            cmd.Parameters.Add("?", OleDbType.Binary).Value = DBNull.Value;
+                            cmd.Parameters.Add("BookCover", OleDbType.Binary).Value = DBNull.Value;
 
+                        
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Book saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -78,8 +79,8 @@ namespace BOOKSTORE
 
         private void btn_Back_Click(object sender, EventArgs e)
         {
-            mainform main = new mainform(); 
-            main.Show();                    
+            mainform main = new mainform();
+            main.Show();
             this.Hide();
         }
     }

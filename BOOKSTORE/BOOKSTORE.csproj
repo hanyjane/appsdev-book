@@ -104,7 +104,12 @@
     <Compile Include="Admin_Main.Designer.cs">
       <DependentUpon>Admin_Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Book.cs" />
+    <Compile Include="BookCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BookCard.Designer.cs">
+      <DependentUpon>BookCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bookcreation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +149,9 @@
     </Compile>
     <EmbeddedResource Include="Admin_Main.resx">
       <DependentUpon>Admin_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookCard.resx">
+      <DependentUpon>BookCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Bookcreation.resx">
       <DependentUpon>Bookcreation.cs</DependentUpon>
