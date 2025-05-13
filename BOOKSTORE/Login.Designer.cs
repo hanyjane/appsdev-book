@@ -91,7 +91,7 @@
             // 
             // txtLoginPassword
             // 
-            this.txtLoginPassword.BackColor = System.Drawing.SystemColors.Info;
+            this.txtLoginPassword.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtLoginPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLoginPassword.Location = new System.Drawing.Point(499, 346);
             this.txtLoginPassword.Name = "txtLoginPassword";
