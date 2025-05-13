@@ -37,16 +37,17 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 59);
+            this.button1.Location = new System.Drawing.Point(12, 23);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 86);
             this.button1.TabIndex = 0;
             this.button1.Text = "Explore";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 144);
+            this.button2.Location = new System.Drawing.Point(12, 127);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(95, 86);
             this.button2.TabIndex = 1;
@@ -55,7 +56,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(12, 229);
+            this.button3.Location = new System.Drawing.Point(12, 230);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(95, 86);
             this.button3.TabIndex = 2;
@@ -64,7 +65,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(12, 315);
+            this.button4.Location = new System.Drawing.Point(12, 336);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(95, 86);
             this.button4.TabIndex = 3;
@@ -74,12 +75,10 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(122, 51);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(141, 108);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(655, 376);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(612, 313);
             this.flowLayoutPanel1.TabIndex = 4;
-            this.flowLayoutPanel1.WrapContents = false;
             // 
             // Admin_Main
             // 

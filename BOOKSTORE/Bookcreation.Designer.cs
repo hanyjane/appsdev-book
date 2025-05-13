@@ -46,8 +46,8 @@
             this.btn_confirm = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_Back = new System.Windows.Forms.Button();
-            this.bookdescription = new System.Windows.Forms.TextBox();
-            this.Bookdesription = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -206,31 +206,31 @@
             this.btn_Back.UseVisualStyleBackColor = true;
             this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
             // 
-            // bookdescription
+            // textBox1
             // 
-            this.bookdescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bookdescription.Location = new System.Drawing.Point(493, 330);
-            this.bookdescription.Multiline = true;
-            this.bookdescription.Name = "bookdescription";
-            this.bookdescription.Size = new System.Drawing.Size(182, 79);
-            this.bookdescription.TabIndex = 18;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(493, 330);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(182, 79);
+            this.textBox1.TabIndex = 18;
             // 
-            // Bookdesription
+            // label8
             // 
-            this.Bookdesription.AutoSize = true;
-            this.Bookdesription.Location = new System.Drawing.Point(490, 306);
-            this.Bookdesription.Name = "Bookdesription";
-            this.Bookdesription.Size = new System.Drawing.Size(80, 13);
-            this.Bookdesription.TabIndex = 19;
-            this.Bookdesription.Text = "Book desription";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(490, 306);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(80, 13);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Book desription";
             // 
             // Bookcreation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Bookdesription);
-            this.Controls.Add(this.bookdescription);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_confirm);
@@ -277,7 +277,7 @@
         private System.Windows.Forms.Button btn_confirm;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_Back;
-        private System.Windows.Forms.TextBox bookdescription;
-        private System.Windows.Forms.Label Bookdesription;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label8;
     }
 }
