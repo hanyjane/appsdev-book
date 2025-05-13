@@ -10,13 +10,14 @@ namespace BOOKSTORE
     public partial class Admin_Main : Form
     {
 
-        private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\reyneil\Desktop\appsdev-bookstore\BOOKSTORE\Appsdevdatabase.accdb;";
+        private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" +
+                                  Application.StartupPath + @"\Appsdevdatabase.accdb;";
         public Admin_Main()
         {
             InitializeComponent();
             this.Load += Admin_Main_Load;
         }
-
+            
         private void Admin_Main_Load(object sender, EventArgs e)
         {
             List<Book> bookList = LoadBooksFromDatabase();
@@ -69,11 +70,7 @@ namespace BOOKSTORE
                     coverImage = Image.FromStream(ms);
                 }
             }
-            else
-            {
-                // Set to a default placeholder image if no cover is found
-                //coverImage = Properties.Resources.DefaultCoverImage;
-            }
+            
 
             bookCard.SetBookData(
                 cover: coverImage,
