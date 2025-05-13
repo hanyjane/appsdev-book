@@ -28,56 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn_Explore = new System.Windows.Forms.Button();
+            this.btn_Update = new System.Windows.Forms.Button();
+            this.btn_Add = new System.Windows.Forms.Button();
+            this.btn_Delete = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // button1
+            // btn_Explore
             // 
-            this.button1.Location = new System.Drawing.Point(12, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 86);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Explore";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Explore.Location = new System.Drawing.Point(12, 78);
+            this.btn_Explore.Name = "btn_Explore";
+            this.btn_Explore.Size = new System.Drawing.Size(95, 86);
+            this.btn_Explore.TabIndex = 0;
+            this.btn_Explore.Text = "Explore";
+            this.btn_Explore.UseVisualStyleBackColor = true;
+            this.btn_Explore.Click += new System.EventHandler(this.btn_Explore_Click);
             // 
-            // button2
+            // btn_Update
             // 
-            this.button2.Location = new System.Drawing.Point(12, 127);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 86);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Update";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_Update.Location = new System.Drawing.Point(12, 160);
+            this.btn_Update.Name = "btn_Update";
+            this.btn_Update.Size = new System.Drawing.Size(95, 86);
+            this.btn_Update.TabIndex = 1;
+            this.btn_Update.Text = "Update";
+            this.btn_Update.UseVisualStyleBackColor = true;
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
-            // button3
+            // btn_Add
             // 
-            this.button3.Location = new System.Drawing.Point(12, 230);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(95, 86);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Add";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_Add.Location = new System.Drawing.Point(12, 244);
+            this.btn_Add.Name = "btn_Add";
+            this.btn_Add.Size = new System.Drawing.Size(95, 86);
+            this.btn_Add.TabIndex = 2;
+            this.btn_Add.Text = "Add";
+            this.btn_Add.UseVisualStyleBackColor = true;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
-            // button4
+            // btn_Delete
             // 
-            this.button4.Location = new System.Drawing.Point(12, 336);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(95, 86);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Update";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_Delete.Location = new System.Drawing.Point(12, 329);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(95, 86);
+            this.btn_Delete.TabIndex = 3;
+            this.btn_Delete.Text = "Update";
+            this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(141, 108);
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(141, 68);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(612, 313);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(612, 353);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
             // Admin_Main
@@ -86,10 +90,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_Delete);
+            this.Controls.Add(this.btn_Add);
+            this.Controls.Add(this.btn_Update);
+            this.Controls.Add(this.btn_Explore);
             this.Name = "Admin_Main";
             this.Text = "Admin_Main";
             this.ResumeLayout(false);
@@ -98,10 +102,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_Explore;
+        private System.Windows.Forms.Button btn_Update;
+        private System.Windows.Forms.Button btn_Add;
+        private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

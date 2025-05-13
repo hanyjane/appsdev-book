@@ -10,7 +10,7 @@ namespace BOOKSTORE
     public partial class Bookcreation : Form
     {
        
-        string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\reyneil\Desktop\Database11.accdb";
+        string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\reyneil\Desktop\appsdev-bookstore\BOOKSTORE\Appsdevdatabase.accdb";
         public Bookcreation()
         {
             InitializeComponent();
@@ -25,6 +25,7 @@ namespace BOOKSTORE
             {
                 imagepath.Text = fileDialog.FileName;
                 pictureBox1.Image = Image.FromFile(fileDialog.FileName);
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
 
@@ -58,7 +59,7 @@ namespace BOOKSTORE
                         cmd.Parameters.AddWithValue("Author", txtAuthor.Text);
                         cmd.Parameters.AddWithValue("Stock", int.Parse(txtStock.Text));
                         cmd.Parameters.AddWithValue("Price", decimal.Parse(txtPrice.Text));
-
+                            
                         
                         if (imageBytes != null)
                             cmd.Parameters.Add("BookCover", OleDbType.Binary).Value = imageBytes;
