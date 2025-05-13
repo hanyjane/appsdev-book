@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtLoginPassword = new System.Windows.Forms.TextBox();
             this.pass = new System.Windows.Forms.Label();
-            this.txtLoginEmail = new System.Windows.Forms.TextBox();
             this.l = new System.Windows.Forms.Label();
-            this.btnLogin_Click = new System.Windows.Forms.Button();
+            this.txtLoginPassword = new System.Windows.Forms.TextBox();
+            this.txtLoginEmail = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnLogin_Click = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -51,18 +51,8 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 581);
+            this.panel1.Size = new System.Drawing.Size(800, 600);
             this.panel1.TabIndex = 7;
-            // 
-            // txtLoginPassword
-            // 
-            this.txtLoginPassword.BackColor = System.Drawing.SystemColors.Info;
-            this.txtLoginPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLoginPassword.Location = new System.Drawing.Point(201, 401);
-            this.txtLoginPassword.Name = "txtLoginPassword";
-            this.txtLoginPassword.Size = new System.Drawing.Size(486, 31);
-            this.txtLoginPassword.TabIndex = 3;
-            this.txtLoginPassword.UseSystemPasswordChar = true;
             // 
             // pass
             // 
@@ -73,15 +63,6 @@
             this.pass.Size = new System.Drawing.Size(0, 24);
             this.pass.TabIndex = 6;
             // 
-            // txtLoginEmail
-            // 
-            this.txtLoginEmail.BackColor = System.Drawing.SystemColors.Info;
-            this.txtLoginEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLoginEmail.Location = new System.Drawing.Point(201, 270);
-            this.txtLoginEmail.Name = "txtLoginEmail";
-            this.txtLoginEmail.Size = new System.Drawing.Size(486, 31);
-            this.txtLoginEmail.TabIndex = 2;
-            // 
             // l
             // 
             this.l.AutoSize = true;
@@ -91,34 +72,57 @@
             this.l.Size = new System.Drawing.Size(0, 24);
             this.l.TabIndex = 5;
             // 
+            // txtLoginPassword
+            // 
+            this.txtLoginPassword.BackColor = System.Drawing.SystemColors.Info;
+            this.txtLoginPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLoginPassword.Location = new System.Drawing.Point(499, 346);
+            this.txtLoginPassword.Name = "txtLoginPassword";
+            this.txtLoginPassword.Size = new System.Drawing.Size(246, 31);
+            this.txtLoginPassword.TabIndex = 3;
+            this.txtLoginPassword.UseSystemPasswordChar = true;
+            // 
+            // txtLoginEmail
+            // 
+            this.txtLoginEmail.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtLoginEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLoginEmail.Location = new System.Drawing.Point(499, 273);
+            this.txtLoginEmail.Name = "txtLoginEmail";
+            this.txtLoginEmail.Size = new System.Drawing.Size(246, 31);
+            this.txtLoginEmail.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(809, 600);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnLogin_Click
             // 
             this.btnLogin_Click.BackColor = System.Drawing.Color.Transparent;
             this.btnLogin_Click.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogin_Click.BackgroundImage")));
-            this.btnLogin_Click.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogin_Click.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnLogin_Click.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogin_Click.FlatAppearance.BorderSize = 0;
+            this.btnLogin_Click.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin_Click.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin_Click.ForeColor = System.Drawing.Color.Black;
-            this.btnLogin_Click.Location = new System.Drawing.Point(607, 469);
+            this.btnLogin_Click.ForeColor = System.Drawing.Color.Transparent;
+            this.btnLogin_Click.Location = new System.Drawing.Point(400, 392);
             this.btnLogin_Click.Name = "btnLogin_Click";
-            this.btnLogin_Click.Size = new System.Drawing.Size(116, 52);
+            this.btnLogin_Click.Size = new System.Drawing.Size(380, 85);
             this.btnLogin_Click.TabIndex = 4;
             this.btnLogin_Click.UseVisualStyleBackColor = false;
             this.btnLogin_Click.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(782, 560);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(784, 596);
             this.Controls.Add(this.panel1);
             this.Name = "Login";
             this.Text = "Login";
@@ -136,7 +140,7 @@
         private System.Windows.Forms.Label pass;
         private System.Windows.Forms.TextBox txtLoginEmail;
         private System.Windows.Forms.Label l;
-        private System.Windows.Forms.Button btnLogin_Click;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnLogin_Click;
     }
 }
