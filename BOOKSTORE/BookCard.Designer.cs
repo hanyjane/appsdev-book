@@ -35,7 +35,6 @@
             this.lblStock = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblISBN = new System.Windows.Forms.Label();
-            this.txtDescription = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCover)).BeginInit();
@@ -103,15 +102,6 @@
             this.lblISBN.TabIndex = 4;
             this.lblISBN.Text = "label6";
             // 
-            // txtDescription
-            // 
-            this.txtDescription.Location = new System.Drawing.Point(176, 169);
-            this.txtDescription.Multiline = true;
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.ReadOnly = true;
-            this.txtDescription.Size = new System.Drawing.Size(235, 49);
-            this.txtDescription.TabIndex = 7;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(293, 14);
@@ -129,6 +119,7 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "Delete";
             this.button2.UseVisualStyleBackColor = true;
+          
             // 
             // BookCard
             // 
@@ -136,7 +127,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.lblStock);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblISBN);
@@ -161,7 +151,6 @@
         private System.Windows.Forms.Label lblStock;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblISBN;
-        private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }

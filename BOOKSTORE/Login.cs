@@ -14,7 +14,7 @@ namespace BOOKSTORE
     public partial class Login : Form
     {
 
-        private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\reyneil\Desktop\Database11.accdb;";
+        private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\reyneil\Desktop\appsdev-bookstore\BOOKSTORE";
         public Login()
         {
             InitializeComponent();
@@ -41,7 +41,7 @@ namespace BOOKSTORE
                 this.Hide();
                 return;
             }
-
+                
             try
             {
                 using (OleDbConnection connection = new OleDbConnection(connectionString))
