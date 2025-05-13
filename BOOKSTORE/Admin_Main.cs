@@ -69,6 +69,11 @@ namespace BOOKSTORE
                     coverImage = Image.FromStream(ms);
                 }
             }
+            else
+            {
+                // Set to a default placeholder image if no cover is found
+                //coverImage = Properties.Resources.DefaultCoverImage;
+            }
 
             bookCard.SetBookData(
                 cover: coverImage,

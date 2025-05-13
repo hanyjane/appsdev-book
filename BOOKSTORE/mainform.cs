@@ -72,11 +72,11 @@ namespace BOOKSTORE
             picture.Location = new Point(25, 10);
             picture.SizeMode = PictureBoxSizeMode.Zoom;
 
-            if (book.BookCover != null)
-            {
-                MemoryStream ms = new MemoryStream(book.BookCover);
-                picture.Image = Image.FromStream(ms);
-            }
+          //  if (book.BookCover != null)
+           // {
+            //    MemoryStream ms = new MemoryStream(book.BookCover);
+             //   picture.Image = Image.FromStream(ms);
+           // }
 
             Label titleLabel = new Label();
             titleLabel.Text = book.Title;
