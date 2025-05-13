@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace BOOKSTORE
 {
-    public partial class Login : Form//test12
+    public partial class Login : Form
     {
 
         private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\reyneil\Desktop\Database11.accdb;";
@@ -22,12 +22,23 @@ namespace BOOKSTORE
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            if (string.IsNullOrWhiteSpace(l.Text) ||
-                string.IsNullOrWhiteSpace(pass.Text))
+            string email = txtLoginEmail.Text.Trim();
+            string password = txtLoginPassword.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
             {
-                MessageBox.Show("Please enter both email and password", "Error",
-                               MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter both email and password", "Input Required",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Check for hardcoded admin credentials
+            if (email == "admin" && password == "pass")
+            {
+                MessageBox.Show("Welcome, Admin!", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Admin_Main adminForm = new Admin_Main();
+                adminForm.Show();
+                this.Hide();
                 return;
             }
 
@@ -37,33 +48,29 @@ namespace BOOKSTORE
                 {
                     connection.Open();
 
-                   
                     string loginQuery = "SELECT Username FROM Users WHERE Email = ? AND [Password] = ?";
 
                     using (OleDbCommand command = new OleDbCommand(loginQuery, connection))
                     {
-                        command.Parameters.AddWithValue("?", txtLoginEmail.Text);
-                        command.Parameters.AddWithValue("?", txtLoginPassword.Text);
+                        command.Parameters.AddWithValue("?", email);
+                        command.Parameters.AddWithValue("?", password);
 
-                       
                         object result = command.ExecuteScalar();
 
-                        if (result != null) 
+                        if (result != null)
                         {
                             string username = result.ToString();
                             MessageBox.Show($"Welcome back, {username}!", "Login Successful",
-                                          MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                           
-                           mainform mainForm = new mainform();
-                            mainForm.Show();
+                            mainform userForm = new mainform();
+                            userForm.Show();
                             this.Hide();
-
                         }
                         else
                         {
                             MessageBox.Show("Invalid email or password", "Login Failed",
-                                          MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
@@ -71,8 +78,9 @@ namespace BOOKSTORE
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}", "Database Error",
-                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

@@ -16,6 +16,7 @@ namespace BOOKSTORE
         public int Stock { get; set; }
         public decimal Price { get; set; }
         public byte[] BookCover { get; set; } // image from DB
+        public string Description { get; internal set; }
     }
 
 

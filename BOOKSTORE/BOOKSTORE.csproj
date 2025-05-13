@@ -98,7 +98,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Main.Designer.cs">
+      <DependentUpon>Admin_Main.cs</DependentUpon>
+    </Compile>
     <Compile Include="Book.cs" />
+    <Compile Include="BookCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BookCard.Designer.cs">
+      <DependentUpon>BookCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bookcreation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +148,12 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin_Main.resx">
+      <DependentUpon>Admin_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookCard.resx">
+      <DependentUpon>BookCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bookcreation.resx">
       <DependentUpon>Bookcreation.cs</DependentUpon>
     </EmbeddedResource>

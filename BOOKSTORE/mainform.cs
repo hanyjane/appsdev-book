@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BOOKSTORE
-{
+{   
     public partial class mainform : Form
     {
         private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\reyneil\Desktop\Database11.accdb";
@@ -101,7 +101,11 @@ namespace BOOKSTORE
             form.Show();
             this.Hide();
         }
-    
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
 }
