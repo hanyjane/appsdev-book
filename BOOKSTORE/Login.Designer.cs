@@ -32,11 +32,11 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pass = new System.Windows.Forms.Label();
+            this.btnLogin_Click = new System.Windows.Forms.Button();
             this.l = new System.Windows.Forms.Label();
             this.txtLoginPassword = new System.Windows.Forms.TextBox();
             this.txtLoginEmail = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnLogin_Click = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -62,6 +62,23 @@
             this.pass.Name = "pass";
             this.pass.Size = new System.Drawing.Size(0, 24);
             this.pass.TabIndex = 6;
+            // 
+            // btnLogin_Click
+            // 
+            this.btnLogin_Click.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogin_Click.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogin_Click.BackgroundImage")));
+            this.btnLogin_Click.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnLogin_Click.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogin_Click.FlatAppearance.BorderSize = 0;
+            this.btnLogin_Click.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin_Click.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin_Click.ForeColor = System.Drawing.Color.Transparent;
+            this.btnLogin_Click.Location = new System.Drawing.Point(400, 392);
+            this.btnLogin_Click.Name = "btnLogin_Click";
+            this.btnLogin_Click.Size = new System.Drawing.Size(380, 85);
+            this.btnLogin_Click.TabIndex = 4;
+            this.btnLogin_Click.UseVisualStyleBackColor = false;
+            this.btnLogin_Click.Click += new System.EventHandler(this.button1_Click);
             // 
             // l
             // 
@@ -100,23 +117,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(809, 600);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnLogin_Click
-            // 
-            this.btnLogin_Click.BackColor = System.Drawing.Color.Transparent;
-            this.btnLogin_Click.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogin_Click.BackgroundImage")));
-            this.btnLogin_Click.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnLogin_Click.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogin_Click.FlatAppearance.BorderSize = 0;
-            this.btnLogin_Click.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin_Click.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin_Click.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLogin_Click.Location = new System.Drawing.Point(400, 392);
-            this.btnLogin_Click.Name = "btnLogin_Click";
-            this.btnLogin_Click.Size = new System.Drawing.Size(380, 85);
-            this.btnLogin_Click.TabIndex = 4;
-            this.btnLogin_Click.UseVisualStyleBackColor = false;
-            this.btnLogin_Click.Click += new System.EventHandler(this.button1_Click);
             // 
             // Login
             // 
