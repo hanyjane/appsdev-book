@@ -59,8 +59,9 @@ namespace BOOKSTORE
                         cmd.Parameters.AddWithValue("Author", txtAuthor.Text);
                         cmd.Parameters.AddWithValue("Stock", int.Parse(txtStock.Text));
                         cmd.Parameters.AddWithValue("Price", decimal.Parse(txtPrice.Text));
-                            
-                        
+                        cmd.Parameters.AddWithValue("Description", txtDescription.Text);
+
+
                         if (imageBytes != null)
                             cmd.Parameters.Add("BookCover", OleDbType.Binary).Value = imageBytes;
                         else

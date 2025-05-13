@@ -46,7 +46,7 @@
             this.btn_confirm = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_Back = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDescription = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -151,10 +151,11 @@
             // 
             // imagepath
             // 
-            this.imagepath.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.imagepath.Location = new System.Drawing.Point(274, 330);
+            this.imagepath.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.imagepath.Location = new System.Drawing.Point(274, 331);
+            this.imagepath.Multiline = true;
             this.imagepath.Name = "imagepath";
-            this.imagepath.Size = new System.Drawing.Size(182, 29);
+            this.imagepath.Size = new System.Drawing.Size(182, 26);
             this.imagepath.TabIndex = 12;
             // 
             // btn_choosefile
@@ -171,8 +172,11 @@
             // 
             this.cmbCategory.FormattingEnabled = true;
             this.cmbCategory.Items.AddRange(new object[] {
-            "sci-fi",
-            "horror"});
+            "Fiction",
+            "Romance",
+            "Mystery",
+            "Fantasy",
+            "Horror"});
             this.cmbCategory.Location = new System.Drawing.Point(274, 117);
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(121, 21);
@@ -180,7 +184,7 @@
             // 
             // btn_confirm
             // 
-            this.btn_confirm.Location = new System.Drawing.Point(262, 384);
+            this.btn_confirm.Location = new System.Drawing.Point(293, 381);
             this.btn_confirm.Name = "btn_confirm";
             this.btn_confirm.Size = new System.Drawing.Size(102, 28);
             this.btn_confirm.TabIndex = 15;
@@ -190,9 +194,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(493, 83);
+            this.pictureBox1.Location = new System.Drawing.Point(493, 61);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(175, 209);
+            this.pictureBox1.Size = new System.Drawing.Size(175, 231);
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
@@ -206,14 +210,14 @@
             this.btn_Back.UseVisualStyleBackColor = true;
             this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
             // 
-            // textBox1
+            // txtDescription
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(493, 330);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(182, 79);
-            this.textBox1.TabIndex = 18;
+            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(493, 330);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(182, 79);
+            this.txtDescription.TabIndex = 18;
             // 
             // label8
             // 
@@ -230,7 +234,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_confirm);
@@ -277,7 +281,7 @@
         private System.Windows.Forms.Button btn_confirm;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_Back;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label8;
     }
 }
