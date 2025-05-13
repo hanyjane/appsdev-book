@@ -61,7 +61,6 @@ namespace BOOKSTORE
         {
             BookCard bookCard = new BookCard();
 
-            // Set book data
             Image coverImage = null;
             if (book.BookCover != null)
             {
@@ -118,7 +117,25 @@ namespace BOOKSTORE
             }
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+       
+        private void btn_Explore_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Add_Click(object sender, EventArgs e)
+        {
+            Bookcreation form = new Bookcreation();
+            form.Show();
+            this.Hide();
+        }
+
+        private void btn_Delete_Click(object sender, EventArgs e)
         {
 
         }
