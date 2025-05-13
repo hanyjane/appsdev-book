@@ -45,6 +45,7 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(519, 285);
             this.txtUsername.Name = "txtUsername";
@@ -65,6 +66,7 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(519, 347);
             this.txtPassword.Name = "txtPassword";
@@ -88,6 +90,7 @@
             // 
             // txtConfirmPassword
             // 
+            this.txtConfirmPassword.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmPassword.Location = new System.Drawing.Point(519, 409);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
