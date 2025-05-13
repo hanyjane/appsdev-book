@@ -13,9 +13,9 @@ namespace BOOKSTORE
 {
     public partial class Register : Form
     {
-        private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\reyneil\Desktop\Database11.accdb;";
+        private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\reyneil\Desktop\appsdev-bookstore\BOOKSTORE\Appsdevdatabase.accdb;";
 
-        public Register()//test test 
+        public Register()
         {
             InitializeComponent();
             txtPassword.UseSystemPasswordChar = true;

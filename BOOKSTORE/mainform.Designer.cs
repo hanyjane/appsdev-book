@@ -33,9 +33,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.database11DataSet = new BOOKSTORE.Database11DataSet();
-            this.database11DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.database11DataSet1 = new BOOKSTORE.Database11DataSet();
+         
             this.btn_Back = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -46,9 +44,7 @@
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.database11DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database11DataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database11DataSet1)).BeginInit();
+       
             this.SuspendLayout();
             // 
             // button1
@@ -90,18 +86,15 @@
             // 
             // database11DataSet
             // 
-            this.database11DataSet.DataSetName = "Database11DataSet";
-            this.database11DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+         
             // 
             // database11DataSetBindingSource
             // 
-            this.database11DataSetBindingSource.DataSource = this.database11DataSet;
-            this.database11DataSetBindingSource.Position = 0;
+          
             // 
             // database11DataSet1
             // 
-            this.database11DataSet1.DataSetName = "Database11DataSet";
-            this.database11DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+           
             // 
             // btn_Back
             // 
@@ -213,9 +206,6 @@
             this.Controls.Add(this.button1);
             this.Name = "mainform";
             this.Text = "main";
-            ((System.ComponentModel.ISupportInitialize)(this.database11DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database11DataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database11DataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -227,8 +217,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.BindingSource database11DataSetBindingSource;
-        private Database11DataSet database11DataSet;
-        private Database11DataSet database11DataSet1;
+
         private System.Windows.Forms.Button btn_Back;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;

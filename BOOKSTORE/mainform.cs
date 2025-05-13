@@ -13,7 +13,7 @@ namespace BOOKSTORE
 {   
     public partial class mainform : Form
     {
-        private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\reyneil\Desktop\Database11.accdb";
+        private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\reyneil\Desktop\appsdev-bookstore\BOOKSTORE\Appsdevdatabase.accdb";
 
         public mainform()
         {
