@@ -86,9 +86,7 @@ namespace BOOKSTORE
 
         private void btn_Back_Click(object sender, EventArgs e)
         {
-            mainform main = new mainform();
-            main.Show();
-            this.Hide();
+            
         }
     }
 }
