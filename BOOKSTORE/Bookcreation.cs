@@ -90,10 +90,5 @@ namespace BOOKSTORE
             main.Show();
             this.Hide();
         }
-
-        private void Bookcreation_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
