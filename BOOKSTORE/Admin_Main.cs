@@ -24,7 +24,7 @@ namespace BOOKSTORE
 
             foreach (Book book in bookList)
             {
-                AddBookCardToUI(book)
+                AddBookCardToUI(book);
             }
         }
 

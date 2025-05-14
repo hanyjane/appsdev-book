@@ -35,40 +35,43 @@ namespace BOOKSTORE
         {
             try
             {
-                // Convert the image to byte array
                 byte[] imageBytes = null;
                 if (!string.IsNullOrEmpty(imagepath.Text))
                 {
                     imageBytes = File.ReadAllBytes(imagepath.Text);
                 }
 
+                if (!int.TryParse(txtStock.Text, out int stock))
+                {
+                    MessageBox.Show("Invalid stock value.");
+                    return;
+                }
+
+                if (!decimal.TryParse(txtPrice.Text, out decimal price))
+                {
+                    MessageBox.Show("Invalid price value.");
+                    return;
+                }
+
                 using (OleDbConnection conn = new OleDbConnection(connectionString))
                 {
                     conn.Open();
 
-                    
                     string insertQuery = @"INSERT INTO Books 
-                        (Category, Title, ISBN, Author, Stock, Price, BookCover)
-                        VALUES (?, ?, ?, ?, ?, ?, ?)";
+                (Category, Title, ISBN, Author, Stock, Price, Description, BookCover)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
                     using (OleDbCommand cmd = new OleDbCommand(insertQuery, conn))
                     {
-                       
-                        cmd.Parameters.AddWithValue("Category", cmbCategory.Text);
-                        cmd.Parameters.AddWithValue("Title", txtTitle.Text);
-                        cmd.Parameters.AddWithValue("ISBN", txtISBN.Text);
-                        cmd.Parameters.AddWithValue("Author", txtAuthor.Text);
-                        cmd.Parameters.AddWithValue("Stock", int.Parse(txtStock.Text));
-                        cmd.Parameters.AddWithValue("Price", decimal.Parse(txtPrice.Text));
-                        cmd.Parameters.AddWithValue("Description", txtDescription.Text);
+                        cmd.Parameters.Add("Category", OleDbType.VarChar).Value = cmbCategory.Text;
+                        cmd.Parameters.Add("Title", OleDbType.VarChar).Value = txtTitle.Text;
+                        cmd.Parameters.Add("ISBN", OleDbType.VarChar).Value = txtISBN.Text;
+                        cmd.Parameters.Add("Author", OleDbType.VarChar).Value = txtAuthor.Text;
+                        cmd.Parameters.Add("Stock", OleDbType.Integer).Value = stock;
+                        cmd.Parameters.Add("Price", OleDbType.Currency).Value = price;
+                        cmd.Parameters.Add("Description", OleDbType.VarChar).Value = txtDescription.Text;
+                        cmd.Parameters.Add("BookCover", OleDbType.Binary).Value = imageBytes ?? (object)DBNull.Value;
 
-
-                        if (imageBytes != null)
-                            cmd.Parameters.Add("BookCover", OleDbType.Binary).Value = imageBytes;
-                        else
-                            cmd.Parameters.Add("BookCover", OleDbType.Binary).Value = DBNull.Value;
-
-                        
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Book saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -79,6 +82,7 @@ namespace BOOKSTORE
                 MessageBox.Show("Error saving book: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void btn_Back_Click(object sender, EventArgs e)
         {
