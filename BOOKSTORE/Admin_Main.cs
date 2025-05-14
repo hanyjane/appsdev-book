@@ -10,7 +10,7 @@ namespace BOOKSTORE
     public partial class Admin_Main : Form
     {
 
-        private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\reyneil\Desktop\appsdev-bookstore\BOOKSTORE\Appsdevdatabase.accdb;";
+        private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\appsdev\BOOKSTORE.accdb;";
         public Admin_Main()
         {
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace BOOKSTORE
 
             foreach (Book book in bookList)
             {
-                AddBookCardToUI(book)
+                AddBookCardToUI(book);
             }
         }
 
