@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,9 @@ namespace BOOKSTORE
 {
     public partial class Register : Form
     {
-        private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\reyneil\Desktop\appsdev-bookstore\BOOKSTORE\Appsdevdatabase.accdb;";
+        private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" +
+                                   Path.Combine(Application.StartupPath, "Appsdevdatabase.accdb") + ";";
+
 
         public Register()
         {

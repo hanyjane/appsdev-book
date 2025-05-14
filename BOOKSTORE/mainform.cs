@@ -13,7 +13,9 @@ namespace BOOKSTORE
 {   
     public partial class mainform : Form
     {
-        private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\reyneil\Desktop\appsdev-bookstore\BOOKSTORE\Appsdevdatabase.accdb";
+        private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" +
+                                   Path.Combine(Application.StartupPath, "Appsdevdatabase.accdb") + ";";
+
 
         public mainform()
         {

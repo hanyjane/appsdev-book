@@ -9,8 +9,9 @@ namespace BOOKSTORE
 {
     public partial class Bookcreation : Form
     {
-       
-        string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\reyneil\Desktop\appsdev-bookstore\BOOKSTORE\Appsdevdatabase.accdb";
+
+        private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" +
+                                  Application.StartupPath + @"\Appsdevdatabase.accdb;";
         public Bookcreation()
         {
             InitializeComponent();

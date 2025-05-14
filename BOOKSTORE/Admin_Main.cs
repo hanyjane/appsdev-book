@@ -16,7 +16,7 @@ namespace BOOKSTORE
             InitializeComponent();
             this.Load += Admin_Main_Load;
         }
-
+            
         private void Admin_Main_Load(object sender, EventArgs e)
         {
             List<Book> bookList = LoadBooksFromDatabase();
@@ -69,11 +69,7 @@ namespace BOOKSTORE
                     coverImage = Image.FromStream(ms);
                 }
             }
-            else
-            {
-                // Set to a default placeholder image if no cover is found
-                //coverImage = Properties.Resources.DefaultCoverImage;
-            }
+            
 
             bookCard.SetBookData(
                 cover: coverImage,
