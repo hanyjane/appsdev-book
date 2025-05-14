@@ -255,6 +255,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Bookcreation";
             this.Text = "Bookcreation";
+            this.Load += new System.EventHandler(this.Bookcreation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

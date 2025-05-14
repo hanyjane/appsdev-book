@@ -10,8 +10,7 @@ namespace BOOKSTORE
     public partial class Admin_Main : Form
     {
 
-        private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" +
-                                  Application.StartupPath + @"\Appsdevdatabase.accdb;";
+        private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\appsdev\BOOKSTORE.accdb;";
         public Admin_Main()
         {
             InitializeComponent();
