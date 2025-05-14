@@ -37,12 +37,20 @@
             this.txtLoginPassword = new System.Windows.Forms.TextBox();
             this.txtLoginEmail = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.pass);
             this.panel1.Controls.Add(this.btnLogin_Click);
             this.panel1.Controls.Add(this.l);
@@ -65,18 +73,18 @@
             // 
             // btnLogin_Click
             // 
-            this.btnLogin_Click.BackColor = System.Drawing.Color.Transparent;
-            this.btnLogin_Click.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogin_Click.BackgroundImage")));
+            this.btnLogin_Click.BackColor = System.Drawing.Color.Navy;
             this.btnLogin_Click.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnLogin_Click.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin_Click.FlatAppearance.BorderSize = 0;
             this.btnLogin_Click.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin_Click.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin_Click.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLogin_Click.Location = new System.Drawing.Point(400, 392);
+            this.btnLogin_Click.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin_Click.ForeColor = System.Drawing.Color.White;
+            this.btnLogin_Click.Location = new System.Drawing.Point(263, 345);
             this.btnLogin_Click.Name = "btnLogin_Click";
-            this.btnLogin_Click.Size = new System.Drawing.Size(380, 85);
+            this.btnLogin_Click.Size = new System.Drawing.Size(285, 38);
             this.btnLogin_Click.TabIndex = 4;
+            this.btnLogin_Click.Text = "Login";
             this.btnLogin_Click.UseVisualStyleBackColor = false;
             this.btnLogin_Click.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -92,20 +100,20 @@
             // txtLoginPassword
             // 
             this.txtLoginPassword.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtLoginPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLoginPassword.Location = new System.Drawing.Point(499, 346);
+            this.txtLoginPassword.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLoginPassword.Location = new System.Drawing.Point(506, 288);
             this.txtLoginPassword.Name = "txtLoginPassword";
-            this.txtLoginPassword.Size = new System.Drawing.Size(246, 31);
+            this.txtLoginPassword.Size = new System.Drawing.Size(246, 26);
             this.txtLoginPassword.TabIndex = 3;
             this.txtLoginPassword.UseSystemPasswordChar = true;
             // 
             // txtLoginEmail
             // 
             this.txtLoginEmail.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtLoginEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLoginEmail.Location = new System.Drawing.Point(499, 273);
+            this.txtLoginEmail.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLoginEmail.Location = new System.Drawing.Point(108, 288);
             this.txtLoginEmail.Name = "txtLoginEmail";
-            this.txtLoginEmail.Size = new System.Drawing.Size(246, 31);
+            this.txtLoginEmail.Size = new System.Drawing.Size(262, 26);
             this.txtLoginEmail.TabIndex = 2;
             // 
             // pictureBox1
@@ -114,9 +122,53 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(809, 600);
+            this.pictureBox1.Size = new System.Drawing.Size(800, 600);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(46, 291);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(56, 19);
+            this.textBox1.TabIndex = 8;
+            this.textBox1.Text = "Email :";
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.White;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(428, 291);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(72, 19);
+            this.textBox2.TabIndex = 9;
+            this.textBox2.Text = "Password :";
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.White;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Font = new System.Drawing.Font("Stencil", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(37, 195);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(231, 32);
+            this.textBox3.TabIndex = 10;
+            this.textBox3.Text = "Welcome Back!";
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.White;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(37, 233);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(537, 22);
+            this.textBox4.TabIndex = 11;
+            this.textBox4.Text = "Nice to see you again! Please fill in details to continue.";
             // 
             // Login
             // 
@@ -125,6 +177,7 @@
             this.ClientSize = new System.Drawing.Size(784, 596);
             this.Controls.Add(this.panel1);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -142,5 +195,9 @@
         private System.Windows.Forms.Label l;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnLogin_Click;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }
