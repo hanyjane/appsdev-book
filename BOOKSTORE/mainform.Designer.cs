@@ -28,6 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainform));
+            this.btn_Fiction = new System.Windows.Forms.Button();
+            this.btn_Romance = new System.Windows.Forms.Button();
+            this.btn_Mystery = new System.Windows.Forms.Button();
+            this.btn_Fantasy = new System.Windows.Forms.Button();
+            this.btn_Logout = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_Horror = new System.Windows.Forms.Button();
+            this.txtAuthor = new System.Windows.Forms.TextBox();
+            this.txtMinPrice = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtMaxPrice = new System.Windows.Forms.TextBox();
+            this.btn_findAuthor = new System.Windows.Forms.Button();
+            this.btn_minmaxPrice = new System.Windows.Forms.Button();
+            this.btn_ViewCart = new System.Windows.Forms.Button();
+            this.btn_All = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_Fiction
@@ -162,12 +182,6 @@
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-<<<<<<<<< Temporary merge branch 1
-            this.panel1.Controls.Add(this.txtHello);
-=========
-            this.panel1.Controls.Add(this.ViewCart);
-            this.panel1.Controls.Add(this.LogOut);
->>>>>>>>> Temporary merge branch 2
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -213,16 +227,6 @@
             this.label3.Size = new System.Drawing.Size(77, 19);
             this.label3.TabIndex = 33;
             this.label3.Text = "Explore";
-            // 
-            // txtHello
-            // 
-            this.txtHello.AutoSize = true;
-            this.txtHello.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHello.Location = new System.Drawing.Point(77, 141);
-            this.txtHello.Name = "txtHello";
-            this.txtHello.Size = new System.Drawing.Size(67, 25);
-            this.txtHello.TabIndex = 34;
-            this.txtHello.Text = "Hello!";
             // 
             // mainform
             // 
