@@ -42,6 +42,7 @@
             this.txtMaxPrice = new System.Windows.Forms.TextBox();
             this.btn_findAuthor = new System.Windows.Forms.Button();
             this.btn_minmaxPrice = new System.Windows.Forms.Button();
+            this.btn_ViewCart = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Fiction
@@ -56,7 +57,7 @@
             // 
             // btn_Romance
             // 
-            this.btn_Romance.Location = new System.Drawing.Point(196, 103);
+            this.btn_Romance.Location = new System.Drawing.Point(201, 103);
             this.btn_Romance.Name = "btn_Romance";
             this.btn_Romance.Size = new System.Drawing.Size(106, 29);
             this.btn_Romance.TabIndex = 1;
@@ -66,7 +67,7 @@
             // 
             // btn_Mystery
             // 
-            this.btn_Mystery.Location = new System.Drawing.Point(341, 103);
+            this.btn_Mystery.Location = new System.Drawing.Point(348, 103);
             this.btn_Mystery.Name = "btn_Mystery";
             this.btn_Mystery.Size = new System.Drawing.Size(106, 29);
             this.btn_Mystery.TabIndex = 2;
@@ -97,7 +98,7 @@
             // 
             this.flowLayoutPanel1.Location = new System.Drawing.Point(57, 149);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(694, 278);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(694, 260);
             this.flowLayoutPanel1.TabIndex = 20;
             // 
             // btn_Horror
@@ -171,11 +172,21 @@
             this.btn_minmaxPrice.UseVisualStyleBackColor = true;
             this.btn_minmaxPrice.Click += new System.EventHandler(this.btn_minmaxPrice_Click);
             // 
+            // btn_ViewCart
+            // 
+            this.btn_ViewCart.Location = new System.Drawing.Point(605, 23);
+            this.btn_ViewCart.Name = "btn_ViewCart";
+            this.btn_ViewCart.Size = new System.Drawing.Size(146, 29);
+            this.btn_ViewCart.TabIndex = 30;
+            this.btn_ViewCart.Text = "View Cart";
+            this.btn_ViewCart.UseVisualStyleBackColor = true;
+            // 
             // mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_ViewCart);
             this.Controls.Add(this.btn_minmaxPrice);
             this.Controls.Add(this.btn_findAuthor);
             this.Controls.Add(this.txtMaxPrice);
@@ -214,5 +225,6 @@
         private System.Windows.Forms.TextBox txtMaxPrice;
         private System.Windows.Forms.Button btn_findAuthor;
         private System.Windows.Forms.Button btn_minmaxPrice;
+        private System.Windows.Forms.Button btn_ViewCart;
     }
 }
