@@ -64,7 +64,7 @@ namespace BOOKSTORE
                             MessageBox.Show($"Welcome back, {username}!", "Login Successful",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            mainform userForm = new mainform();
+                            mainform userForm = new mainform(username);
                             userForm.Show();
                             this.Hide();
                         }

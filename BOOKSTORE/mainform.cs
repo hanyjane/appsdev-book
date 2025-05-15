@@ -18,15 +18,17 @@ namespace BOOKSTORE
                                    Path.Combine(Application.StartupPath, "Appsdevdatabase.accdb") + ";";
 
         private string currentUsername;
-        public mainform()
+        public mainform(string username)
         {
             InitializeComponent();
+            currentUsername = username;
             this.Load += new EventHandler(mainform_Load);
         }
 
         // load the books from the database when the form loads
         private void mainform_Load(object sender, EventArgs e)
         {
+            txtHello.Text = $"Hello, {currentUsername}!";
             List<Book> bookList = LoadBooksFromDatabase();
 
             for (int i = 0; i < bookList.Count; i++)
