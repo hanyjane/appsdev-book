@@ -47,6 +47,7 @@
             this.ViewCart = new System.Windows.Forms.Label();
             this.LogOut = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtHello = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -182,8 +183,6 @@
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel1.Controls.Add(this.ViewCart);
-            this.panel1.Controls.Add(this.LogOut);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -229,6 +228,16 @@
             this.label3.Size = new System.Drawing.Size(77, 19);
             this.label3.TabIndex = 33;
             this.label3.Text = "Explore";
+            // 
+            // txtHello
+            // 
+            this.txtHello.AutoSize = true;
+            this.txtHello.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHello.Location = new System.Drawing.Point(77, 141);
+            this.txtHello.Name = "txtHello";
+            this.txtHello.Size = new System.Drawing.Size(67, 25);
+            this.txtHello.TabIndex = 34;
+            this.txtHello.Text = "Hello!";
             // 
             // mainform
             // 
@@ -278,7 +287,5 @@
         private System.Windows.Forms.Button btn_All;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label LogOut;
-        private System.Windows.Forms.Label ViewCart;
     }
 }
