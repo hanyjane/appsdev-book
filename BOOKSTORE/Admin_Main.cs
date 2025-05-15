@@ -35,7 +35,7 @@ namespace BOOKSTORE
             using (OleDbConnection conn = new OleDbConnection(connectionString))
             {
                 conn.Open();
-                string query = "SELECT ID, Category, Title, Author, BookCover, ISBN, Price, Stock FROM Books";
+                string query = "SELECT ID, Category, Title, Author, BookCover, ISBN, Price, Stock, Description FROM Books";
 
                 using (OleDbCommand cmd = new OleDbCommand(query, conn))
                 using (OleDbDataReader reader = cmd.ExecuteReader())
@@ -51,7 +51,8 @@ namespace BOOKSTORE
                             BookCover = reader.IsDBNull(4) ? null : (byte[])reader[4],
                             ISBN = reader.GetString(5),
                             Price = reader.GetDecimal(6),
-                            Stock = reader.GetInt32(7)
+                            Stock = reader.GetInt32(7),
+                            Description = reader.GetString(8)
                         });
                     }
                 }
@@ -79,16 +80,15 @@ namespace BOOKSTORE
                 category: book.Category,
                 isbn: book.ISBN,
                 price: book.Price,
-                stock: book.Stock
+                stock: book.Stock,
+                description: book.Description
             );
 
             // Style the card
-            bookCard.Size = new Size(200, 350); // Adjust size as needed
-            bookCard.Margin = new Padding(10);
+           // bookCard.Size = new Size(200, 350); // Adjust size as needed
+           // bookCard.Margin = new Padding(10);
 
             // Handle button clicks
-            bookCard.Button1Click += (s, e) => EditBook(book.Id);
-            bookCard.Button2Click += (s, e) => DeleteBook(book.Id);
 
             flowLayoutPanel1.Controls.Add(bookCard);
         }
@@ -128,19 +128,34 @@ namespace BOOKSTORE
         private void btn_Update_Click(object sender, EventArgs e)
         {
 
-        }
+        }     
 
-        private void btn_Add_Click(object sender, EventArgs e)
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+
+        }
+   
+
+        private void Add_Click(object sender, EventArgs e)
         {
             Bookcreation form = new Bookcreation();
             form.Show();
             this.Hide();
         }
 
-        private void btn_Delete_Click(object sender, EventArgs e)
+        private void LogOut_Click(object sender, EventArgs e)
         {
-
+            Login form = new Login();
+            form.Show();
+            this.Hide();
         }
 
+        private void Explore_Click(object sender, EventArgs e)
+        {
+            Admin_Main form = new Admin_Main();            
+            form.Show();
+            this.Hide();
+        }
+       
     }
 }

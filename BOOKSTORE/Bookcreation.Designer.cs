@@ -50,10 +50,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.ViewCart = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.ViewCart = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -193,7 +193,7 @@
             // 
             // btn_confirm
             // 
-            this.btn_confirm.Location = new System.Drawing.Point(318, 349);
+            this.btn_confirm.Location = new System.Drawing.Point(330, 349);
             this.btn_confirm.Name = "btn_confirm";
             this.btn_confirm.Size = new System.Drawing.Size(102, 28);
             this.btn_confirm.TabIndex = 15;
@@ -268,31 +268,15 @@
             this.panel2.Size = new System.Drawing.Size(800, 600);
             this.panel2.TabIndex = 21;
             // 
-            // label9
+            // pictureBox2
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Stencil", 14F);
-            this.label9.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label9.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label9.Location = new System.Drawing.Point(86, 311);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 22);
-            this.label9.TabIndex = 35;
-            this.label9.Text = "add";
-            // 
-            // ViewCart
-            // 
-            this.ViewCart.AutoSize = true;
-            this.ViewCart.BackColor = System.Drawing.Color.Transparent;
-            this.ViewCart.Font = new System.Drawing.Font("Stencil", 14F);
-            this.ViewCart.ForeColor = System.Drawing.Color.AliceBlue;
-            this.ViewCart.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.ViewCart.Location = new System.Drawing.Point(86, 236);
-            this.ViewCart.Name = "ViewCart";
-            this.ViewCart.Size = new System.Drawing.Size(91, 22);
-            this.ViewCart.TabIndex = 37;
-            this.ViewCart.Text = "explore";
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(32, 516);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(170, 71);
+            this.pictureBox2.TabIndex = 39;
+            this.pictureBox2.TabStop = false;
             // 
             // label10
             // 
@@ -307,15 +291,31 @@
             this.label10.TabIndex = 38;
             this.label10.Text = "logout";
             // 
-            // pictureBox2
+            // ViewCart
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(32, 516);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(170, 71);
-            this.pictureBox2.TabIndex = 39;
-            this.pictureBox2.TabStop = false;
+            this.ViewCart.AutoSize = true;
+            this.ViewCart.BackColor = System.Drawing.Color.Transparent;
+            this.ViewCart.Font = new System.Drawing.Font("Stencil", 14F);
+            this.ViewCart.ForeColor = System.Drawing.Color.AliceBlue;
+            this.ViewCart.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.ViewCart.Location = new System.Drawing.Point(86, 236);
+            this.ViewCart.Name = "ViewCart";
+            this.ViewCart.Size = new System.Drawing.Size(91, 22);
+            this.ViewCart.TabIndex = 37;
+            this.ViewCart.Text = "explore";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Stencil", 14F);
+            this.label9.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label9.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label9.Location = new System.Drawing.Point(86, 311);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(46, 22);
+            this.label9.TabIndex = 35;
+            this.label9.Text = "add";
             // 
             // Bookcreation
             // 

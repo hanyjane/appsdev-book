@@ -35,9 +35,10 @@
             this.lblStock = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblISBN = new System.Windows.Forms.Label();
-            this.txtDescription = new System.Windows.Forms.TextBox();
             this.btn_Edit = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCover)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,6 +47,7 @@
             this.pictureBoxCover.Location = new System.Drawing.Point(25, 41);
             this.pictureBoxCover.Name = "pictureBoxCover";
             this.pictureBoxCover.Size = new System.Drawing.Size(129, 175);
+            this.pictureBoxCover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxCover.TabIndex = 0;
             this.pictureBoxCover.TabStop = false;
             // 
@@ -103,15 +105,6 @@
             this.lblISBN.TabIndex = 4;
             this.lblISBN.Text = "ISBN";
             // 
-            // txtDescription
-            // 
-            this.txtDescription.Location = new System.Drawing.Point(176, 169);
-            this.txtDescription.Multiline = true;
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.ReadOnly = true;
-            this.txtDescription.Size = new System.Drawing.Size(235, 49);
-            this.txtDescription.TabIndex = 7;
-            // 
             // btn_Edit
             // 
             this.btn_Edit.Location = new System.Drawing.Point(293, 14);
@@ -130,13 +123,30 @@
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = true;
             // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Location = new System.Drawing.Point(173, 176);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(60, 13);
+            this.lblDescription.TabIndex = 10;
+            this.lblDescription.Text = "Description";
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(429, 230);
+            this.panel1.TabIndex = 11;
+            // 
             // BookCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.btn_Edit);
-            this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.lblStock);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblISBN);
@@ -144,8 +154,9 @@
             this.Controls.Add(this.lblAuthor);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pictureBoxCover);
+            this.Controls.Add(this.panel1);
             this.Name = "BookCard";
-            this.Size = new System.Drawing.Size(548, 238);
+            this.Size = new System.Drawing.Size(435, 236);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCover)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -161,8 +172,9 @@
         private System.Windows.Forms.Label lblStock;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblISBN;
-        private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Button btn_Edit;
         private System.Windows.Forms.Button btn_Delete;
+        private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -312,13 +312,6 @@ namespace BOOKSTORE
         }
 
         //logout
-        private void btn_Logout_Click(object sender, EventArgs e)
-        {
-            Login form = new Login();
-            form.Show();
-            this.Hide();
-        }
-
 
         private void label4_Click(object sender, EventArgs e)
         {
