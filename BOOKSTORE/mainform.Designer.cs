@@ -33,7 +33,6 @@
             this.btn_Romance = new System.Windows.Forms.Button();
             this.btn_Mystery = new System.Windows.Forms.Button();
             this.btn_Fantasy = new System.Windows.Forms.Button();
-         //   this.btn_Logout = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_Horror = new System.Windows.Forms.Button();
             this.txtAuthor = new System.Windows.Forms.TextBox();
@@ -43,9 +42,10 @@
             this.txtMaxPrice = new System.Windows.Forms.TextBox();
             this.btn_findAuthor = new System.Windows.Forms.Button();
             this.btn_minmaxPrice = new System.Windows.Forms.Button();
-         //   this.btn_ViewCart = new System.Windows.Forms.Button();
             this.btn_All = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ViewCart = new System.Windows.Forms.Label();
+            this.LogOut = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -182,6 +182,8 @@
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel1.Controls.Add(this.ViewCart);
+            this.panel1.Controls.Add(this.LogOut);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -190,31 +192,31 @@
             // 
             // ViewCart
             // 
-        //    this.ViewCart.AutoSize = true;
-        //    this.ViewCart.BackColor = System.Drawing.Color.Transparent;
-         //   this.ViewCart.Font = new System.Drawing.Font("Stencil", 12F);
-        //    this.ViewCart.ForeColor = System.Drawing.Color.AliceBlue;
-        //    this.ViewCart.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-        //    this.ViewCart.Location = new System.Drawing.Point(67, 293);
-        //    this.ViewCart.Name = "ViewCart";
-         //   this.ViewCart.Size = new System.Drawing.Size(87, 19);
-          //  this.ViewCart.TabIndex = 35;
-        //    this.ViewCart.Text = "viewcart";
-         //   this.ViewCart.Click += new System.EventHandler(this.label5_Click);
+            this.ViewCart.AutoSize = true;
+            this.ViewCart.BackColor = System.Drawing.Color.Transparent;
+            this.ViewCart.Font = new System.Drawing.Font("Stencil", 12F);
+            this.ViewCart.ForeColor = System.Drawing.Color.AliceBlue;
+            this.ViewCart.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.ViewCart.Location = new System.Drawing.Point(67, 293);
+            this.ViewCart.Name = "ViewCart";
+            this.ViewCart.Size = new System.Drawing.Size(87, 19);
+            this.ViewCart.TabIndex = 35;
+            this.ViewCart.Text = "viewcart";
+            this.ViewCart.Click += new System.EventHandler(this.label5_Click);
             // 
             // LogOut
             // 
-       //     this.LogOut.AutoSize = true;
-           // this.LogOut.BackColor = System.Drawing.Color.Transparent;
-           // this.LogOut.Font = new System.Drawing.Font("Stencil", 12F);
-           // this.LogOut.ForeColor = System.Drawing.Color.AliceBlue;
-          //  this.LogOut.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-          //  this.LogOut.Location = new System.Drawing.Point(67, 324);
-          //  this.LogOut.Name = "LogOut";
-          //  this.LogOut.Size = new System.Drawing.Size(69, 19);
-          //  this.LogOut.TabIndex = 34;
-         //   this.LogOut.Text = "logout";
-         //   this.LogOut.Click += new System.EventHandler(this.label4_Click);
+            this.LogOut.AutoSize = true;
+            this.LogOut.BackColor = System.Drawing.Color.Transparent;
+            this.LogOut.Font = new System.Drawing.Font("Stencil", 12F);
+            this.LogOut.ForeColor = System.Drawing.Color.AliceBlue;
+            this.LogOut.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.LogOut.Location = new System.Drawing.Point(67, 324);
+            this.LogOut.Name = "LogOut";
+            this.LogOut.Size = new System.Drawing.Size(69, 19);
+            this.LogOut.TabIndex = 34;
+            this.LogOut.Text = "logout";
+            this.LogOut.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -230,9 +232,31 @@
             // 
             // mainform
             // 
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.btn_All);
+            this.Controls.Add(this.btn_minmaxPrice);
+            this.Controls.Add(this.btn_findAuthor);
+            this.Controls.Add(this.txtMaxPrice);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtMinPrice);
+            this.Controls.Add(this.txtAuthor);
+            this.Controls.Add(this.btn_Horror);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.btn_Fantasy);
+            this.Controls.Add(this.btn_Mystery);
+            this.Controls.Add(this.btn_Romance);
+            this.Controls.Add(this.btn_Fiction);
+            this.Controls.Add(this.panel1);
             this.Name = "mainform";
+            this.Text = "main";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -254,5 +278,7 @@
         private System.Windows.Forms.Button btn_All;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label LogOut;
+        private System.Windows.Forms.Label ViewCart;
     }
 }
