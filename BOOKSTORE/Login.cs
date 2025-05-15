@@ -21,7 +21,7 @@ namespace BOOKSTORE
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)//dd
+        private void button1_Click(object sender, EventArgs e)
         {
             string email = txtLoginEmail.Text.Trim();
             string password = txtLoginPassword.Text.Trim();
