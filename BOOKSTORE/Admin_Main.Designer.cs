@@ -35,14 +35,20 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btn_Explore = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.ViewCart = new System.Windows.Forms.Label();
             this.LogOut = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -102,7 +108,7 @@
             this.btn_Explore.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Explore.Font = new System.Drawing.Font("Stencil", 11F);
             this.btn_Explore.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btn_Explore.Location = new System.Drawing.Point(363, 165);
+            this.btn_Explore.Location = new System.Drawing.Point(533, 150);
             this.btn_Explore.Name = "btn_Explore";
             this.btn_Explore.Size = new System.Drawing.Size(211, 54);
             this.btn_Explore.TabIndex = 0;
@@ -128,38 +134,33 @@
             this.btn_Add.UseVisualStyleBackColor = false;
             this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.AliceBlue;
-            this.pictureBox1.ErrorImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(0, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(800, 600);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
             // panel2
             // 
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel2.Controls.Add(this.btn_Explore);
+            this.panel2.Controls.Add(this.pictureBox4);
+            this.panel2.Controls.Add(this.pictureBox3);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.LogOut);
             this.panel2.Controls.Add(this.ViewCart);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(0, -1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(232, 566);
+            this.panel2.Size = new System.Drawing.Size(800, 600);
             this.panel2.TabIndex = 33;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Stencil", 12F);
+            this.label3.Font = new System.Drawing.Font("Stencil", 14F);
             this.label3.ForeColor = System.Drawing.Color.MidnightBlue;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label3.Location = new System.Drawing.Point(67, 246);
+            this.label3.Location = new System.Drawing.Point(86, 236);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 19);
+            this.label3.Size = new System.Drawing.Size(91, 22);
             this.label3.TabIndex = 34;
             this.label3.Text = "Explore";
             // 
@@ -167,12 +168,12 @@
             // 
             this.ViewCart.AutoSize = true;
             this.ViewCart.BackColor = System.Drawing.Color.Transparent;
-            this.ViewCart.Font = new System.Drawing.Font("Stencil", 12F);
+            this.ViewCart.Font = new System.Drawing.Font("Stencil", 14F);
             this.ViewCart.ForeColor = System.Drawing.Color.AliceBlue;
             this.ViewCart.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.ViewCart.Location = new System.Drawing.Point(67, 293);
+            this.ViewCart.Location = new System.Drawing.Point(86, 311);
             this.ViewCart.Name = "ViewCart";
-            this.ViewCart.Size = new System.Drawing.Size(39, 19);
+            this.ViewCart.Size = new System.Drawing.Size(46, 22);
             this.ViewCart.TabIndex = 36;
             this.ViewCart.Text = "add";
             // 
@@ -180,39 +181,79 @@
             // 
             this.LogOut.AutoSize = true;
             this.LogOut.BackColor = System.Drawing.Color.Transparent;
-            this.LogOut.Font = new System.Drawing.Font("Stencil", 12F);
+            this.LogOut.Font = new System.Drawing.Font("Stencil", 14F);
             this.LogOut.ForeColor = System.Drawing.Color.AliceBlue;
             this.LogOut.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.LogOut.Location = new System.Drawing.Point(67, 326);
+            this.LogOut.Location = new System.Drawing.Point(86, 394);
             this.LogOut.Name = "LogOut";
-            this.LogOut.Size = new System.Drawing.Size(69, 19);
+            this.LogOut.Size = new System.Drawing.Size(80, 22);
             this.LogOut.TabIndex = 37;
             this.LogOut.Text = "logout";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(318, 287);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(164, 60);
+            this.pictureBox1.TabIndex = 38;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(326, 295);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(164, 60);
+            this.pictureBox2.TabIndex = 39;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(334, 303);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(164, 60);
+            this.pictureBox3.TabIndex = 40;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(32, 516);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(170, 71);
+            this.pictureBox4.TabIndex = 41;
+            this.pictureBox4.TabStop = false;
             // 
             // Admin_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.btn_Explore);
+            this.ClientSize = new System.Drawing.Size(784, 598);
             this.Controls.Add(this.btn_Add);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panel2);
             this.Name = "Admin_Main";
             this.Text = "Admin_Main";
             this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_Update;
         private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Button button2;
@@ -222,5 +263,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label ViewCart;
         private System.Windows.Forms.Label LogOut;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

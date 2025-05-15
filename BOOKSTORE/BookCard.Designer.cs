@@ -54,27 +54,27 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Location = new System.Drawing.Point(173, 41);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(35, 13);
+            this.lblTitle.Size = new System.Drawing.Size(27, 13);
             this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "label1";
+            this.lblTitle.Text = "Title";
             // 
             // lblAuthor
             // 
             this.lblAuthor.AutoSize = true;
             this.lblAuthor.Location = new System.Drawing.Point(173, 63);
             this.lblAuthor.Name = "lblAuthor";
-            this.lblAuthor.Size = new System.Drawing.Size(35, 13);
+            this.lblAuthor.Size = new System.Drawing.Size(38, 13);
             this.lblAuthor.TabIndex = 2;
-            this.lblAuthor.Text = "label2";
+            this.lblAuthor.Text = "Author";
             // 
             // lblCategory
             // 
             this.lblCategory.AutoSize = true;
             this.lblCategory.Location = new System.Drawing.Point(173, 85);
             this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(35, 13);
+            this.lblCategory.Size = new System.Drawing.Size(49, 13);
             this.lblCategory.TabIndex = 3;
-            this.lblCategory.Text = "label3";
+            this.lblCategory.Text = "Category";
             // 
             // lblStock
             // 
@@ -83,25 +83,25 @@
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(35, 13);
             this.lblStock.TabIndex = 6;
-            this.lblStock.Text = "label4";
+            this.lblStock.Text = "Stock";
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Location = new System.Drawing.Point(173, 131);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(35, 13);
+            this.lblPrice.Size = new System.Drawing.Size(31, 13);
             this.lblPrice.TabIndex = 5;
-            this.lblPrice.Text = "label5";
+            this.lblPrice.Text = "Price";
             // 
             // lblISBN
             // 
             this.lblISBN.AutoSize = true;
             this.lblISBN.Location = new System.Drawing.Point(173, 109);
             this.lblISBN.Name = "lblISBN";
-            this.lblISBN.Size = new System.Drawing.Size(35, 13);
+            this.lblISBN.Size = new System.Drawing.Size(32, 13);
             this.lblISBN.TabIndex = 4;
-            this.lblISBN.Text = "label6";
+            this.lblISBN.Text = "ISBN";
             // 
             // txtDescription
             // 
@@ -145,7 +145,7 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pictureBoxCover);
             this.Name = "BookCard";
-            this.Size = new System.Drawing.Size(444, 239);
+            this.Size = new System.Drawing.Size(611, 372);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCover)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

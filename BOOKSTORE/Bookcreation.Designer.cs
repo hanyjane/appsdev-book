@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bookcreation));
             this.label1 = new System.Windows.Forms.Label();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.txtISBN = new System.Windows.Forms.TextBox();
@@ -45,126 +46,132 @@
             this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.btn_confirm = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_Back = new System.Windows.Forms.Button();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.ViewCart = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 11);
+            this.label1.Location = new System.Drawing.Point(9, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.Size = new System.Drawing.Size(88, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Book title";
+            this.label1.Text = "Book Title :";
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(89, 8);
+            this.txtTitle.Location = new System.Drawing.Point(113, 42);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(100, 20);
+            this.txtTitle.Size = new System.Drawing.Size(157, 25);
             this.txtTitle.TabIndex = 1;
             // 
             // txtISBN
             // 
-            this.txtISBN.Location = new System.Drawing.Point(89, 80);
+            this.txtISBN.Location = new System.Drawing.Point(113, 112);
             this.txtISBN.Name = "txtISBN";
-            this.txtISBN.Size = new System.Drawing.Size(100, 20);
+            this.txtISBN.Size = new System.Drawing.Size(157, 25);
             this.txtISBN.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 83);
+            this.label2.Location = new System.Drawing.Point(9, 115);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.Size = new System.Drawing.Size(53, 17);
             this.label2.TabIndex = 2;
-            this.label2.Text = "ISBN";
+            this.label2.Text = "ISBN :";
             // 
             // txtAuthor
             // 
-            this.txtAuthor.Location = new System.Drawing.Point(89, 124);
+            this.txtAuthor.Location = new System.Drawing.Point(113, 152);
             this.txtAuthor.Name = "txtAuthor";
-            this.txtAuthor.Size = new System.Drawing.Size(100, 20);
+            this.txtAuthor.Size = new System.Drawing.Size(157, 25);
             this.txtAuthor.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 127);
+            this.label3.Location = new System.Drawing.Point(8, 155);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.Size = new System.Drawing.Size(63, 17);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Author";
+            this.label3.Text = "Author :";
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(89, 167);
+            this.txtStock.Location = new System.Drawing.Point(113, 192);
             this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(100, 20);
+            this.txtStock.Size = new System.Drawing.Size(157, 25);
             this.txtStock.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 170);
+            this.label4.Location = new System.Drawing.Point(8, 195);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(54, 17);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Stock";
+            this.label4.Text = "Stock :";
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(89, 211);
+            this.txtPrice.Location = new System.Drawing.Point(113, 231);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(100, 20);
+            this.txtPrice.Size = new System.Drawing.Size(157, 25);
             this.txtPrice.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 214);
+            this.label5.Location = new System.Drawing.Point(9, 234);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 13);
+            this.label5.Size = new System.Drawing.Size(51, 17);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Price";
+            this.label5.Text = "Price :";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 50);
+            this.label6.Location = new System.Drawing.Point(9, 78);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 13);
+            this.label6.Size = new System.Drawing.Size(77, 17);
             this.label6.TabIndex = 10;
-            this.label6.Text = "Category";
+            this.label6.Text = "Category :";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 263);
+            this.label7.Location = new System.Drawing.Point(283, 44);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 13);
+            this.label7.Size = new System.Drawing.Size(98, 17);
             this.label7.TabIndex = 11;
-            this.label7.Text = "Book Cover";
+            this.label7.Text = "Book Cover :";
             // 
             // imagepath
             // 
             this.imagepath.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.imagepath.Location = new System.Drawing.Point(89, 256);
+            this.imagepath.Location = new System.Drawing.Point(286, 74);
             this.imagepath.Multiline = true;
             this.imagepath.Name = "imagepath";
-            this.imagepath.Size = new System.Drawing.Size(182, 26);
+            this.imagepath.Size = new System.Drawing.Size(175, 26);
             this.imagepath.TabIndex = 12;
             // 
             // btn_choosefile
             // 
-            this.btn_choosefile.Location = new System.Drawing.Point(91, 258);
+            this.btn_choosefile.Location = new System.Drawing.Point(381, 38);
             this.btn_choosefile.Name = "btn_choosefile";
-            this.btn_choosefile.Size = new System.Drawing.Size(75, 23);
+            this.btn_choosefile.Size = new System.Drawing.Size(80, 29);
             this.btn_choosefile.TabIndex = 13;
             this.btn_choosefile.Text = "Choose file";
             this.btn_choosefile.UseVisualStyleBackColor = true;
@@ -179,14 +186,14 @@
             "Mystery",
             "Fantasy",
             "Horror"});
-            this.cmbCategory.Location = new System.Drawing.Point(89, 42);
+            this.cmbCategory.Location = new System.Drawing.Point(113, 75);
             this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(121, 21);
+            this.cmbCategory.Size = new System.Drawing.Size(157, 25);
             this.cmbCategory.TabIndex = 14;
             // 
             // btn_confirm
             // 
-            this.btn_confirm.Location = new System.Drawing.Point(108, 306);
+            this.btn_confirm.Location = new System.Drawing.Point(318, 349);
             this.btn_confirm.Name = "btn_confirm";
             this.btn_confirm.Size = new System.Drawing.Size(102, 28);
             this.btn_confirm.TabIndex = 15;
@@ -196,45 +203,34 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(288, 11);
+            this.pictureBox1.Location = new System.Drawing.Point(286, 112);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(175, 231);
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
-            // btn_Back
-            // 
-            this.btn_Back.Location = new System.Drawing.Point(216, 50);
-            this.btn_Back.Name = "btn_Back";
-            this.btn_Back.Size = new System.Drawing.Size(75, 23);
-            this.btn_Back.TabIndex = 17;
-            this.btn_Back.Text = "back";
-            this.btn_Back.UseVisualStyleBackColor = true;
-            this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
-            // 
             // txtDescription
             // 
             this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(288, 280);
+            this.txtDescription.Location = new System.Drawing.Point(141, 273);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(182, 79);
+            this.txtDescription.Size = new System.Drawing.Size(129, 79);
             this.txtDescription.TabIndex = 18;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(285, 256);
+            this.label8.Location = new System.Drawing.Point(8, 273);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 13);
+            this.label8.Size = new System.Drawing.Size(126, 17);
             this.label8.TabIndex = 19;
-            this.label8.Text = "Book desription";
+            this.label8.Text = "Book Desription :";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.AliceBlue;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.txtISBN);
-            this.panel1.Controls.Add(this.btn_Back);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtDescription);
@@ -253,23 +249,89 @@
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.txtPrice);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Location = new System.Drawing.Point(93, 46);
+            this.panel1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(277, 77);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(620, 363);
+            this.panel1.Size = new System.Drawing.Size(475, 444);
             this.panel1.TabIndex = 20;
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.ViewCart);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Location = new System.Drawing.Point(2, 1);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(800, 600);
+            this.panel2.TabIndex = 21;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Stencil", 14F);
+            this.label9.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label9.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label9.Location = new System.Drawing.Point(86, 311);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(46, 22);
+            this.label9.TabIndex = 35;
+            this.label9.Text = "add";
+            // 
+            // ViewCart
+            // 
+            this.ViewCart.AutoSize = true;
+            this.ViewCart.BackColor = System.Drawing.Color.Transparent;
+            this.ViewCart.Font = new System.Drawing.Font("Stencil", 14F);
+            this.ViewCart.ForeColor = System.Drawing.Color.AliceBlue;
+            this.ViewCart.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.ViewCart.Location = new System.Drawing.Point(86, 236);
+            this.ViewCart.Name = "ViewCart";
+            this.ViewCart.Size = new System.Drawing.Size(91, 22);
+            this.ViewCart.TabIndex = 37;
+            this.ViewCart.Text = "explore";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Stencil", 14F);
+            this.label10.ForeColor = System.Drawing.Color.AliceBlue;
+            this.label10.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label10.Location = new System.Drawing.Point(86, 394);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(80, 22);
+            this.label10.TabIndex = 38;
+            this.label10.Text = "logout";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(32, 516);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(170, 71);
+            this.pictureBox2.TabIndex = 39;
+            this.pictureBox2.TabStop = false;
             // 
             // Bookcreation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(784, 596);
+            this.Controls.Add(this.panel2);
             this.Name = "Bookcreation";
             this.Text = "Bookcreation";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -293,9 +355,13 @@
         private System.Windows.Forms.ComboBox cmbCategory;
         private System.Windows.Forms.Button btn_confirm;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btn_Back;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label ViewCart;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
