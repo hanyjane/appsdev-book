@@ -145,7 +145,7 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pictureBoxCover);
             this.Name = "BookCard";
-            this.Size = new System.Drawing.Size(611, 372);
+            this.Size = new System.Drawing.Size(579, 241);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCover)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
