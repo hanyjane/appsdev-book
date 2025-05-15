@@ -36,8 +36,8 @@
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblISBN = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Edit = new System.Windows.Forms.Button();
+            this.btn_Delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCover)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,30 +112,30 @@
             this.txtDescription.Size = new System.Drawing.Size(235, 49);
             this.txtDescription.TabIndex = 7;
             // 
-            // button1
+            // btn_Edit
             // 
-            this.button1.Location = new System.Drawing.Point(293, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Edit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_Edit.Location = new System.Drawing.Point(293, 14);
+            this.btn_Edit.Name = "btn_Edit";
+            this.btn_Edit.Size = new System.Drawing.Size(56, 23);
+            this.btn_Edit.TabIndex = 8;
+            this.btn_Edit.Text = "Edit";
+            this.btn_Edit.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btn_Delete
             // 
-            this.button2.Location = new System.Drawing.Point(355, 14);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(56, 23);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_Delete.Location = new System.Drawing.Point(355, 14);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(56, 23);
+            this.btn_Delete.TabIndex = 9;
+            this.btn_Delete.Text = "Delete";
+            this.btn_Delete.UseVisualStyleBackColor = true;
             // 
             // BookCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_Delete);
+            this.Controls.Add(this.btn_Edit);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.lblStock);
             this.Controls.Add(this.lblPrice);
@@ -162,7 +162,7 @@
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblISBN;
         private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_Edit;
+        private System.Windows.Forms.Button btn_Delete;
     }
 }

@@ -15,8 +15,8 @@ namespace BOOKSTORE
             InitializeComponent();
 
             // Wire up button events
-            button1.Click += (s, e) => Button1Click?.Invoke(this, e);
-            button2.Click += (s, e) => Button2Click?.Invoke(this, e);
+            btn_Edit.Click += (s, e) => Button1Click?.Invoke(this, e);
+            btn_Delete.Click += (s, e) => Button2Click?.Invoke(this, e);
         }
 
         public void SetBookData(
