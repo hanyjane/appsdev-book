@@ -32,14 +32,23 @@
             this.btn_Romance = new System.Windows.Forms.Button();
             this.btn_Mystery = new System.Windows.Forms.Button();
             this.btn_Fantasy = new System.Windows.Forms.Button();
-            this.btn_Back = new System.Windows.Forms.Button();
+            this.btn_Logout = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_Horror = new System.Windows.Forms.Button();
+            this.txtAuthor = new System.Windows.Forms.TextBox();
+            this.txtMinPrice = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtMaxPrice = new System.Windows.Forms.TextBox();
+            this.btn_findAuthor = new System.Windows.Forms.Button();
+            this.btn_minmaxPrice = new System.Windows.Forms.Button();
+            this.btn_ViewCart = new System.Windows.Forms.Button();
+            this.btn_All = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Fiction
             // 
-            this.btn_Fiction.Location = new System.Drawing.Point(55, 103);
+            this.btn_Fiction.Location = new System.Drawing.Point(175, 103);
             this.btn_Fiction.Name = "btn_Fiction";
             this.btn_Fiction.Size = new System.Drawing.Size(106, 29);
             this.btn_Fiction.TabIndex = 0;
@@ -49,7 +58,7 @@
             // 
             // btn_Romance
             // 
-            this.btn_Romance.Location = new System.Drawing.Point(167, 103);
+            this.btn_Romance.Location = new System.Drawing.Point(287, 103);
             this.btn_Romance.Name = "btn_Romance";
             this.btn_Romance.Size = new System.Drawing.Size(106, 29);
             this.btn_Romance.TabIndex = 1;
@@ -59,7 +68,7 @@
             // 
             // btn_Mystery
             // 
-            this.btn_Mystery.Location = new System.Drawing.Point(279, 103);
+            this.btn_Mystery.Location = new System.Drawing.Point(399, 103);
             this.btn_Mystery.Name = "btn_Mystery";
             this.btn_Mystery.Size = new System.Drawing.Size(106, 29);
             this.btn_Mystery.TabIndex = 2;
@@ -69,7 +78,7 @@
             // 
             // btn_Fantasy
             // 
-            this.btn_Fantasy.Location = new System.Drawing.Point(391, 103);
+            this.btn_Fantasy.Location = new System.Drawing.Point(511, 103);
             this.btn_Fantasy.Name = "btn_Fantasy";
             this.btn_Fantasy.Size = new System.Drawing.Size(106, 29);
             this.btn_Fantasy.TabIndex = 3;
@@ -77,26 +86,26 @@
             this.btn_Fantasy.UseVisualStyleBackColor = true;
             this.btn_Fantasy.Click += new System.EventHandler(this.btn_Fantasy_Click);
             // 
-            // btn_Back
+            // btn_Logout
             // 
-            this.btn_Back.Location = new System.Drawing.Point(12, 12);
-            this.btn_Back.Name = "btn_Back";
-            this.btn_Back.Size = new System.Drawing.Size(75, 23);
-            this.btn_Back.TabIndex = 11;
-            this.btn_Back.Text = "back";
-            this.btn_Back.UseVisualStyleBackColor = true;
+            this.btn_Logout.Location = new System.Drawing.Point(12, 12);
+            this.btn_Logout.Name = "btn_Logout";
+            this.btn_Logout.Size = new System.Drawing.Size(89, 29);
+            this.btn_Logout.TabIndex = 11;
+            this.btn_Logout.Text = "Logout";
+            this.btn_Logout.UseVisualStyleBackColor = true;
+            this.btn_Logout.Click += new System.EventHandler(this.btn_Logout_Click);
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Location = new System.Drawing.Point(57, 149);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(698, 278);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(694, 280);
             this.flowLayoutPanel1.TabIndex = 20;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // btn_Horror
             // 
-            this.btn_Horror.Location = new System.Drawing.Point(503, 103);
+            this.btn_Horror.Location = new System.Drawing.Point(623, 103);
             this.btn_Horror.Name = "btn_Horror";
             this.btn_Horror.Size = new System.Drawing.Size(106, 29);
             this.btn_Horror.TabIndex = 21;
@@ -104,14 +113,104 @@
             this.btn_Horror.UseVisualStyleBackColor = true;
             this.btn_Horror.Click += new System.EventHandler(this.btn_Horror_Click);
             // 
+            // txtAuthor
+            // 
+            this.txtAuthor.Location = new System.Drawing.Point(137, 68);
+            this.txtAuthor.Name = "txtAuthor";
+            this.txtAuthor.Size = new System.Drawing.Size(286, 20);
+            this.txtAuthor.TabIndex = 22;
+            // 
+            // txtMinPrice
+            // 
+            this.txtMinPrice.Location = new System.Drawing.Point(571, 68);
+            this.txtMinPrice.Name = "txtMinPrice";
+            this.txtMinPrice.Size = new System.Drawing.Size(49, 20);
+            this.txtMinPrice.TabIndex = 23;
+            this.txtMinPrice.Text = "Min ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(39, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 13);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Search by Author:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(483, 71);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 13);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Search by Price";
+            // 
+            // txtMaxPrice
+            // 
+            this.txtMaxPrice.Location = new System.Drawing.Point(626, 68);
+            this.txtMaxPrice.Name = "txtMaxPrice";
+            this.txtMaxPrice.Size = new System.Drawing.Size(49, 20);
+            this.txtMaxPrice.TabIndex = 27;
+            this.txtMaxPrice.Text = "Max";
+            // 
+            // btn_findAuthor
+            // 
+            this.btn_findAuthor.Location = new System.Drawing.Point(429, 68);
+            this.btn_findAuthor.Name = "btn_findAuthor";
+            this.btn_findAuthor.Size = new System.Drawing.Size(48, 20);
+            this.btn_findAuthor.TabIndex = 28;
+            this.btn_findAuthor.Text = "Find";
+            this.btn_findAuthor.UseVisualStyleBackColor = true;
+            this.btn_findAuthor.Click += new System.EventHandler(this.btn_findAuthor_Click);
+            // 
+            // btn_minmaxPrice
+            // 
+            this.btn_minmaxPrice.Location = new System.Drawing.Point(681, 67);
+            this.btn_minmaxPrice.Name = "btn_minmaxPrice";
+            this.btn_minmaxPrice.Size = new System.Drawing.Size(48, 20);
+            this.btn_minmaxPrice.TabIndex = 29;
+            this.btn_minmaxPrice.Text = "Find";
+            this.btn_minmaxPrice.UseVisualStyleBackColor = true;
+            this.btn_minmaxPrice.Click += new System.EventHandler(this.btn_minmaxPrice_Click);
+            // 
+            // btn_ViewCart
+            // 
+            this.btn_ViewCart.Location = new System.Drawing.Point(605, 23);
+            this.btn_ViewCart.Name = "btn_ViewCart";
+            this.btn_ViewCart.Size = new System.Drawing.Size(146, 29);
+            this.btn_ViewCart.TabIndex = 30;
+            this.btn_ViewCart.Text = "View Cart";
+            this.btn_ViewCart.UseVisualStyleBackColor = true;
+            this.btn_ViewCart.Click += new System.EventHandler(this.btn_ViewCart_Click);
+            // 
+            // btn_All
+            // 
+            this.btn_All.Location = new System.Drawing.Point(63, 103);
+            this.btn_All.Name = "btn_All";
+            this.btn_All.Size = new System.Drawing.Size(106, 29);
+            this.btn_All.TabIndex = 31;
+            this.btn_All.Text = "All";
+            this.btn_All.UseVisualStyleBackColor = true;
+            this.btn_All.Click += new System.EventHandler(this.btn_All_Click);
+            // 
             // mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_All);
+            this.Controls.Add(this.btn_ViewCart);
+            this.Controls.Add(this.btn_minmaxPrice);
+            this.Controls.Add(this.btn_findAuthor);
+            this.Controls.Add(this.txtMaxPrice);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtMinPrice);
+            this.Controls.Add(this.txtAuthor);
             this.Controls.Add(this.btn_Horror);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.btn_Back);
+            this.Controls.Add(this.btn_Logout);
             this.Controls.Add(this.btn_Fantasy);
             this.Controls.Add(this.btn_Mystery);
             this.Controls.Add(this.btn_Romance);
@@ -119,6 +218,7 @@
             this.Name = "mainform";
             this.Text = "main";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -129,8 +229,17 @@
         private System.Windows.Forms.Button btn_Mystery;
         private System.Windows.Forms.Button btn_Fantasy;
 
-        private System.Windows.Forms.Button btn_Back;
+        private System.Windows.Forms.Button btn_Logout;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btn_Horror;
+        private System.Windows.Forms.TextBox txtAuthor;
+        private System.Windows.Forms.TextBox txtMinPrice;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtMaxPrice;
+        private System.Windows.Forms.Button btn_findAuthor;
+        private System.Windows.Forms.Button btn_minmaxPrice;
+        private System.Windows.Forms.Button btn_ViewCart;
+        private System.Windows.Forms.Button btn_All;
     }
 }

@@ -23,6 +23,7 @@ namespace BOOKSTORE
             this.Load += new EventHandler(mainform_Load);
         }
 
+        // load the books from the database when the form loads
         private void mainform_Load(object sender, EventArgs e)
         {
             List<Book> bookList = LoadBooksFromDatabase();
@@ -34,6 +35,7 @@ namespace BOOKSTORE
             }
         }
 
+        // Load books from the database
         private List<Book> LoadBooksFromDatabase(string category = null)
         {
             List<Book> books = new List<Book>();
@@ -78,6 +80,7 @@ namespace BOOKSTORE
         }
 
 
+        //design card for each book
         private void AddBookToUI(Book book)
         {
             Panel panel = new Panel();
@@ -125,7 +128,7 @@ namespace BOOKSTORE
             btnAddToCart.Location = new Point(15, 230);
             btnAddToCart.Click += (s, e) => {
                 MessageBox.Show($"Added '{book.Title}' to cart!");
-                // You can extend this to actually manage a cart system
+                // manage a cart system HERE
             };
 
             panel.Controls.Add(picture);
@@ -148,13 +151,94 @@ namespace BOOKSTORE
                 AddBookToUI(book);
             }
         }
-        //it will append the books in here 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+
+        private List<Book> LoadBooksByAuthor(string author)
         {
-           
+            List<Book> books = new List<Book>();
+
+            using (OleDbConnection conn = new OleDbConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT ID, Category, Title, Author, BookCover, Price, Stock FROM Books WHERE Author LIKE ?";
+
+                using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("?", "%" + author + "%");
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            books.Add(new Book
+                            {
+                                Id = reader.GetInt32(0),
+                                Category = reader.GetString(1),
+                                Title = reader.GetString(2),
+                                Author = reader.GetString(3),
+                                BookCover = reader.IsDBNull(4) ? null : (byte[])reader[4],
+                                Price = reader.GetDecimal(5),
+                                Stock = reader.GetInt32(6)
+                            });
+                        }
+                    }
+                }
+            }
+
+            return books;
         }
 
-        //and if i click this it will filter by category which is fiction and it will show books that are fiction in flowLayoutPanel1
+        private List<Book> LoadBooksByPriceRange(decimal minPrice, decimal maxPrice)
+        {
+            List<Book> books = new List<Book>();
+
+            using (OleDbConnection conn = new OleDbConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT ID, Category, Title, Author, BookCover, Price, Stock FROM Books WHERE Price BETWEEN ? AND ?";
+
+                using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("?", minPrice);
+                    cmd.Parameters.AddWithValue("?", maxPrice);
+
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            books.Add(new Book
+                            {
+                                Id = reader.GetInt32(0),
+                                Category = reader.GetString(1),
+                                Title = reader.GetString(2),
+                                Author = reader.GetString(3),
+                                BookCover = reader.IsDBNull(4) ? null : (byte[])reader[4],
+                                Price = reader.GetDecimal(5),
+                                Stock = reader.GetInt32(6)
+                            });
+                        }
+                    }
+                }
+            }
+
+            return books;
+        }
+
+        //it will append the books in here flowLayoutPanel1
+
+
+        //BUTTONSS for load by category 
+
+        //all category
+        private void btn_All_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            List<Book> books = LoadBooksFromDatabase();
+            foreach (Book book in books)
+            {
+                AddBookToUI(book);
+            }
+        }
+
         private void btn_Fiction_Click(object sender, EventArgs e)
         {
             LoadBooksByCategory("Fiction");
@@ -179,6 +263,68 @@ namespace BOOKSTORE
         {
             LoadBooksByCategory("Horror");
         }
+
+
+        //button find by author
+        private void btn_findAuthor_Click(object sender, EventArgs e)
+        {
+            string author = txtAuthor.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(author))
+            {
+                MessageBox.Show("Please enter an author name.");
+                return;
+            }
+
+            flowLayoutPanel1.Controls.Clear();
+            List<Book> books = LoadBooksByAuthor(author);
+
+            foreach (Book book in books)
+            {
+                AddBookToUI(book);
+            }
+        }
+
+        //button find by price
+        private void btn_minmaxPrice_Click(object sender, EventArgs e)
+        {
+            if (!decimal.TryParse(txtMinPrice.Text.Trim(), out decimal minPrice) ||
+       !decimal.TryParse(txtMaxPrice.Text.Trim(), out decimal maxPrice))
+            {
+                MessageBox.Show("Please enter valid numeric values for both minimum and maximum prices.");
+                return;
+            }
+
+            if (minPrice > maxPrice)
+            {
+                MessageBox.Show("Minimum price cannot be greater than maximum price.");
+                return;
+            }
+
+            flowLayoutPanel1.Controls.Clear();
+            List<Book> books = LoadBooksByPriceRange(minPrice, maxPrice);
+
+            foreach (Book book in books)
+            {
+                AddBookToUI(book);
+            }
+        }
+
+        //logout
+        private void btn_Logout_Click(object sender, EventArgs e)
+        {
+            Login form = new Login();
+            form.Show();
+            this.Hide();
+        }
+
+        //view cart
+        private void btn_ViewCart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 
 }
