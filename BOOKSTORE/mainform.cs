@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace BOOKSTORE
 {   
@@ -16,16 +17,18 @@ namespace BOOKSTORE
         private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" +
                                    Path.Combine(Application.StartupPath, "Appsdevdatabase.accdb") + ";";
 
-
-        public mainform()
+        private string currentUsername;
+        public mainform(string username)
         {
             InitializeComponent();
+            currentUsername = username;
             this.Load += new EventHandler(mainform_Load);
         }
 
         // load the books from the database when the form loads
         private void mainform_Load(object sender, EventArgs e)
         {
+            txtHello.Text = $"Hello, {currentUsername}!";
             List<Book> bookList = LoadBooksFromDatabase();
 
             for (int i = 0; i < bookList.Count; i++)
