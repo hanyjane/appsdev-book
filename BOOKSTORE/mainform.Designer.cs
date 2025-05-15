@@ -33,7 +33,7 @@
             this.btn_Romance = new System.Windows.Forms.Button();
             this.btn_Mystery = new System.Windows.Forms.Button();
             this.btn_Fantasy = new System.Windows.Forms.Button();
-            this.btn_Logout = new System.Windows.Forms.Button();
+         //   this.btn_Logout = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_Horror = new System.Windows.Forms.Button();
             this.txtAuthor = new System.Windows.Forms.TextBox();
@@ -43,7 +43,7 @@
             this.txtMaxPrice = new System.Windows.Forms.TextBox();
             this.btn_findAuthor = new System.Windows.Forms.Button();
             this.btn_minmaxPrice = new System.Windows.Forms.Button();
-            this.btn_ViewCart = new System.Windows.Forms.Button();
+         //   this.btn_ViewCart = new System.Windows.Forms.Button();
             this.btn_All = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -190,31 +190,31 @@
             // 
             // ViewCart
             // 
-            this.ViewCart.AutoSize = true;
-            this.ViewCart.BackColor = System.Drawing.Color.Transparent;
-            this.ViewCart.Font = new System.Drawing.Font("Stencil", 12F);
-            this.ViewCart.ForeColor = System.Drawing.Color.AliceBlue;
-            this.ViewCart.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.ViewCart.Location = new System.Drawing.Point(67, 293);
-            this.ViewCart.Name = "ViewCart";
-            this.ViewCart.Size = new System.Drawing.Size(87, 19);
-            this.ViewCart.TabIndex = 35;
-            this.ViewCart.Text = "viewcart";
-            this.ViewCart.Click += new System.EventHandler(this.label5_Click);
+        //    this.ViewCart.AutoSize = true;
+        //    this.ViewCart.BackColor = System.Drawing.Color.Transparent;
+         //   this.ViewCart.Font = new System.Drawing.Font("Stencil", 12F);
+        //    this.ViewCart.ForeColor = System.Drawing.Color.AliceBlue;
+        //    this.ViewCart.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+        //    this.ViewCart.Location = new System.Drawing.Point(67, 293);
+        //    this.ViewCart.Name = "ViewCart";
+         //   this.ViewCart.Size = new System.Drawing.Size(87, 19);
+          //  this.ViewCart.TabIndex = 35;
+        //    this.ViewCart.Text = "viewcart";
+         //   this.ViewCart.Click += new System.EventHandler(this.label5_Click);
             // 
             // LogOut
             // 
-            this.LogOut.AutoSize = true;
-            this.LogOut.BackColor = System.Drawing.Color.Transparent;
-            this.LogOut.Font = new System.Drawing.Font("Stencil", 12F);
-            this.LogOut.ForeColor = System.Drawing.Color.AliceBlue;
-            this.LogOut.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.LogOut.Location = new System.Drawing.Point(67, 324);
-            this.LogOut.Name = "LogOut";
-            this.LogOut.Size = new System.Drawing.Size(69, 19);
-            this.LogOut.TabIndex = 34;
-            this.LogOut.Text = "logout";
-            this.LogOut.Click += new System.EventHandler(this.label4_Click);
+       //     this.LogOut.AutoSize = true;
+           // this.LogOut.BackColor = System.Drawing.Color.Transparent;
+           // this.LogOut.Font = new System.Drawing.Font("Stencil", 12F);
+           // this.LogOut.ForeColor = System.Drawing.Color.AliceBlue;
+          //  this.LogOut.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+          //  this.LogOut.Location = new System.Drawing.Point(67, 324);
+          //  this.LogOut.Name = "LogOut";
+          //  this.LogOut.Size = new System.Drawing.Size(69, 19);
+          //  this.LogOut.TabIndex = 34;
+         //   this.LogOut.Text = "logout";
+         //   this.LogOut.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
