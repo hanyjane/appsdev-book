@@ -36,19 +36,19 @@
             this.btn_Explore = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.ViewCart = new System.Windows.Forms.Label();
-            this.LogOut = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.LogOut = new System.Windows.Forms.Label();
+            this.ViewCart = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -151,31 +151,45 @@
             this.panel2.Size = new System.Drawing.Size(800, 600);
             this.panel2.TabIndex = 33;
             // 
-            // label3
+            // pictureBox4
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Stencil", 14F);
-            this.label3.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label3.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label3.Location = new System.Drawing.Point(86, 236);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 22);
-            this.label3.TabIndex = 34;
-            this.label3.Text = "Explore";
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(32, 516);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(170, 71);
+            this.pictureBox4.TabIndex = 41;
+            this.pictureBox4.TabStop = false;
             // 
-            // ViewCart
+            // pictureBox3
             // 
-            this.ViewCart.AutoSize = true;
-            this.ViewCart.BackColor = System.Drawing.Color.Transparent;
-            this.ViewCart.Font = new System.Drawing.Font("Stencil", 14F);
-            this.ViewCart.ForeColor = System.Drawing.Color.AliceBlue;
-            this.ViewCart.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.ViewCart.Location = new System.Drawing.Point(86, 311);
-            this.ViewCart.Name = "ViewCart";
-            this.ViewCart.Size = new System.Drawing.Size(46, 22);
-            this.ViewCart.TabIndex = 36;
-            this.ViewCart.Text = "add";
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(334, 303);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(164, 60);
+            this.pictureBox3.TabIndex = 40;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(326, 295);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(164, 60);
+            this.pictureBox2.TabIndex = 39;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(318, 287);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(164, 60);
+            this.pictureBox1.TabIndex = 38;
+            this.pictureBox1.TabStop = false;
             // 
             // LogOut
             // 
@@ -190,45 +204,31 @@
             this.LogOut.TabIndex = 37;
             this.LogOut.Text = "logout";
             // 
-            // pictureBox1
+            // ViewCart
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(318, 287);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(164, 60);
-            this.pictureBox1.TabIndex = 38;
-            this.pictureBox1.TabStop = false;
+            this.ViewCart.AutoSize = true;
+            this.ViewCart.BackColor = System.Drawing.Color.Transparent;
+            this.ViewCart.Font = new System.Drawing.Font("Stencil", 14F);
+            this.ViewCart.ForeColor = System.Drawing.Color.AliceBlue;
+            this.ViewCart.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.ViewCart.Location = new System.Drawing.Point(86, 311);
+            this.ViewCart.Name = "ViewCart";
+            this.ViewCart.Size = new System.Drawing.Size(46, 22);
+            this.ViewCart.TabIndex = 36;
+            this.ViewCart.Text = "add";
             // 
-            // pictureBox2
+            // label3
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(326, 295);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(164, 60);
-            this.pictureBox2.TabIndex = 39;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(334, 303);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(164, 60);
-            this.pictureBox3.TabIndex = 40;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(32, 516);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(170, 71);
-            this.pictureBox4.TabIndex = 41;
-            this.pictureBox4.TabStop = false;
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Stencil", 14F);
+            this.label3.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label3.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label3.Location = new System.Drawing.Point(86, 236);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 22);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "Explore";
             // 
             // Admin_Main
             // 
@@ -244,10 +244,10 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
