@@ -318,13 +318,18 @@ namespace BOOKSTORE
             this.Hide();
         }
 
-        //view cart
-        private void btn_ViewCart_Click(object sender, EventArgs e)
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Login form = new Login();
+            form.Show();
+            this.Hide();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }
-
-       
     }
 
 }
