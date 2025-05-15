@@ -23,6 +23,7 @@ namespace BOOKSTORE
             this.Load += new EventHandler(mainform_Load);
         }
 
+        // load the books from the database when the form loads
         private void mainform_Load(object sender, EventArgs e)
         {
             List<Book> bookList = LoadBooksFromDatabase();
@@ -34,6 +35,7 @@ namespace BOOKSTORE
             }
         }
 
+        // Load books from the database
         private List<Book> LoadBooksFromDatabase(string category = null)
         {
             List<Book> books = new List<Book>();
@@ -78,6 +80,7 @@ namespace BOOKSTORE
         }
 
 
+        //design card for each book
         private void AddBookToUI(Book book)
         {
             Panel panel = new Panel();
@@ -221,9 +224,21 @@ namespace BOOKSTORE
         }
 
         //it will append the books in here flowLayoutPanel1
-      
 
-        //BUTTONSS
+
+        //BUTTONSS for load by category 
+
+        //all category
+        private void btn_All_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            List<Book> books = LoadBooksFromDatabase();
+            foreach (Book book in books)
+            {
+                AddBookToUI(book);
+            }
+        }
+
         private void btn_Fiction_Click(object sender, EventArgs e)
         {
             LoadBooksByCategory("Fiction");
@@ -244,14 +259,13 @@ namespace BOOKSTORE
             LoadBooksByCategory("Fantasy");
         }
 
-
-
         private void btn_Horror_Click(object sender, EventArgs e)
         {
             LoadBooksByCategory("Horror");
         }
 
-        
+
+        //button find by author
         private void btn_findAuthor_Click(object sender, EventArgs e)
         {
             string author = txtAuthor.Text.Trim();
@@ -270,9 +284,8 @@ namespace BOOKSTORE
                 AddBookToUI(book);
             }
         }
-       
 
-        
+        //button find by price
         private void btn_minmaxPrice_Click(object sender, EventArgs e)
         {
             if (!decimal.TryParse(txtMinPrice.Text.Trim(), out decimal minPrice) ||
@@ -296,6 +309,22 @@ namespace BOOKSTORE
                 AddBookToUI(book);
             }
         }
+
+        //logout
+        private void btn_Logout_Click(object sender, EventArgs e)
+        {
+            Login form = new Login();
+            form.Show();
+            this.Hide();
+        }
+
+        //view cart
+        private void btn_ViewCart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 
 }
