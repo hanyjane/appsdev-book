@@ -33,7 +33,6 @@
             this.btn_Romance = new System.Windows.Forms.Button();
             this.btn_Mystery = new System.Windows.Forms.Button();
             this.btn_Fantasy = new System.Windows.Forms.Button();
-         //   this.btn_Logout = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_Horror = new System.Windows.Forms.Button();
             this.txtAuthor = new System.Windows.Forms.TextBox();
@@ -43,16 +42,19 @@
             this.txtMaxPrice = new System.Windows.Forms.TextBox();
             this.btn_findAuthor = new System.Windows.Forms.Button();
             this.btn_minmaxPrice = new System.Windows.Forms.Button();
-         //   this.btn_ViewCart = new System.Windows.Forms.Button();
             this.btn_All = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ViewCart = new System.Windows.Forms.Label();
+            this.LogOut = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Fiction
             // 
-            this.btn_Fiction.Location = new System.Drawing.Point(434, 119);
+            this.btn_Fiction.Location = new System.Drawing.Point(426, 140);
             this.btn_Fiction.Name = "btn_Fiction";
             this.btn_Fiction.Size = new System.Drawing.Size(70, 24);
             this.btn_Fiction.TabIndex = 0;
@@ -62,7 +64,7 @@
             // 
             // btn_Romance
             // 
-            this.btn_Romance.Location = new System.Drawing.Point(510, 119);
+            this.btn_Romance.Location = new System.Drawing.Point(502, 140);
             this.btn_Romance.Name = "btn_Romance";
             this.btn_Romance.Size = new System.Drawing.Size(70, 24);
             this.btn_Romance.TabIndex = 1;
@@ -72,7 +74,7 @@
             // 
             // btn_Mystery
             // 
-            this.btn_Mystery.Location = new System.Drawing.Point(662, 119);
+            this.btn_Mystery.Location = new System.Drawing.Point(654, 140);
             this.btn_Mystery.Name = "btn_Mystery";
             this.btn_Mystery.Size = new System.Drawing.Size(70, 24);
             this.btn_Mystery.TabIndex = 2;
@@ -82,7 +84,7 @@
             // 
             // btn_Fantasy
             // 
-            this.btn_Fantasy.Location = new System.Drawing.Point(358, 119);
+            this.btn_Fantasy.Location = new System.Drawing.Point(350, 140);
             this.btn_Fantasy.Name = "btn_Fantasy";
             this.btn_Fantasy.Size = new System.Drawing.Size(70, 24);
             this.btn_Fantasy.TabIndex = 3;
@@ -92,14 +94,14 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(249, 159);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(239, 170);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(523, 390);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(523, 430);
             this.flowLayoutPanel1.TabIndex = 20;
             // 
             // btn_Horror
             // 
-            this.btn_Horror.Location = new System.Drawing.Point(586, 119);
+            this.btn_Horror.Location = new System.Drawing.Point(578, 140);
             this.btn_Horror.Name = "btn_Horror";
             this.btn_Horror.Size = new System.Drawing.Size(70, 24);
             this.btn_Horror.TabIndex = 21;
@@ -109,14 +111,14 @@
             // 
             // txtAuthor
             // 
-            this.txtAuthor.Location = new System.Drawing.Point(347, 24);
+            this.txtAuthor.Location = new System.Drawing.Point(395, 51);
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(286, 20);
             this.txtAuthor.TabIndex = 22;
             // 
             // txtMinPrice
             // 
-            this.txtMinPrice.Location = new System.Drawing.Point(347, 50);
+            this.txtMinPrice.Location = new System.Drawing.Point(395, 87);
             this.txtMinPrice.Name = "txtMinPrice";
             this.txtMinPrice.Size = new System.Drawing.Size(49, 20);
             this.txtMinPrice.TabIndex = 23;
@@ -125,24 +127,28 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(249, 27);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(279, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 13);
+            this.label1.Size = new System.Drawing.Size(105, 15);
             this.label1.TabIndex = 25;
-            this.label1.Text = "Search by Author:";
+            this.label1.Text = "Search by Author :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(249, 53);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(279, 89);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 13);
+            this.label2.Size = new System.Drawing.Size(96, 15);
             this.label2.TabIndex = 26;
-            this.label2.Text = "Search by Price";
+            this.label2.Text = "Search by Price :";
             // 
             // txtMaxPrice
             // 
-            this.txtMaxPrice.Location = new System.Drawing.Point(418, 50);
+            this.txtMaxPrice.Location = new System.Drawing.Point(455, 87);
             this.txtMaxPrice.Name = "txtMaxPrice";
             this.txtMaxPrice.Size = new System.Drawing.Size(49, 20);
             this.txtMaxPrice.TabIndex = 27;
@@ -150,7 +156,7 @@
             // 
             // btn_findAuthor
             // 
-            this.btn_findAuthor.Location = new System.Drawing.Point(639, 24);
+            this.btn_findAuthor.Location = new System.Drawing.Point(687, 50);
             this.btn_findAuthor.Name = "btn_findAuthor";
             this.btn_findAuthor.Size = new System.Drawing.Size(48, 20);
             this.btn_findAuthor.TabIndex = 28;
@@ -160,7 +166,7 @@
             // 
             // btn_minmaxPrice
             // 
-            this.btn_minmaxPrice.Location = new System.Drawing.Point(487, 50);
+            this.btn_minmaxPrice.Location = new System.Drawing.Point(532, 87);
             this.btn_minmaxPrice.Name = "btn_minmaxPrice";
             this.btn_minmaxPrice.Size = new System.Drawing.Size(48, 20);
             this.btn_minmaxPrice.TabIndex = 29;
@@ -170,7 +176,7 @@
             // 
             // btn_All
             // 
-            this.btn_All.Location = new System.Drawing.Point(282, 119);
+            this.btn_All.Location = new System.Drawing.Point(274, 140);
             this.btn_All.Name = "btn_All";
             this.btn_All.Size = new System.Drawing.Size(70, 24);
             this.btn_All.TabIndex = 31;
@@ -182,39 +188,56 @@
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.btn_Fiction);
+            this.panel1.Controls.Add(this.btn_Fantasy);
+            this.panel1.Controls.Add(this.btn_All);
+            this.panel1.Controls.Add(this.ViewCart);
+            this.panel1.Controls.Add(this.btn_Horror);
+            this.panel1.Controls.Add(this.btn_Romance);
+            this.panel1.Controls.Add(this.btn_findAuthor);
+            this.panel1.Controls.Add(this.flowLayoutPanel1);
+            this.panel1.Controls.Add(this.btn_Mystery);
+            this.panel1.Controls.Add(this.btn_minmaxPrice);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.LogOut);
             this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.txtMaxPrice);
+            this.panel1.Controls.Add(this.txtAuthor);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.txtMinPrice);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(243, 600);
+            this.panel1.Size = new System.Drawing.Size(800, 600);
             this.panel1.TabIndex = 32;
             // 
             // ViewCart
             // 
-        //    this.ViewCart.AutoSize = true;
-        //    this.ViewCart.BackColor = System.Drawing.Color.Transparent;
-         //   this.ViewCart.Font = new System.Drawing.Font("Stencil", 12F);
-        //    this.ViewCart.ForeColor = System.Drawing.Color.AliceBlue;
-        //    this.ViewCart.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-        //    this.ViewCart.Location = new System.Drawing.Point(67, 293);
-        //    this.ViewCart.Name = "ViewCart";
-         //   this.ViewCart.Size = new System.Drawing.Size(87, 19);
-          //  this.ViewCart.TabIndex = 35;
-        //    this.ViewCart.Text = "viewcart";
-         //   this.ViewCart.Click += new System.EventHandler(this.label5_Click);
+            this.ViewCart.AutoSize = true;
+            this.ViewCart.BackColor = System.Drawing.Color.Transparent;
+            this.ViewCart.Font = new System.Drawing.Font("Stencil", 12F);
+            this.ViewCart.ForeColor = System.Drawing.Color.AliceBlue;
+            this.ViewCart.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.ViewCart.Location = new System.Drawing.Point(67, 293);
+            this.ViewCart.Name = "ViewCart";
+            this.ViewCart.Size = new System.Drawing.Size(87, 19);
+            this.ViewCart.TabIndex = 35;
+            this.ViewCart.Text = "viewcart";
+            this.ViewCart.Click += new System.EventHandler(this.label5_Click);
             // 
             // LogOut
             // 
-       //     this.LogOut.AutoSize = true;
-           // this.LogOut.BackColor = System.Drawing.Color.Transparent;
-           // this.LogOut.Font = new System.Drawing.Font("Stencil", 12F);
-           // this.LogOut.ForeColor = System.Drawing.Color.AliceBlue;
-          //  this.LogOut.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-          //  this.LogOut.Location = new System.Drawing.Point(67, 324);
-          //  this.LogOut.Name = "LogOut";
-          //  this.LogOut.Size = new System.Drawing.Size(69, 19);
-          //  this.LogOut.TabIndex = 34;
-         //   this.LogOut.Text = "logout";
-         //   this.LogOut.Click += new System.EventHandler(this.label4_Click);
+            this.LogOut.AutoSize = true;
+            this.LogOut.BackColor = System.Drawing.Color.Transparent;
+            this.LogOut.Font = new System.Drawing.Font("Stencil", 12F);
+            this.LogOut.ForeColor = System.Drawing.Color.AliceBlue;
+            this.LogOut.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.LogOut.Location = new System.Drawing.Point(67, 324);
+            this.LogOut.Name = "LogOut";
+            this.LogOut.Size = new System.Drawing.Size(69, 19);
+            this.LogOut.TabIndex = 34;
+            this.LogOut.Text = "logout";
+            this.LogOut.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -228,10 +251,28 @@
             this.label3.TabIndex = 33;
             this.label3.Text = "Explore";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(33, 514);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(164, 60);
+            this.pictureBox1.TabIndex = 36;
+            this.pictureBox1.TabStop = false;
+            // 
             // mainform
             // 
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.ClientSize = new System.Drawing.Size(784, 596);
+            this.Controls.Add(this.panel1);
             this.Name = "mainform";
+            this.Text = "main";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -247,12 +288,15 @@
         private System.Windows.Forms.TextBox txtAuthor;
         private System.Windows.Forms.TextBox txtMinPrice;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMaxPrice;
         private System.Windows.Forms.Button btn_findAuthor;
         private System.Windows.Forms.Button btn_minmaxPrice;
         private System.Windows.Forms.Button btn_All;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label LogOut;
+        private System.Windows.Forms.Label ViewCart;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

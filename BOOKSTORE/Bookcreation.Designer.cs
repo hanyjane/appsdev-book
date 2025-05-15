@@ -204,7 +204,7 @@
             // 
             // btn_Back
             // 
-            this.btn_Back.Location = new System.Drawing.Point(12, 12);
+            this.btn_Back.Location = new System.Drawing.Point(216, 50);
             this.btn_Back.Name = "btn_Back";
             this.btn_Back.Size = new System.Drawing.Size(75, 23);
             this.btn_Back.TabIndex = 17;
@@ -234,6 +234,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.AliceBlue;
             this.panel1.Controls.Add(this.txtISBN);
+            this.panel1.Controls.Add(this.btn_Back);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtDescription);
@@ -264,7 +265,6 @@
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btn_Back);
             this.Name = "Bookcreation";
             this.Text = "Bookcreation";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
