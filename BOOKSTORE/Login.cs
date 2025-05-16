@@ -87,5 +87,11 @@ namespace BOOKSTORE
             }
         }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Form1 form = new Form1(); //Hides
+            form.Show();
+            this.Hide();
+        }
     }
 }

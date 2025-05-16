@@ -108,5 +108,12 @@ namespace BOOKSTORE
             txtPassword.UseSystemPasswordChar = !show;
             txtConfirmPassword.UseSystemPasswordChar = !show;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form1 form = new Form1(); //Hides
+            form.Show();
+            this.Hide();
+        }
     }
 }

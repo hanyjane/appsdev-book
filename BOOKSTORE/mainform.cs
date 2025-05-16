@@ -15,7 +15,7 @@ namespace BOOKSTORE
         private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" +
                                    Path.Combine(Application.StartupPath, "Appsdevdatabase.accdb") + ";";
         private int currentUserId;
-       
+
         private Cart cartForm = null;
 
 
@@ -26,6 +26,10 @@ namespace BOOKSTORE
             currentUserId = userId;
             this.Load += mainform_Load;
 
+        }
+
+        public mainform()
+        {
         }
 
         // Form load event handler
@@ -98,19 +102,20 @@ namespace BOOKSTORE
             Panel bookPanel = new Panel
             {
                 Size = new Size(150, 280),
-                BackColor = Color.White,
+                BackColor = Color.AliceBlue,
                 Margin = new Padding(10)
             };
 
             // Book cover image
             PictureBox coverPicture = new PictureBox
             {
-                Panel panel = new Panel();
-                panel.Size = new Size(170, 300);
-                panel.BackColor = Color.AliceBlue;
-                panel.Margin = new Padding(10);
+                Size = new Size(100, 120),
+                Location = new Point(25, 10),
+                SizeMode = PictureBoxSizeMode.Zoom
+            };
 
-            if (book.BookCover != null)//
+
+            if (book.BookCover != null)
             {
                 using (MemoryStream ms = new MemoryStream(book.BookCover))
                 {
@@ -133,7 +138,7 @@ namespace BOOKSTORE
                 Text = "By " + book.Author,
                 Location = new Point(10, 160),
                 Size = new Size(130, 20),
-                Font = new Font("Times New Roman", 8)
+                Font = new Font("Times New Roman", 9, FontStyle.Italic)
             };
 
             // Price label
@@ -177,6 +182,7 @@ namespace BOOKSTORE
             flowLayoutPanel1.Controls.Add(bookPanel);
         }
 
+
         // Add to cart button click handler
         private void AddToCartButton_Click(object sender, EventArgs e)
         {
@@ -185,94 +191,49 @@ namespace BOOKSTORE
 
             if (book.Stock > 0)
             {
-                // Find existing cart item or create new one
-                var existingItem = cart.FirstOrDefault(c => c.Book.Id == book.Id);
+                using (OleDbConnection conn = new OleDbConnection(connectionString))
+                {
+                    conn.Open();
 
-                if (existingItem != null)
-                {
-                    existingItem.Quantity++;
-                    UpdateCartItemInDatabase(currentUserId, book.Id, existingItem.Quantity);
-                }
-                else
-                {
-                    cart.Add(new CartItem { Book = book, Quantity = 1 });
-                    AddCartItemToDatabase(currentUserId, book.Id, 1);
+                    // Check if item already exists in cart
+                    string checkQuery = "SELECT Quantity FROM CartItems WHERE UserId = ? AND BookId = ?";
+                    using (OleDbCommand checkCmd = new OleDbCommand(checkQuery, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("?", currentUserId);
+                        checkCmd.Parameters.AddWithValue("?", book.Id);
+
+                        object result = checkCmd.ExecuteScalar();
+
+                        if (result != null) // Item exists - update quantity
+                        {
+                            int currentQuantity = Convert.ToInt32(result);
+                            string updateQuery = "UPDATE CartItems SET Quantity = ? WHERE UserId = ? AND BookId = ?";
+                            using (OleDbCommand updateCmd = new OleDbCommand(updateQuery, conn))
+                            {
+                                updateCmd.Parameters.AddWithValue("?", currentQuantity + 1);
+                                updateCmd.Parameters.AddWithValue("?", currentUserId);
+                                updateCmd.Parameters.AddWithValue("?", book.Id);
+                                updateCmd.ExecuteNonQuery();
+                            }
+                        }
+                        else // Item doesn't exist - insert new
+                        {
+                            string insertQuery = "INSERT INTO CartItems (UserId, BookId, Quantity) VALUES (?, ?, ?)";
+                            using (OleDbCommand insertCmd = new OleDbCommand(insertQuery, conn))
+                            {
+                                insertCmd.Parameters.AddWithValue("?", currentUserId);
+                                insertCmd.Parameters.AddWithValue("?", book.Id);
+                                insertCmd.Parameters.AddWithValue("?", 1);
+                                insertCmd.ExecuteNonQuery();
+                            }
+                        }
+                    }
                 }
 
                 // Refresh cart if open
                 if (cartForm != null && !cartForm.IsDisposed)
                 {
-                    cartForm.ReloadCart(); // This will update the cart UI
-                }
-            }
-        }
-
-        // Update stock label in the book panel
-        private void UpdateStockLabel(Control panel, int newStock)
-        {
-            foreach (Control control in panel.Controls)
-            {
-                if (control is Label label && label.Text.StartsWith("Stock:"))
-                {
-                    label.Text = newStock > 0 ? $"Stock: {newStock}" : "Out of stock";
-                    break;
-                }
-            }
-        }
-
-        // Add item to cart in database
-        private void AddCartItemToDatabase(int userId, int bookId, int quantity)
-        {
-            using (OleDbConnection conn = new OleDbConnection(connectionString))
-            {
-                conn.Open();
-                string query = "INSERT INTO CartItems (UserId, BookId, Quantity) VALUES (?, ?, ?)";
-
-                using (OleDbCommand cmd = new OleDbCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("?", userId);
-                    cmd.Parameters.AddWithValue("?", bookId);
-                    cmd.Parameters.AddWithValue("?", quantity);
-                    cmd.ExecuteNonQuery();
-                }
-            }
-        }
-
-        // Update cart item quantity in database
-        private void UpdateCartItemInDatabase(int userId, int bookId, int quantity)
-        {
-            using (OleDbConnection conn = new OleDbConnection(connectionString))
-            {
-                conn.Open();
-                string query = "UPDATE CartItems SET Quantity = ? WHERE UserId = ? AND BookId = ?";
-
-                using (OleDbCommand cmd = new OleDbCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("?", quantity);
-                    cmd.Parameters.AddWithValue("?", userId);
-                    cmd.Parameters.AddWithValue("?", bookId);
-                    cmd.ExecuteNonQuery();
-                }
-            }
-        }
-
-        private void UpdateStockAfterPurchase()
-        {
-            using (OleDbConnection conn = new OleDbConnection(connectionString))
-            {
-                conn.Open();
-
-                foreach (CartItem item in cart)
-                {
-                    string query = "UPDATE Books SET Stock = Stock - ? WHERE ID = ? AND Stock >= ?";
-
-                    using (OleDbCommand cmd = new OleDbCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("?", item.Quantity);
-                        cmd.Parameters.AddWithValue("?", item.Book.Id);
-                        cmd.Parameters.AddWithValue("?", item.Quantity);
-                        cmd.ExecuteNonQuery();
-                    }
+                    cartForm.ReloadCart();
                 }
             }
         }

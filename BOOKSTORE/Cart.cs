@@ -194,7 +194,7 @@ namespace BOOKSTORE
         }
         private void purchaseButton_Click(object sender, EventArgs e)
         {
-            
+
         }
 
 
@@ -381,6 +381,13 @@ namespace BOOKSTORE
                     }
                 }
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            mainform form = new mainform(); //Hides
+            form.Show();
+            this.Hide();
         }
     }
 }
