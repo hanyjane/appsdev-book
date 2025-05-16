@@ -15,7 +15,7 @@ namespace BOOKSTORE
         private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" +
                                    Path.Combine(Application.StartupPath, "Appsdevdatabase.accdb") + ";";
         private int currentUserId;
-        private List<CartItem> cart = new List<CartItem>();
+       
         private Cart cartForm = null;
 
 
@@ -110,7 +110,7 @@ namespace BOOKSTORE
                 panel.BackColor = Color.AliceBlue;
                 panel.Margin = new Padding(10);
 
-            if (book.BookCover != null)
+            if (book.BookCover != null)//
             {
                 using (MemoryStream ms = new MemoryStream(book.BookCover))
                 {
