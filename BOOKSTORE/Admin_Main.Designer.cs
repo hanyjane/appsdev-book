@@ -110,7 +110,7 @@
             this.LogOut.Font = new System.Drawing.Font("Stencil", 15F);
             this.LogOut.ForeColor = System.Drawing.Color.MidnightBlue;
             this.LogOut.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.LogOut.Location = new System.Drawing.Point(842, 22);
+            this.LogOut.Location = new System.Drawing.Point(855, 27);
             this.LogOut.Name = "LogOut";
             this.LogOut.Size = new System.Drawing.Size(85, 24);
             this.LogOut.TabIndex = 37;
@@ -124,7 +124,7 @@
             this.Add.Font = new System.Drawing.Font("Stencil", 15F);
             this.Add.ForeColor = System.Drawing.Color.AliceBlue;
             this.Add.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.Add.Location = new System.Drawing.Point(586, 126);
+            this.Add.Location = new System.Drawing.Point(583, 126);
             this.Add.Name = "Add";
             this.Add.Size = new System.Drawing.Size(48, 24);
             this.Add.TabIndex = 36;
@@ -138,7 +138,7 @@
             this.Explore.Font = new System.Drawing.Font("Stencil", 15F);
             this.Explore.ForeColor = System.Drawing.Color.AliceBlue;
             this.Explore.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.Explore.Location = new System.Drawing.Point(325, 126);
+            this.Explore.Location = new System.Drawing.Point(324, 126);
             this.Explore.Name = "Explore";
             this.Explore.Size = new System.Drawing.Size(97, 24);
             this.Explore.TabIndex = 34;
