@@ -250,14 +250,19 @@
             this.panel1.Controls.Add(this.txtPrice);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(260, 239);
+            this.panel1.Location = new System.Drawing.Point(268, 151);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(478, 396);
             this.panel1.TabIndex = 20;
             // 
             // panel2
             // 
+            this.panel2.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.ViewCart);
@@ -265,7 +270,7 @@
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1000, 700);
+            this.panel2.Size = new System.Drawing.Size(1000, 600);
             this.panel2.TabIndex = 21;
             // 
             // pictureBox2
@@ -285,7 +290,7 @@
             this.label10.Font = new System.Drawing.Font("Stencil", 15F);
             this.label10.ForeColor = System.Drawing.Color.MidnightBlue;
             this.label10.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label10.Location = new System.Drawing.Point(842, 22);
+            this.label10.Location = new System.Drawing.Point(887, 20);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(85, 24);
             this.label10.TabIndex = 38;
@@ -298,7 +303,7 @@
             this.ViewCart.Font = new System.Drawing.Font("Stencil", 15F);
             this.ViewCart.ForeColor = System.Drawing.Color.AliceBlue;
             this.ViewCart.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.ViewCart.Location = new System.Drawing.Point(325, 126);
+            this.ViewCart.Location = new System.Drawing.Point(359, 113);
             this.ViewCart.Name = "ViewCart";
             this.ViewCart.Size = new System.Drawing.Size(97, 24);
             this.ViewCart.TabIndex = 37;
@@ -311,7 +316,7 @@
             this.label9.Font = new System.Drawing.Font("Stencil", 15F);
             this.label9.ForeColor = System.Drawing.Color.AliceBlue;
             this.label9.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label9.Location = new System.Drawing.Point(586, 126);
+            this.label9.Location = new System.Drawing.Point(567, 113);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(48, 24);
             this.label9.TabIndex = 35;
@@ -322,8 +327,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.ClientSize = new System.Drawing.Size(984, 661);
+            this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Bookcreation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bookcreation";
