@@ -47,7 +47,7 @@ namespace BOOKSTORE
 
                 using (OleDbCommand cmd = new OleDbCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@userId", userId);
+                     cmd.Parameters.AddWithValue("@userId", userId);
 
                     // Read each cart item
                     using (OleDbDataReader reader = cmd.ExecuteReader())
@@ -386,6 +386,13 @@ namespace BOOKSTORE
         private void label3_Click(object sender, EventArgs e)
         {
             mainform form = new mainform(); //Hides
+            form.Show();
+            this.Hide();
+        }
+
+        private void LogOut_Click(object sender, EventArgs e)
+        {
+            Login form = new Login(); //Hides
             form.Show();
             this.Hide();
         }

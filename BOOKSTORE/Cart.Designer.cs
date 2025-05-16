@@ -33,11 +33,10 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.purchaseButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ViewCart = new System.Windows.Forms.Label();
+            this.LogOut = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.ViewCart = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelCartItems
@@ -47,9 +46,9 @@
             this.panelCartItems.AutoScroll = true;
             this.panelCartItems.BackColor = System.Drawing.Color.Transparent;
             this.panelCartItems.ForeColor = System.Drawing.Color.Transparent;
-            this.panelCartItems.Location = new System.Drawing.Point(141, 219);
+            this.panelCartItems.Location = new System.Drawing.Point(141, 203);
             this.panelCartItems.Name = "panelCartItems";
-            this.panelCartItems.Size = new System.Drawing.Size(674, 289);
+            this.panelCartItems.Size = new System.Drawing.Size(704, 305);
             this.panelCartItems.TabIndex = 0;
             // 
             // lblTotal
@@ -57,17 +56,18 @@
             this.lblTotal.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
             this.lblTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTotal.AutoSize = true;
-            this.lblTotal.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.lblTotal.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.lblTotal.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblTotal.Location = new System.Drawing.Point(388, 175);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(41, 13);
+            this.lblTotal.Size = new System.Drawing.Size(44, 15);
             this.lblTotal.TabIndex = 1;
             this.lblTotal.Text = "lblTotal";
             // 
             // purchaseButton
             // 
             this.purchaseButton.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.purchaseButton.Location = new System.Drawing.Point(592, 166);
+            this.purchaseButton.Location = new System.Drawing.Point(592, 159);
             this.purchaseButton.Name = "purchaseButton";
             this.purchaseButton.Size = new System.Drawing.Size(122, 31);
             this.purchaseButton.TabIndex = 2;
@@ -80,9 +80,11 @@
             this.panel1.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.AutoScroll = true;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.LogOut);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.ViewCart);
             this.panel1.Controls.Add(this.lblTotal);
@@ -94,18 +96,19 @@
             this.panel1.Size = new System.Drawing.Size(1000, 600);
             this.panel1.TabIndex = 21;
             // 
-            // ViewCart
+            // LogOut
             // 
-            this.ViewCart.AutoSize = true;
-            this.ViewCart.BackColor = System.Drawing.Color.Transparent;
-            this.ViewCart.Font = new System.Drawing.Font("Stencil", 15F);
-            this.ViewCart.ForeColor = System.Drawing.Color.AliceBlue;
-            this.ViewCart.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.ViewCart.Location = new System.Drawing.Point(542, 88);
-            this.ViewCart.Name = "ViewCart";
-            this.ViewCart.Size = new System.Drawing.Size(108, 24);
-            this.ViewCart.TabIndex = 36;
-            this.ViewCart.Text = "viewcart";
+            this.LogOut.AutoSize = true;
+            this.LogOut.BackColor = System.Drawing.Color.Transparent;
+            this.LogOut.Font = new System.Drawing.Font("Stencil", 15F);
+            this.LogOut.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.LogOut.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.LogOut.Location = new System.Drawing.Point(887, 20);
+            this.LogOut.Name = "LogOut";
+            this.LogOut.Size = new System.Drawing.Size(85, 24);
+            this.LogOut.TabIndex = 46;
+            this.LogOut.Text = "logout";
+            this.LogOut.Click += new System.EventHandler(this.LogOut_Click);
             // 
             // label3
             // 
@@ -121,15 +124,18 @@
             this.label3.Text = "Explore";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // pictureBox2
+            // ViewCart
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(3, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(170, 71);
-            this.pictureBox2.TabIndex = 45;
-            this.pictureBox2.TabStop = false;
+            this.ViewCart.AutoSize = true;
+            this.ViewCart.BackColor = System.Drawing.Color.Transparent;
+            this.ViewCart.Font = new System.Drawing.Font("Stencil", 15F);
+            this.ViewCart.ForeColor = System.Drawing.Color.AliceBlue;
+            this.ViewCart.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.ViewCart.Location = new System.Drawing.Point(542, 88);
+            this.ViewCart.Name = "ViewCart";
+            this.ViewCart.Size = new System.Drawing.Size(108, 24);
+            this.ViewCart.TabIndex = 36;
+            this.ViewCart.Text = "viewcart";
             // 
             // Cart
             // 
@@ -143,7 +149,6 @@
             this.Text = "Cart";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -156,6 +161,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label ViewCart;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label LogOut;
     }
 }
