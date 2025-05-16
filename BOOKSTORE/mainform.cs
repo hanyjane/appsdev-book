@@ -15,7 +15,7 @@ namespace BOOKSTORE
         private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" +
                                    Path.Combine(Application.StartupPath, "Appsdevdatabase.accdb") + ";";
         private int currentUserId;
-        private List<CartItem> cart = new List<CartItem>();
+       
         private Cart cartForm = null;
 
 
