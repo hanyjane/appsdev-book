@@ -308,6 +308,7 @@
             this.ViewCart.Size = new System.Drawing.Size(97, 24);
             this.ViewCart.TabIndex = 37;
             this.ViewCart.Text = "explore";
+            this.ViewCart.Click += new System.EventHandler(this.ViewCart_Click);
             // 
             // label9
             // 

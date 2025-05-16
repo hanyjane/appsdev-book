@@ -83,10 +83,11 @@ namespace BOOKSTORE
             }
         }
 
-
-        private void btn_Back_Click(object sender, EventArgs e)
+        private void ViewCart_Click(object sender, EventArgs e)
         {
-            
+            Admin_Main form = new Admin_Main(); //Hides
+            form.Show();
+            this.Hide();
         }
     }
 }
