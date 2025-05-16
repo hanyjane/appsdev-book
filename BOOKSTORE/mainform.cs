@@ -109,13 +109,13 @@ namespace BOOKSTORE
                 titleLabel.Text = book.Title;
                 titleLabel.Location = new Point(10, 140);
                 titleLabel.Size = new Size(130, 20);
-                titleLabel.Font = new Font("Arial", 9, FontStyle.Bold);
+                titleLabel.Font = new Font("Times New Roman", 9, FontStyle.Bold);
 
                 Label authorLabel = new Label();
                 authorLabel.Text = "By " + book.Author;
                 authorLabel.Location = new Point(10, 160);
                 authorLabel.Size = new Size(130, 20);
-                authorLabel.Font = new Font("Arial", 8);
+                authorLabel.Font = new Font("Times New Roman", 8);
 
                 Label priceLabel = new Label();
                 priceLabel.Text = "₱" + book.Price.ToString("F2");
