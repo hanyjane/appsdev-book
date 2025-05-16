@@ -30,15 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin_Main));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.btn_Update = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.LogOut = new System.Windows.Forms.Label();
             this.Add = new System.Windows.Forms.Label();
             this.Explore = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -56,6 +56,13 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(907, 306);
             this.flowLayoutPanel1.TabIndex = 4;
+            // 
+            // vScrollBar1
+            // 
+            this.vScrollBar1.Location = new System.Drawing.Point(0, 0);
+            this.vScrollBar1.Name = "vScrollBar1";
+            this.vScrollBar1.Size = new System.Drawing.Size(20, 241);
+            this.vScrollBar1.TabIndex = 4;
             // 
             // btn_Update
             // 
@@ -93,6 +100,20 @@
             this.panel2.Size = new System.Drawing.Size(1000, 700);
             this.panel2.TabIndex = 33;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Stencil", 25F);
+            this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label1.Location = new System.Drawing.Point(168, 243);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(290, 80);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "Welcome back, \r\nADMIN!";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
@@ -110,7 +131,7 @@
             this.LogOut.Font = new System.Drawing.Font("Stencil", 15F);
             this.LogOut.ForeColor = System.Drawing.Color.MidnightBlue;
             this.LogOut.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.LogOut.Location = new System.Drawing.Point(842, 22);
+            this.LogOut.Location = new System.Drawing.Point(855, 27);
             this.LogOut.Name = "LogOut";
             this.LogOut.Size = new System.Drawing.Size(85, 24);
             this.LogOut.TabIndex = 37;
@@ -124,7 +145,7 @@
             this.Add.Font = new System.Drawing.Font("Stencil", 15F);
             this.Add.ForeColor = System.Drawing.Color.AliceBlue;
             this.Add.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.Add.Location = new System.Drawing.Point(586, 126);
+            this.Add.Location = new System.Drawing.Point(583, 126);
             this.Add.Name = "Add";
             this.Add.Size = new System.Drawing.Size(48, 24);
             this.Add.TabIndex = 36;
@@ -138,33 +159,12 @@
             this.Explore.Font = new System.Drawing.Font("Stencil", 15F);
             this.Explore.ForeColor = System.Drawing.Color.AliceBlue;
             this.Explore.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.Explore.Location = new System.Drawing.Point(325, 126);
+            this.Explore.Location = new System.Drawing.Point(324, 126);
             this.Explore.Name = "Explore";
             this.Explore.Size = new System.Drawing.Size(97, 24);
             this.Explore.TabIndex = 34;
             this.Explore.Text = "Explore";
             this.Explore.Click += new System.EventHandler(this.Explore_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Stencil", 25F);
-            this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label1.Location = new System.Drawing.Point(168, 243);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(290, 80);
-            this.label1.TabIndex = 42;
-            this.label1.Text = "Welcome back, \r\nADMIN!";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(0, 0);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(20, 241);
-            this.vScrollBar1.TabIndex = 4;
             // 
             // Admin_Main
             // 
@@ -174,6 +174,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel2);
             this.Name = "Admin_Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin_Main";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

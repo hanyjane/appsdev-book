@@ -37,20 +37,22 @@
             this.txtLoginPassword = new System.Windows.Forms.TextBox();
             this.txtLoginEmail = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.ViewCart = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.ViewCart);
             this.panel1.Controls.Add(this.pass);
             this.panel1.Controls.Add(this.btnLogin_Click);
             this.panel1.Controls.Add(this.l);
@@ -59,7 +61,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 600);
+            this.panel1.Size = new System.Drawing.Size(1000, 700);
             this.panel1.TabIndex = 7;
             // 
             // pass
@@ -73,14 +75,14 @@
             // 
             // btnLogin_Click
             // 
-            this.btnLogin_Click.BackColor = System.Drawing.Color.Navy;
+            this.btnLogin_Click.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnLogin_Click.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnLogin_Click.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin_Click.FlatAppearance.BorderSize = 0;
-            this.btnLogin_Click.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin_Click.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLogin_Click.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin_Click.ForeColor = System.Drawing.Color.White;
-            this.btnLogin_Click.Location = new System.Drawing.Point(263, 345);
+            this.btnLogin_Click.Location = new System.Drawing.Point(428, 426);
             this.btnLogin_Click.Name = "btnLogin_Click";
             this.btnLogin_Click.Size = new System.Drawing.Size(285, 38);
             this.btnLogin_Click.TabIndex = 4;
@@ -101,9 +103,9 @@
             // 
             this.txtLoginPassword.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtLoginPassword.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLoginPassword.Location = new System.Drawing.Point(506, 288);
+            this.txtLoginPassword.Location = new System.Drawing.Point(633, 339);
             this.txtLoginPassword.Name = "txtLoginPassword";
-            this.txtLoginPassword.Size = new System.Drawing.Size(246, 26);
+            this.txtLoginPassword.Size = new System.Drawing.Size(283, 26);
             this.txtLoginPassword.TabIndex = 3;
             this.txtLoginPassword.UseSystemPasswordChar = true;
             // 
@@ -111,9 +113,9 @@
             // 
             this.txtLoginEmail.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtLoginEmail.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLoginEmail.Location = new System.Drawing.Point(108, 288);
+            this.txtLoginEmail.Location = new System.Drawing.Point(159, 339);
             this.txtLoginEmail.Name = "txtLoginEmail";
-            this.txtLoginEmail.Size = new System.Drawing.Size(262, 26);
+            this.txtLoginEmail.Size = new System.Drawing.Size(311, 26);
             this.txtLoginEmail.TabIndex = 2;
             // 
             // pictureBox1
@@ -122,59 +124,83 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(800, 600);
+            this.pictureBox1.Size = new System.Drawing.Size(1000, 700);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // ViewCart
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(46, 291);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(56, 19);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.Text = "Email :";
+            this.ViewCart.AutoSize = true;
+            this.ViewCart.BackColor = System.Drawing.Color.Transparent;
+            this.ViewCart.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ViewCart.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ViewCart.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.ViewCart.Location = new System.Drawing.Point(546, 342);
+            this.ViewCart.Name = "ViewCart";
+            this.ViewCart.Size = new System.Drawing.Size(81, 19);
+            this.ViewCart.TabIndex = 38;
+            this.ViewCart.Text = "Password :";
             // 
-            // textBox2
+            // label1
             // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(428, 291);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(72, 19);
-            this.textBox2.TabIndex = 9;
-            this.textBox2.Text = "Password :";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label1.Location = new System.Drawing.Point(97, 342);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 19);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "Email :";
             // 
-            // textBox3
+            // label2
             // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Stencil", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(37, 195);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(231, 32);
-            this.textBox3.TabIndex = 10;
-            this.textBox3.Text = "Welcome Back!";
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Stencil", 25F);
+            this.label2.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label2.Location = new System.Drawing.Point(78, 203);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(281, 40);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Welcome Back!";
             // 
-            // textBox4
+            // label3
             // 
-            this.textBox4.BackColor = System.Drawing.Color.White;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(37, 233);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(537, 22);
-            this.textBox4.TabIndex = 11;
-            this.textBox4.Text = "Nice to see you again! Please fill in details to continue.";
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label3.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label3.Location = new System.Drawing.Point(81, 253);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(486, 24);
+            this.label3.TabIndex = 41;
+            this.label3.Text = "Nice to see you again! Please fill in details to continue.";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(330, 426);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(92, 38);
+            this.button1.TabIndex = 42;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 596);
+            this.ClientSize = new System.Drawing.Size(984, 661);
             this.Controls.Add(this.panel1);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -193,11 +219,12 @@
         private System.Windows.Forms.Label pass;
         private System.Windows.Forms.TextBox txtLoginEmail;
         private System.Windows.Forms.Label l;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnLogin_Click;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label ViewCart;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }
