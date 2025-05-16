@@ -164,7 +164,7 @@
             this.imagepath.Location = new System.Drawing.Point(286, 74);
             this.imagepath.Multiline = true;
             this.imagepath.Name = "imagepath";
-            this.imagepath.Size = new System.Drawing.Size(175, 26);
+            this.imagepath.Size = new System.Drawing.Size(175, 41);
             this.imagepath.TabIndex = 12;
             // 
             // btn_choosefile
@@ -193,7 +193,7 @@
             // 
             // btn_confirm
             // 
-            this.btn_confirm.Location = new System.Drawing.Point(330, 349);
+            this.btn_confirm.Location = new System.Drawing.Point(329, 358);
             this.btn_confirm.Name = "btn_confirm";
             this.btn_confirm.Size = new System.Drawing.Size(102, 28);
             this.btn_confirm.TabIndex = 15;
@@ -203,7 +203,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(286, 112);
+            this.pictureBox1.Location = new System.Drawing.Point(286, 121);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(175, 231);
             this.pictureBox1.TabIndex = 16;
