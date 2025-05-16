@@ -76,7 +76,6 @@
             // 
             // panel2
             // 
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.btn_Update);
