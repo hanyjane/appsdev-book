@@ -5,43 +5,46 @@ using System.Data.OleDb;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace BOOKSTORE
-{   
+{
     public partial class mainform : Form
-
     {
+        // Database connection and user information
         private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" +
                                    Path.Combine(Application.StartupPath, "Appsdevdatabase.accdb") + ";";
         private int currentUserId;
-        private string currentUsername;
         private List<CartItem> cart = new List<CartItem>();
+        private Cart cartForm = null;
 
+        // Constructor
         public mainform(int userId)
         {
             InitializeComponent();
             currentUserId = userId;
-            this.Load += new EventHandler(mainform_Load);
+            this.Load += mainform_Load;
         }
 
-        // load the books from the database when the form loads
+        // Form load event handler
         private void mainform_Load(object sender, EventArgs e)
         {
-            List<Book> bookList = LoadBooksFromDatabase();
+            LoadAllBooks();
+        }
 
-            for (int i = 0; i < bookList.Count; i++)
+        // Load all books from database and display them
+        private void LoadAllBooks()
+        {
+            flowLayoutPanel1.Controls.Clear();
+            List<Book> books = LoadBooksFromDatabase();
+
+            foreach (Book book in books)
             {
-                Book book = bookList[i];
-                AddBookToUI(book);
+                CreateBookPanel(book);
             }
         }
 
-        // Load books from the database
+        // Load books from database with optional category filter
         private List<Book> LoadBooksFromDatabase(string category = null)
         {
             List<Book> books = new List<Book>();
@@ -49,11 +52,12 @@ namespace BOOKSTORE
             using (OleDbConnection conn = new OleDbConnection(connectionString))
             {
                 conn.Open();
-                string query = "SELECT ID, Category, Title, Author, BookCover, Price, Stock FROM Books WHERE 1=1";
+                string query = "SELECT ID, Category, Title, Author, BookCover, Price, Stock FROM Books";
 
+                // Add category filter if specified
                 if (!string.IsNullOrEmpty(category))
                 {
-                    query += " AND Category = ?";
+                    query += " WHERE Category = ?";
                 }
 
                 using (OleDbCommand cmd = new OleDbCommand(query, conn))
@@ -85,145 +89,204 @@ namespace BOOKSTORE
             return books;
         }
 
-
-        //design card for each book
-            private void AddBookToUI(Book book)
+        // Create a UI panel for a book
+        private void CreateBookPanel(Book book)
+        {
+            // Main panel for the book
+            Panel bookPanel = new Panel
             {
-                Panel panel = new Panel();
-                panel.Size = new Size(150, 280);
-                panel.BackColor = Color.White;
-                panel.Margin = new Padding(10);
+                Size = new Size(150, 280),
+                BackColor = Color.White,
+                Margin = new Padding(10)
+            };
 
-                PictureBox picture = new PictureBox();
-                picture.Size = new Size(100, 120);
-                picture.Location = new Point(25, 10);
-                picture.SizeMode = PictureBoxSizeMode.Zoom;
+            // Book cover image
+            PictureBox coverPicture = new PictureBox
+            {
+                Size = new Size(100, 120),
+                Location = new Point(25, 10),
+                SizeMode = PictureBoxSizeMode.Zoom
+            };
 
-                if (book.BookCover != null)
+            if (book.BookCover != null)
+            {
+                using (MemoryStream ms = new MemoryStream(book.BookCover))
                 {
-                    MemoryStream ms = new MemoryStream(book.BookCover);
-                    picture.Image = Image.FromStream(ms);
+                    coverPicture.Image = Image.FromStream(ms);
                 }
+            }
 
-                Label titleLabel = new Label();
-                titleLabel.Text = book.Title;
-                titleLabel.Location = new Point(10, 140);
-                titleLabel.Size = new Size(130, 20);
-                titleLabel.Font = new Font("Times New Roman", 9, FontStyle.Bold);
+            // Book title label
+            Label titleLabel = new Label
+            {
+                Text = book.Title,
+                Location = new Point(10, 140),
+                Size = new Size(130, 20),
+                Font = new Font("Times New Roman", 9, FontStyle.Bold)
+            };
 
-                Label authorLabel = new Label();
-                authorLabel.Text = "By " + book.Author;
-                authorLabel.Location = new Point(10, 160);
-                authorLabel.Size = new Size(130, 20);
-                authorLabel.Font = new Font("Times New Roman", 8);
+            // Author label
+            Label authorLabel = new Label
+            {
+                Text = "By " + book.Author,
+                Location = new Point(10, 160),
+                Size = new Size(130, 20),
+                Font = new Font("Times New Roman", 8)
+            };
 
-                Label priceLabel = new Label();
-                priceLabel.Text = "₱" + book.Price.ToString("F2");
-                priceLabel.Location = new Point(10, 180);
-                priceLabel.Size = new Size(130, 20);
-                priceLabel.ForeColor = Color.Green;
+            // Price label
+            Label priceLabel = new Label
+            {
+                Text = "₱" + book.Price.ToString("F2"),
+                Location = new Point(10, 180),
+                Size = new Size(130, 20),
+                ForeColor = Color.Green
+            };
 
-                Label stockLabel = new Label();
-                stockLabel.Text = "Stock: " + book.Stock;
-                stockLabel.Location = new Point(10, 200);
-                stockLabel.Size = new Size(130, 20);
+            // Stock label
+            Label stockLabel = new Label
+            {
+                Text = "Stock: " + book.Stock,
+                Location = new Point(10, 200),
+                Size = new Size(130, 20)
+            };
 
-                Button btnAddToCart = new Button();
-                btnAddToCart.Text = book.Stock > 0 ? "Add to Cart" : "No Stock";
-                btnAddToCart.Size = new Size(120, 25);
-                btnAddToCart.Location = new Point(15, 230);
-                btnAddToCart.Enabled = book.Stock > 0;
+            // Add to cart button
+            Button addToCartButton = new Button
+            {
+                Text = book.Stock > 0 ? "Add to Cart" : "No Stock",
+                Size = new Size(120, 25),
+                Location = new Point(15, 230),
+                Enabled = book.Stock > 0,
+                Tag = book // Store book reference for event handling
+            };
 
-                btnAddToCart.Click += (s, e) =>
-                {
-                    if (book.Stock > 0)
-                    {
-                        var existingItem = cart.FirstOrDefault(c => c.Book.Id == book.Id);
-                        if (existingItem != null)
-                        {
-                            existingItem.Quantity++;
-                            UpdateCartItemInDatabase(currentUserId, book.Id, existingItem.Quantity);
-                        }
-                        else
-                        {
-                            cart.Add(new CartItem { Book = book, Quantity = 1 });
-                            AddCartItemToDatabase(currentUserId, book.Id, 1);
-                        }
+            addToCartButton.Click += AddToCartButton_Click;
 
-                        book.Stock--;
-                        stockLabel.Text = book.Stock > 0 ? $"Stock: {book.Stock}" : "Out of stock";
+            // Add controls to the panel
+            bookPanel.Controls.Add(coverPicture);
+            bookPanel.Controls.Add(titleLabel);
+            bookPanel.Controls.Add(authorLabel);
+            bookPanel.Controls.Add(priceLabel);
+            bookPanel.Controls.Add(stockLabel);
+            bookPanel.Controls.Add(addToCartButton);
 
-                        if (book.Stock == 0)
-                        {
-                            btnAddToCart.Text = "No Stock";
-                            btnAddToCart.Enabled = false;
-                        }
-
-                        MessageBox.Show($"Added '{book.Title}' to cart!");
-                    }
-                };
-
-            panel.Controls.Add(picture);
-            panel.Controls.Add(titleLabel);
-            panel.Controls.Add(authorLabel);
-            panel.Controls.Add(priceLabel);
-            panel.Controls.Add(stockLabel);
-            panel.Controls.Add(btnAddToCart);
-
-            flowLayoutPanel1.Controls.Add(panel);
+            // Add panel to the flow layout
+            flowLayoutPanel1.Controls.Add(bookPanel);
         }
 
+        // Add to cart button click handler
+        private void AddToCartButton_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            Book book = (Book)button.Tag;
+
+            if (book.Stock > 0)
+            {
+                // Find existing cart item or create new one
+                var existingItem = cart.FirstOrDefault(c => c.Book.Id == book.Id);
+
+                if (existingItem != null)
+                {
+                    existingItem.Quantity++;
+                    UpdateCartItemInDatabase(currentUserId, book.Id, existingItem.Quantity);
+                }
+                else
+                {
+                    cart.Add(new CartItem { Book = book, Quantity = 1 });
+                    AddCartItemToDatabase(currentUserId, book.Id, 1);
+                }
+
+                // Update stock
+                book.Stock--;
+                UpdateStockLabel(button.Parent, book.Stock);
+
+                if (book.Stock == 0)
+                {
+                    button.Text = "No Stock";
+                    button.Enabled = false;
+                }
+
+                MessageBox.Show($"Added '{book.Title}' to cart!");
+            }
+        }
+
+        // Update stock label in the book panel
+        private void UpdateStockLabel(Control panel, int newStock)
+        {
+            foreach (Control control in panel.Controls)
+            {
+                if (control is Label label && label.Text.StartsWith("Stock:"))
+                {
+                    label.Text = newStock > 0 ? $"Stock: {newStock}" : "Out of stock";
+                    break;
+                }
+            }
+        }
+
+        // Add item to cart in database
         private void AddCartItemToDatabase(int userId, int bookId, int quantity)
         {
             using (OleDbConnection conn = new OleDbConnection(connectionString))
             {
                 conn.Open();
                 string query = "INSERT INTO CartItems (UserId, BookId, Quantity) VALUES (?, ?, ?)";
+
                 using (OleDbCommand cmd = new OleDbCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("?", userId);
                     cmd.Parameters.AddWithValue("?", bookId);
                     cmd.Parameters.AddWithValue("?", quantity);
-
                     cmd.ExecuteNonQuery();
                 }
             }
         }
 
+        // Update cart item quantity in database
         private void UpdateCartItemInDatabase(int userId, int bookId, int quantity)
         {
             using (OleDbConnection conn = new OleDbConnection(connectionString))
             {
                 conn.Open();
                 string query = "UPDATE CartItems SET Quantity = ? WHERE UserId = ? AND BookId = ?";
+
                 using (OleDbCommand cmd = new OleDbCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("?", quantity);
                     cmd.Parameters.AddWithValue("?", userId);
                     cmd.Parameters.AddWithValue("?", bookId);
-
                     cmd.ExecuteNonQuery();
                 }
             }
         }
 
-
-        private void btn_ViewCart_Click(object sender, EventArgs e)
+        // View cart button click handler
+        private void ViewCart_Click(object sender, EventArgs e)
         {
-            Cart cartForm = new Cart(currentUserId); // pass the logged-in user ID
-            cartForm.Show();
+            if (cartForm == null || cartForm.IsDisposed)
+            {
+                cartForm = new Cart(currentUserId);
+                cartForm.Show();
+            }
+            else
+            {
+                cartForm.BringToFront();
+            }
         }
 
+        // Load books by category
         private void LoadBooksByCategory(string category)
         {
             flowLayoutPanel1.Controls.Clear();
             List<Book> books = LoadBooksFromDatabase(category);
+
             foreach (Book book in books)
             {
-                AddBookToUI(book);
+                CreateBookPanel(book);
             }
         }
 
+        // Load books by author
         private List<Book> LoadBooksByAuthor(string author)
         {
             List<Book> books = new List<Book>();
@@ -259,6 +322,7 @@ namespace BOOKSTORE
             return books;
         }
 
+        // Load books by price range
         private List<Book> LoadBooksByPriceRange(decimal minPrice, decimal maxPrice)
         {
             List<Book> books = new List<Book>();
@@ -295,52 +359,15 @@ namespace BOOKSTORE
             return books;
         }
 
-        //it will append the books in here flowLayoutPanel1
+        // Category filter buttons
+        private void btn_All_Click(object sender, EventArgs e) => LoadAllBooks();
+        private void btn_Fiction_Click(object sender, EventArgs e) => LoadBooksByCategory("Fiction");
+        private void btn_Romance_Click(object sender, EventArgs e) => LoadBooksByCategory("Romance");
+        private void btn_Mystery_Click(object sender, EventArgs e) => LoadBooksByCategory("Mystery");
+        private void btn_Fantasy_Click(object sender, EventArgs e) => LoadBooksByCategory("Fantasy");
+        private void btn_Horror_Click(object sender, EventArgs e) => LoadBooksByCategory("Horror");
 
-
-
-
-
-        //BUTTONSS for load by category 
-
-        //all category
-        private void btn_All_Click(object sender, EventArgs e)
-        {
-            flowLayoutPanel1.Controls.Clear();
-            List<Book> books = LoadBooksFromDatabase();
-            foreach (Book book in books)
-            {
-                AddBookToUI(book);
-            }
-        }
-
-        private void btn_Fiction_Click(object sender, EventArgs e)
-        {
-            LoadBooksByCategory("Fiction");
-        }
-
-        private void btn_Romance_Click(object sender, EventArgs e)
-        {
-            LoadBooksByCategory("Romance");
-        }
-
-        private void btn_Mystery_Click(object sender, EventArgs e)
-        {
-            LoadBooksByCategory("Mystery");
-        }
-
-        private void btn_Fantasy_Click(object sender, EventArgs e)
-        {
-            LoadBooksByCategory("Fantasy");
-        }
-
-        private void btn_Horror_Click(object sender, EventArgs e)
-        {
-            LoadBooksByCategory("Horror");
-        }
-
-
-        //button find by author
+        // Search by author button
         private void btn_findAuthor_Click(object sender, EventArgs e)
         {
             string author = txtAuthor.Text.Trim();
@@ -356,15 +383,15 @@ namespace BOOKSTORE
 
             foreach (Book book in books)
             {
-                AddBookToUI(book);
+                CreateBookPanel(book);
             }
         }
 
-        //button find by price
+        // Search by price range button
         private void btn_minmaxPrice_Click(object sender, EventArgs e)
         {
             if (!decimal.TryParse(txtMinPrice.Text.Trim(), out decimal minPrice) ||
-       !decimal.TryParse(txtMaxPrice.Text.Trim(), out decimal maxPrice))
+                !decimal.TryParse(txtMaxPrice.Text.Trim(), out decimal maxPrice))
             {
                 MessageBox.Show("Please enter valid numeric values for both minimum and maximum prices.");
                 return;
@@ -381,24 +408,16 @@ namespace BOOKSTORE
 
             foreach (Book book in books)
             {
-                AddBookToUI(book);
+                CreateBookPanel(book);
             }
         }
 
-        //logout
-
+        // Logout button
         private void label4_Click(object sender, EventArgs e)
         {
-            Login form = new Login();
-            form.Show();
+            Login loginForm = new Login();
+            loginForm.Show();
             this.Hide();
         }
-
-        private void ViewCart_Click(object sender, EventArgs e)
-        {
-            Cart cartForm = new Cart(currentUserId);
-            cartForm.Show();
-        }
     }
-
 }

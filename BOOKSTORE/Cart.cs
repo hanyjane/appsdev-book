@@ -14,10 +14,12 @@ namespace BOOKSTORE
 {
     public partial class Cart : Form
     {
+        // Database connection and user information
         private int userId;
         private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" +
             Path.Combine(Application.StartupPath, "Appsdevdatabase.accdb") + ";";
 
+        // Constructor
         public Cart(int currentUserId)
         {
             InitializeComponent();
@@ -25,25 +27,34 @@ namespace BOOKSTORE
             LoadCartItems();
         }
 
+        // Load all items in the user's cart
         private void LoadCartItems()
         {
+            // Clear existing items
             panelCartItems.Controls.Clear();
             decimal totalPrice = 0;
 
+            // Connect to database
             using (OleDbConnection conn = new OleDbConnection(connectionString))
             {
                 conn.Open();
+
+                // SQL query to get cart items with book details
                 string query = @"SELECT Books.Id, Books.Title, Books.Author, Books.Price, Books.BookCover, CartItems.Quantity
-                         FROM CartItems INNER JOIN Books ON CartItems.BookId = Books.Id
+                         FROM CartItems 
+                         INNER JOIN Books ON CartItems.BookId = Books.Id
                          WHERE CartItems.UserId = @userId";
 
                 using (OleDbCommand cmd = new OleDbCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@userId", userId);
+
+                    // Read each cart item
                     using (OleDbDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
+                            // Get book details from database
                             int bookId = Convert.ToInt32(reader["Id"]);
                             string title = reader["Title"].ToString();
                             string author = reader["Author"].ToString();
@@ -51,74 +62,173 @@ namespace BOOKSTORE
                             int quantity = Convert.ToInt32(reader["Quantity"]);
                             byte[] imageBytes = reader["BookCover"] as byte[];
 
+                            // Calculate total price
                             totalPrice += price * quantity;
 
-                            // Create panel
-                            Panel itemPanel = new Panel()
-                            {
-                                Size = new Size(500, 100),
-                                BorderStyle = BorderStyle.FixedSingle
-                            };
-
-                            // Book cover
-                            PictureBox pic = new PictureBox
-                            {
-                                Size = new Size(60, 80),
-                                Location = new Point(10, 10),
-                                SizeMode = PictureBoxSizeMode.Zoom
-                            };
-                            if (imageBytes != null)
-                                pic.Image = Image.FromStream(new MemoryStream(imageBytes));
-
-                            // Labels
-                            Label lblTitle = new Label
-                            {
-                                Text = $"{title} by {author}",
-                                Location = new Point(80, 10),
-                                AutoSize = true
-                            };
-
-                            Label lblQty = new Label
-                            {
-                                Text = $"Qty: {quantity}",
-                                Location = new Point(80, 35),
-                                AutoSize = true
-                            };
-
-                            Label lblPrice = new Label
-                            {
-                                Text = $"₱{price * quantity:F2}",
-                                Location = new Point(80, 60),
-                                ForeColor = Color.Green,
-                                AutoSize = true
-                            };
-
-                            // Buttons
-                            Button btnAdd = new Button { Text = "+", Location = new Point(300, 20), Size = new Size(30, 25) };
-                            Button btnMinus = new Button { Text = "-", Location = new Point(335, 20), Size = new Size(30, 25) };
-                            Button btnDelete = new Button { Text = "Remove", Location = new Point(370, 20), Size = new Size(70, 25) };
-
-                            btnAdd.Click += (s, e) => { UpdateQuantity(bookId, quantity + 1); };
-                            btnMinus.Click += (s, e) => { if (quantity > 1) UpdateQuantity(bookId, quantity - 1); };
-                            btnDelete.Click += (s, e) => { DeleteCartItem(bookId); };
-
-                            // Add to panel
-                            itemPanel.Controls.AddRange(new Control[] { pic, lblTitle, lblQty, lblPrice, btnAdd, btnMinus, btnDelete });
-                            panelCartItems.Controls.Add(itemPanel);
+                            // Create a panel for this cart item
+                            CreateCartItemPanel(bookId, title, author, price, quantity, imageBytes);
                         }
                     }
                 }
             }
 
+            // Update the total price label
             lblTotal.Text = $"Total: ₱{totalPrice:F2}";
         }
 
+        // Creates a panel for a single cart item
+        private void CreateCartItemPanel(int bookId, string title, string author, decimal price, int quantity, byte[] imageBytes)
+        {
+            // Create the main panel for this item
+            Panel itemPanel = new Panel()
+            {
+                Size = new Size(500, 100),
+                BorderStyle = BorderStyle.FixedSingle,
+                Margin = new Padding(0, 0, 0, 10) // Add some space between items
+            };
+
+            // Add book cover image
+            PictureBox bookCover = new PictureBox
+            {
+                Size = new Size(60, 80),
+                Location = new Point(10, 10),
+                SizeMode = PictureBoxSizeMode.Zoom
+            };
+
+            if (imageBytes != null)
+            {
+                bookCover.Image = Image.FromStream(new MemoryStream(imageBytes));
+            }
+
+            // Add book title and author label
+            Label titleLabel = new Label
+            {
+                Text = $"{title} by {author}",
+                Location = new Point(80, 10),
+                AutoSize = true
+            };
+
+            // Add quantity label
+            Label quantityLabel = new Label
+            {
+                Text = $"Quantity: {quantity}",
+                Location = new Point(80, 35),
+                AutoSize = true
+            };
+
+            // Add price label
+            Label priceLabel = new Label
+            {
+                Text = $"₱{price * quantity:F2}",
+                Location = new Point(80, 60),
+                ForeColor = Color.Green,
+                AutoSize = true
+            };
+
+            // Add buttons for quantity adjustment
+            Button increaseButton = new Button
+            {
+                Text = "+",
+                Location = new Point(300, 20),
+                Size = new Size(30, 25),
+                Tag = bookId // Store book ID for event handling
+            };
+
+            Button decreaseButton = new Button
+            {
+                Text = "-",
+                Location = new Point(335, 20),
+                Size = new Size(30, 25),
+                Tag = bookId
+            };
+
+            Button removeButton = new Button
+            {
+                Text = "Remove",
+                Location = new Point(370, 20),
+                Size = new Size(70, 25),
+                Tag = bookId
+            };
+
+            // Set up button click events
+            increaseButton.Click += IncreaseQuantity_Click;
+            decreaseButton.Click += DecreaseQuantity_Click;
+            removeButton.Click += RemoveItem_Click;
+
+            // Add all controls to the panel
+            itemPanel.Controls.Add(bookCover);
+            itemPanel.Controls.Add(titleLabel);
+            itemPanel.Controls.Add(quantityLabel);
+            itemPanel.Controls.Add(priceLabel);
+            itemPanel.Controls.Add(increaseButton);
+            itemPanel.Controls.Add(decreaseButton);
+            itemPanel.Controls.Add(removeButton);
+
+            // Add the panel to the cart items container
+            panelCartItems.Controls.Add(itemPanel);
+        }
+
+        // Event handler for increasing quantity
+        private void IncreaseQuantity_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            int bookId = (int)button.Tag;
+
+            // Get current quantity and increase by 1
+            int currentQty = GetCurrentQuantity(bookId);
+            UpdateQuantity(bookId, currentQty + 1);
+        }
+
+        // Event handler for decreasing quantity
+        private void DecreaseQuantity_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            int bookId = (int)button.Tag;
+
+            // Get current quantity and decrease by 1 (but not below 1)
+            int currentQty = GetCurrentQuantity(bookId);
+            if (currentQty > 1)
+            {
+                UpdateQuantity(bookId, currentQty - 1);
+            }
+        }
+
+        // Event handler for removing item
+        private void RemoveItem_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            int bookId = (int)button.Tag;
+
+            DeleteCartItem(bookId);
+        }
+
+        // Gets the current quantity of a book in the cart
+        private int GetCurrentQuantity(int bookId)
+        {
+            using (OleDbConnection conn = new OleDbConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT Quantity FROM CartItems WHERE UserId = @userId AND BookId = @bookId";
+
+                using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@userId", userId);
+                    cmd.Parameters.AddWithValue("@bookId", bookId);
+
+                    object result = cmd.ExecuteScalar();
+                    return result != null ? Convert.ToInt32(result) : 0;
+                }
+            }
+        }
+
+        // Updates the quantity of a book in the cart
         private void UpdateQuantity(int bookId, int newQuantity)
         {
             using (OleDbConnection conn = new OleDbConnection(connectionString))
             {
                 conn.Open();
                 string query = "UPDATE CartItems SET Quantity = @qty WHERE UserId = @userId AND BookId = @bookId";
+
                 using (OleDbCommand cmd = new OleDbCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@qty", newQuantity);
@@ -128,15 +238,18 @@ namespace BOOKSTORE
                 }
             }
 
-            LoadCartItems(); // Refresh UI
+            // Refresh the cart display
+            LoadCartItems();
         }
 
+        // Removes an item from the cart
         private void DeleteCartItem(int bookId)
         {
             using (OleDbConnection conn = new OleDbConnection(connectionString))
             {
                 conn.Open();
                 string query = "DELETE FROM CartItems WHERE UserId = @userId AND BookId = @bookId";
+
                 using (OleDbCommand cmd = new OleDbCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@userId", userId);
@@ -145,11 +258,61 @@ namespace BOOKSTORE
                 }
             }
 
-            LoadCartItems(); // Refresh UI
+            // Refresh the cart display
+            LoadCartItems();
         }
 
+        // Adds or updates a cart item (called from other forms)
+        public void AddOrUpdateCartItem(int bookId, string title, string author, decimal price, int quantity, byte[] imageBytes)
+        {
+            // First check if the item is already in the cart
+            foreach (Panel itemPanel in panelCartItems.Controls.OfType<Panel>())
+            {
+                if ((int)itemPanel.Tag == bookId)
+                {
+                    // Update the existing item's quantity and price
+                    foreach (Control ctrl in itemPanel.Controls)
+                    {
+                        if (ctrl is Label lbl && lbl.Text.StartsWith("Quantity:"))
+                        {
+                            lbl.Text = $"Quantity: {quantity}";
+                        }
+                        else if (ctrl is Label priceLbl && priceLbl.Text.StartsWith("₱"))
+                        {
+                            priceLbl.Text = $"₱{price * quantity:F2}";
+                        }
+                    }
+                    return;
+                }
+            }
 
+            // If not found, create a new cart item panel
+            CreateCartItemPanel(bookId, title, author, price, quantity, imageBytes);
 
+            // Update the total price
+            UpdateTotal();
+        }
+
+        // Updates the total price display
+        private void UpdateTotal()
+        {
+            decimal total = 0;
+
+            // Calculate total by summing up all item prices
+            foreach (Panel itemPanel in panelCartItems.Controls)
+            {
+                foreach (Control ctrl in itemPanel.Controls)
+                {
+                    if (ctrl is Label lbl && lbl.Text.StartsWith("₱"))
+                    {
+                        string priceText = lbl.Text.Replace("₱", "");
+                        total += decimal.Parse(priceText);
+                    }
+                }
+            }
+
+            // Update the total label
+            lblTotal.Text = $"Total: ₱{total:F2}";
+        }
     }
 }
-
