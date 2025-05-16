@@ -91,7 +91,7 @@ namespace BOOKSTORE
             {
                 Panel panel = new Panel();
                 panel.Size = new Size(150, 280);
-                panel.BackColor = Color.White;
+                panel.BackColor = Color.AliceBlue;
                 panel.Margin = new Padding(10);
 
                 PictureBox picture = new PictureBox();
@@ -115,7 +115,7 @@ namespace BOOKSTORE
                 authorLabel.Text = "By " + book.Author;
                 authorLabel.Location = new Point(10, 160);
                 authorLabel.Size = new Size(130, 20);
-                authorLabel.Font = new Font("Times New Roman", 8);
+                authorLabel.Font = new Font("Times New Roman", 8, FontStyle.  Italic);
 
                 Label priceLabel = new Label();
                 priceLabel.Text = "₱" + book.Price.ToString("F2");
