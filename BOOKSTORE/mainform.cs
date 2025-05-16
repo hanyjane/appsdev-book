@@ -90,7 +90,7 @@ namespace BOOKSTORE
             private void AddBookToUI(Book book)
             {
                 Panel panel = new Panel();
-                panel.Size = new Size(150, 280);
+                panel.Size = new Size(170, 300);
                 panel.BackColor = Color.AliceBlue;
                 panel.Margin = new Padding(10);
 
