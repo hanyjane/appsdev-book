@@ -34,6 +34,7 @@
             this.btn_Mystery = new System.Windows.Forms.Button();
             this.btn_Fantasy = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.btn_Horror = new System.Windows.Forms.Button();
             this.txtAuthor = new System.Windows.Forms.TextBox();
             this.txtMinPrice = new System.Windows.Forms.TextBox();
@@ -48,7 +49,6 @@
             this.ViewCart = new System.Windows.Forms.Label();
             this.LogOut = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -98,10 +98,17 @@
             // 
             this.flowLayoutPanel1.Controls.Add(this.vScrollBar1);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(80, 497);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(80, 488);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(859, 307);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(859, 161);
             this.flowLayoutPanel1.TabIndex = 20;
+            // 
+            // vScrollBar1
+            // 
+            this.vScrollBar1.Location = new System.Drawing.Point(0, 0);
+            this.vScrollBar1.Name = "vScrollBar1";
+            this.vScrollBar1.Size = new System.Drawing.Size(20, 161);
+            this.vScrollBar1.TabIndex = 37;
             // 
             // btn_Horror
             // 
@@ -237,7 +244,7 @@
             this.ViewCart.Size = new System.Drawing.Size(108, 24);
             this.ViewCart.TabIndex = 35;
             this.ViewCart.Text = "viewcart";
-            this.ViewCart.Click += new System.EventHandler(this.label5_Click);
+            this.ViewCart.Click += new System.EventHandler(this.ViewCart_Click);
             // 
             // LogOut
             // 
@@ -265,13 +272,6 @@
             this.label3.Size = new System.Drawing.Size(97, 24);
             this.label3.TabIndex = 33;
             this.label3.Text = "Explore";
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(0, -160);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(20, 467);
-            this.vScrollBar1.TabIndex = 37;
             // 
             // mainform
             // 

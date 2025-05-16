@@ -19,6 +19,7 @@ namespace BOOKSTORE
         public Login()
         {
             InitializeComponent();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -49,29 +50,32 @@ namespace BOOKSTORE
                 {
                     connection.Open();
 
-                    string loginQuery = "SELECT Username FROM Users WHERE Email = ? AND [Password] = ?";
+                    string loginQuery = "SELECT ID, Username FROM Users WHERE Email = ? AND [Password] = ?";
 
                     using (OleDbCommand command = new OleDbCommand(loginQuery, connection))
                     {
                         command.Parameters.AddWithValue("?", email);
                         command.Parameters.AddWithValue("?", password);
 
-                        object result = command.ExecuteScalar();
-
-                        if (result != null)
+                        using (OleDbDataReader reader = command.ExecuteReader())
                         {
-                            string username = result.ToString();
-                            MessageBox.Show($"Welcome back, {username}!", "Login Successful",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (reader.Read())
+                            {
+                                int userId = reader.GetInt32(0);  // get ID column
+                                string username = reader.GetString(1);
 
-                            mainform userForm = new mainform();
-                            userForm.Show();
-                            this.Hide();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Invalid email or password", "Login Failed",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show($"Welcome back, {username}!", "Login Successful",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                mainform userForm = new mainform(userId);  // pass userId here
+                                userForm.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Invalid email or password", "Login Failed",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                     }
                 }
