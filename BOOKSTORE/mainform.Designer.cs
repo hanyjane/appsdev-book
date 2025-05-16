@@ -96,11 +96,15 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
+            this.flowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel1.Controls.Add(this.vScrollBar1);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(80, 488);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(80, 503);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(859, 161);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(859, 153);
             this.flowLayoutPanel1.TabIndex = 20;
             // 
             // vScrollBar1
@@ -197,6 +201,7 @@
             // 
             // panel1
             // 
+            this.panel1.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel1.Controls.Add(this.pictureBox1);
@@ -272,6 +277,13 @@
             this.label3.Size = new System.Drawing.Size(97, 24);
             this.label3.TabIndex = 33;
             this.label3.Text = "Explore";
+            // 
+            // vScrollBar1
+            // 
+            this.vScrollBar1.Location = new System.Drawing.Point(0, 0);
+            this.vScrollBar1.Name = "vScrollBar1";
+            this.vScrollBar1.Size = new System.Drawing.Size(20, 153);
+            this.vScrollBar1.TabIndex = 37;
             // 
             // mainform
             // 
