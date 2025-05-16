@@ -40,13 +40,14 @@
             this.lblDescription = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCover)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBoxCover
             // 
-            this.pictureBoxCover.Location = new System.Drawing.Point(25, 41);
+            this.pictureBoxCover.Location = new System.Drawing.Point(15, 28);
             this.pictureBoxCover.Name = "pictureBoxCover";
-            this.pictureBoxCover.Size = new System.Drawing.Size(129, 175);
+            this.pictureBoxCover.Size = new System.Drawing.Size(148, 188);
             this.pictureBoxCover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxCover.TabIndex = 0;
             this.pictureBoxCover.TabStop = false;
@@ -54,54 +55,60 @@
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Location = new System.Drawing.Point(173, 41);
+            this.lblTitle.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(169, 37);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(27, 13);
+            this.lblTitle.Size = new System.Drawing.Size(30, 15);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Title";
             // 
             // lblAuthor
             // 
             this.lblAuthor.AutoSize = true;
-            this.lblAuthor.Location = new System.Drawing.Point(173, 63);
+            this.lblAuthor.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAuthor.Location = new System.Drawing.Point(169, 61);
             this.lblAuthor.Name = "lblAuthor";
-            this.lblAuthor.Size = new System.Drawing.Size(38, 13);
+            this.lblAuthor.Size = new System.Drawing.Size(40, 15);
             this.lblAuthor.TabIndex = 2;
             this.lblAuthor.Text = "Author";
             // 
             // lblCategory
             // 
             this.lblCategory.AutoSize = true;
-            this.lblCategory.Location = new System.Drawing.Point(173, 85);
+            this.lblCategory.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.lblCategory.Location = new System.Drawing.Point(169, 88);
             this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(49, 13);
+            this.lblCategory.Size = new System.Drawing.Size(51, 15);
             this.lblCategory.TabIndex = 3;
             this.lblCategory.Text = "Category";
             // 
             // lblStock
             // 
             this.lblStock.AutoSize = true;
-            this.lblStock.Location = new System.Drawing.Point(173, 153);
+            this.lblStock.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.lblStock.Location = new System.Drawing.Point(169, 166);
             this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(35, 13);
+            this.lblStock.Size = new System.Drawing.Size(34, 15);
             this.lblStock.TabIndex = 6;
             this.lblStock.Text = "Stock";
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(173, 131);
+            this.lblPrice.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.lblPrice.Location = new System.Drawing.Point(169, 142);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(31, 13);
+            this.lblPrice.Size = new System.Drawing.Size(31, 15);
             this.lblPrice.TabIndex = 5;
             this.lblPrice.Text = "Price";
             // 
             // lblISBN
             // 
             this.lblISBN.AutoSize = true;
-            this.lblISBN.Location = new System.Drawing.Point(173, 109);
+            this.lblISBN.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.lblISBN.Location = new System.Drawing.Point(169, 117);
             this.lblISBN.Name = "lblISBN";
-            this.lblISBN.Size = new System.Drawing.Size(32, 13);
+            this.lblISBN.Size = new System.Drawing.Size(34, 15);
             this.lblISBN.TabIndex = 4;
             this.lblISBN.Text = "ISBN";
             // 
@@ -126,40 +133,43 @@
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(173, 176);
+            this.lblDescription.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription.Location = new System.Drawing.Point(169, 191);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(60, 13);
+            this.lblDescription.Size = new System.Drawing.Size(63, 15);
             this.lblDescription.TabIndex = 10;
             this.lblDescription.Text = "Description";
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.MintCream;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lblDescription);
+            this.panel1.Controls.Add(this.lblTitle);
+            this.panel1.Controls.Add(this.pictureBoxCover);
+            this.panel1.Controls.Add(this.lblAuthor);
+            this.panel1.Controls.Add(this.lblCategory);
+            this.panel1.Controls.Add(this.lblStock);
+            this.panel1.Controls.Add(this.lblISBN);
+            this.panel1.Controls.Add(this.lblPrice);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(429, 230);
+            this.panel1.Size = new System.Drawing.Size(430, 233);
             this.panel1.TabIndex = 11;
             // 
             // BookCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.btn_Edit);
-            this.Controls.Add(this.lblStock);
-            this.Controls.Add(this.lblPrice);
-            this.Controls.Add(this.lblISBN);
-            this.Controls.Add(this.lblCategory);
-            this.Controls.Add(this.lblAuthor);
-            this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.pictureBoxCover);
             this.Controls.Add(this.panel1);
             this.Name = "BookCard";
             this.Size = new System.Drawing.Size(435, 236);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCover)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
