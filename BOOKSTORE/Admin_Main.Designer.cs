@@ -80,13 +80,9 @@
             // 
             // panel2
             // 
-            this.panel2.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.flowLayoutPanel1);
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.btn_Update);
             this.panel2.Controls.Add(this.btn_Delete);
             this.panel2.Controls.Add(this.btn_Update);
             this.panel2.Controls.Add(this.label1);
