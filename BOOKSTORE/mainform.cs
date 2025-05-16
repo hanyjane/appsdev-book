@@ -18,12 +18,14 @@ namespace BOOKSTORE
         private List<CartItem> cart = new List<CartItem>();
         private Cart cartForm = null;
 
+
         // Constructor
         public mainform(int userId)
         {
             InitializeComponent();
             currentUserId = userId;
             this.Load += mainform_Load;
+
         }
 
         // Form load event handler
@@ -197,17 +199,11 @@ namespace BOOKSTORE
                     AddCartItemToDatabase(currentUserId, book.Id, 1);
                 }
 
-                // Update stock
-                book.Stock--;
-                UpdateStockLabel(button.Parent, book.Stock);
-
-                if (book.Stock == 0)
+                // Refresh cart if open
+                if (cartForm != null && !cartForm.IsDisposed)
                 {
-                    button.Text = "No Stock";
-                    button.Enabled = false;
+                    cartForm.ReloadCart(); // This will update the cart UI
                 }
-
-                MessageBox.Show($"Added '{book.Title}' to cart!");
             }
         }
 
@@ -259,6 +255,28 @@ namespace BOOKSTORE
                 }
             }
         }
+
+        private void UpdateStockAfterPurchase()
+        {
+            using (OleDbConnection conn = new OleDbConnection(connectionString))
+            {
+                conn.Open();
+
+                foreach (CartItem item in cart)
+                {
+                    string query = "UPDATE Books SET Stock = Stock - ? WHERE ID = ? AND Stock >= ?";
+
+                    using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("?", item.Quantity);
+                        cmd.Parameters.AddWithValue("?", item.Book.Id);
+                        cmd.Parameters.AddWithValue("?", item.Quantity);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+        }
+
 
         // View cart button click handler
         private void ViewCart_Click(object sender, EventArgs e)

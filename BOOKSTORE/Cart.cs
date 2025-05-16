@@ -192,6 +192,12 @@ namespace BOOKSTORE
                 UpdateQuantity(bookId, currentQty - 1);
             }
         }
+        private void purchaseButton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+
 
         // Event handler for removing item
         private void RemoveItem_Click(object sender, EventArgs e)
@@ -220,6 +226,7 @@ namespace BOOKSTORE
                 }
             }
         }
+
 
         // Updates the quantity of a book in the cart
         private void UpdateQuantity(int bookId, int newQuantity)
@@ -313,6 +320,67 @@ namespace BOOKSTORE
 
             // Update the total label
             lblTotal.Text = $"Total: ₱{total:F2}";
+        }
+
+        public void ReloadCart()
+        {
+            LoadCartItems(); // This method should load the cart items from the database and refresh the UI
+        }
+
+        private void purchaseButton_Click_1(object sender, EventArgs e)
+        {
+            using (OleDbConnection conn = new OleDbConnection(connectionString))
+            {
+                conn.Open();
+
+                // Get all cart items
+                string selectQuery = "SELECT BookId, Quantity FROM CartItems WHERE UserId = @userId";
+                using (OleDbCommand selectCmd = new OleDbCommand(selectQuery, conn))
+                {
+                    selectCmd.Parameters.AddWithValue("@userId", userId);
+                    using (OleDbDataReader reader = selectCmd.ExecuteReader())
+                    {
+                        List<(int bookId, int quantity)> items = new List<(int, int)>();
+                        while (reader.Read())
+                        {
+                            items.Add((Convert.ToInt32(reader["BookId"]), Convert.ToInt32(reader["Quantity"])));
+                        }
+
+                        if (items.Count == 0)
+                        {
+                            MessageBox.Show("Your cart is empty.");
+                            return;
+                        }
+
+                        DialogResult result = MessageBox.Show("Confirm purchase?", "Checkout", MessageBoxButtons.YesNo);
+                        if (result != DialogResult.Yes)
+                            return;
+
+                        foreach (var item in items)
+                        {
+                            // Update stock
+                            string updateStockQuery = "UPDATE Books SET Stock = Stock - @qty WHERE Id = @bookId";
+                            using (OleDbCommand updateCmd = new OleDbCommand(updateStockQuery, conn))
+                            {
+                                updateCmd.Parameters.AddWithValue("@qty", item.quantity);
+                                updateCmd.Parameters.AddWithValue("@bookId", item.bookId);
+                                updateCmd.ExecuteNonQuery();
+                            }
+                        }
+
+                        // Clear cart
+                        string deleteCartQuery = "DELETE FROM CartItems WHERE UserId = @userId";
+                        using (OleDbCommand deleteCmd = new OleDbCommand(deleteCartQuery, conn))
+                        {
+                            deleteCmd.Parameters.AddWithValue("@userId", userId);
+                            deleteCmd.ExecuteNonQuery();
+                        }
+
+                        MessageBox.Show("Purchase successful!");
+                        LoadCartItems(); // Refresh cart display
+                    }
+                }
+            }
         }
     }
 }
