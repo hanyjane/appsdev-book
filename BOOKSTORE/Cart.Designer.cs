@@ -30,6 +30,7 @@
         {
             this.panelCartItems = new System.Windows.Forms.FlowLayoutPanel();
             this.lblTotal = new System.Windows.Forms.Label();
+            this.purchaseButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panelCartItems
@@ -48,11 +49,22 @@
             this.lblTotal.TabIndex = 1;
             this.lblTotal.Text = "lblTotal";
             // 
+            // purchaseButton
+            // 
+            this.purchaseButton.Location = new System.Drawing.Point(430, 24);
+            this.purchaseButton.Name = "purchaseButton";
+            this.purchaseButton.Size = new System.Drawing.Size(122, 31);
+            this.purchaseButton.TabIndex = 2;
+            this.purchaseButton.Text = "Purchase";
+            this.purchaseButton.UseVisualStyleBackColor = true;
+            this.purchaseButton.Click += new System.EventHandler(this.purchaseButton_Click_1);
+            // 
             // Cart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.purchaseButton);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.panelCartItems);
             this.Name = "Cart";
@@ -66,5 +78,6 @@
 
         private System.Windows.Forms.FlowLayoutPanel panelCartItems;
         private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Button purchaseButton;
     }
 }
