@@ -34,7 +34,7 @@ namespace BOOKSTORE
                 return;
             }
 
-            // Check for hardcoded admin credentials
+            //admin credentials
             if (email == "admin" && password == "pass")
             {
                 MessageBox.Show("Welcome, Admin!", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -61,13 +61,13 @@ namespace BOOKSTORE
                         {
                             if (reader.Read())
                             {
-                                int userId = reader.GetInt32(0);  // get ID column
+                                int userId = reader.GetInt32(0); 
                                 string username = reader.GetString(1);
 
                                 MessageBox.Show($"Welcome back, {username}!", "Login Successful",
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                mainform userForm = new mainform(userId);  // pass userId here
+                                mainform userForm = new mainform(userId);  
                                 userForm.Show();
                                 this.Hide();
                             }
@@ -86,10 +86,10 @@ namespace BOOKSTORE
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void button1_Click_1(object sender, EventArgs e)
+    
+        private void btn_back_Click(object sender, EventArgs e)
         {
-            Form1 form = new Form1(); //Hides
+            Form1 form = new Form1();
             form.Show();
             this.Hide();
         }

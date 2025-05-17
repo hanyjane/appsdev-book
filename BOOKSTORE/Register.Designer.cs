@@ -32,7 +32,7 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Register = new System.Windows.Forms.Button();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.chkShowPassword = new System.Windows.Forms.CheckBox();
             this.ViewCart = new System.Windows.Forms.Label();
@@ -42,7 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_back = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -81,21 +81,21 @@
             this.txtPassword.Size = new System.Drawing.Size(264, 26);
             this.txtPassword.TabIndex = 2;
             // 
-            // button1
+            // btn_Register
             // 
-            this.button1.BackColor = System.Drawing.Color.MidnightBlue;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(426, 401);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(285, 38);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Register";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Register.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btn_Register.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_Register.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Register.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Register.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Register.ForeColor = System.Drawing.Color.White;
+            this.btn_Register.Location = new System.Drawing.Point(426, 401);
+            this.btn_Register.Name = "btn_Register";
+            this.btn_Register.Size = new System.Drawing.Size(285, 38);
+            this.btn_Register.TabIndex = 3;
+            this.btn_Register.Text = "Register";
+            this.btn_Register.UseVisualStyleBackColor = false;
+            this.btn_Register.Click += new System.EventHandler(this.btn_Register_Click);
             // 
             // txtConfirmPassword
             // 
@@ -210,22 +210,22 @@
             this.label6.TabIndex = 45;
             this.label6.Text = "Welcome to LibFind! Please fill in details to continue.\r\n";
             // 
-            // button2
+            // btn_back
             // 
-            this.button2.BackColor = System.Drawing.Color.MidnightBlue;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(328, 401);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(92, 38);
-            this.button2.TabIndex = 46;
-            this.button2.Text = "Back";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_back.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btn_back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_back.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_back.FlatAppearance.BorderSize = 0;
+            this.btn_back.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_back.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_back.ForeColor = System.Drawing.Color.White;
+            this.btn_back.Location = new System.Drawing.Point(328, 401);
+            this.btn_back.Name = "btn_back";
+            this.btn_back.Size = new System.Drawing.Size(92, 38);
+            this.btn_back.TabIndex = 46;
+            this.btn_back.Text = "Back";
+            this.btn_back.UseVisualStyleBackColor = false;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
             // panel1
             // 
@@ -237,8 +237,8 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btn_Register);
+            this.panel1.Controls.Add(this.btn_back);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label1);
@@ -299,7 +299,7 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Register;
         private System.Windows.Forms.TextBox txtConfirmPassword;
         private System.Windows.Forms.CheckBox chkShowPassword;
         private System.Windows.Forms.Label ViewCart;
@@ -309,7 +309,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;

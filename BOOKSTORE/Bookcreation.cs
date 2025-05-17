@@ -81,11 +81,18 @@ namespace BOOKSTORE
             {
                 MessageBox.Show("Error saving book: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }   
+
+        private void btn_AdminMain_Click(object sender, EventArgs e)
+        {
+            Admin_Main form = new Admin_Main();
+            form.Show();
+            this.Hide();
         }
 
-        private void ViewCart_Click(object sender, EventArgs e)
+        private void btn_Logout_Click(object sender, EventArgs e)
         {
-            Admin_Main form = new Admin_Main(); //Hides
+            Login form = new Login();
             form.Show();
             this.Hide();
         }

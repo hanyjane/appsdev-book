@@ -51,8 +51,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.ViewCart = new System.Windows.Forms.Label();
+            this.btn_Logout = new System.Windows.Forms.Label();
+            this.btn_AdminMain = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -264,8 +264,8 @@
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.ViewCart);
+            this.panel2.Controls.Add(this.btn_Logout);
+            this.panel2.Controls.Add(this.btn_AdminMain);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -284,32 +284,33 @@
             this.pictureBox2.TabIndex = 39;
             this.pictureBox2.TabStop = false;
             // 
-            // label10
+            // btn_Logout
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Stencil", 15F);
-            this.label10.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label10.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label10.Location = new System.Drawing.Point(887, 20);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(85, 24);
-            this.label10.TabIndex = 38;
-            this.label10.Text = "logout";
+            this.btn_Logout.AutoSize = true;
+            this.btn_Logout.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Logout.Font = new System.Drawing.Font("Stencil", 15F);
+            this.btn_Logout.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btn_Logout.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btn_Logout.Location = new System.Drawing.Point(887, 20);
+            this.btn_Logout.Name = "btn_Logout";
+            this.btn_Logout.Size = new System.Drawing.Size(85, 24);
+            this.btn_Logout.TabIndex = 38;
+            this.btn_Logout.Text = "logout";
+            this.btn_Logout.Click += new System.EventHandler(this.btn_Logout_Click);
             // 
-            // ViewCart
+            // btn_AdminMain
             // 
-            this.ViewCart.AutoSize = true;
-            this.ViewCart.BackColor = System.Drawing.Color.Transparent;
-            this.ViewCart.Font = new System.Drawing.Font("Stencil", 15F);
-            this.ViewCart.ForeColor = System.Drawing.Color.AliceBlue;
-            this.ViewCart.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.ViewCart.Location = new System.Drawing.Point(359, 113);
-            this.ViewCart.Name = "ViewCart";
-            this.ViewCart.Size = new System.Drawing.Size(97, 24);
-            this.ViewCart.TabIndex = 37;
-            this.ViewCart.Text = "explore";
-            this.ViewCart.Click += new System.EventHandler(this.ViewCart_Click);
+            this.btn_AdminMain.AutoSize = true;
+            this.btn_AdminMain.BackColor = System.Drawing.Color.Transparent;
+            this.btn_AdminMain.Font = new System.Drawing.Font("Stencil", 15F);
+            this.btn_AdminMain.ForeColor = System.Drawing.Color.AliceBlue;
+            this.btn_AdminMain.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btn_AdminMain.Location = new System.Drawing.Point(359, 113);
+            this.btn_AdminMain.Name = "btn_AdminMain";
+            this.btn_AdminMain.Size = new System.Drawing.Size(97, 24);
+            this.btn_AdminMain.TabIndex = 37;
+            this.btn_AdminMain.Text = "explore";
+            this.btn_AdminMain.Click += new System.EventHandler(this.btn_AdminMain_Click);
             // 
             // label9
             // 
@@ -369,8 +370,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label ViewCart;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label btn_AdminMain;
+        private System.Windows.Forms.Label btn_Logout;
         private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

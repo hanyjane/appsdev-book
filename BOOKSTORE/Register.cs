@@ -15,8 +15,7 @@ namespace BOOKSTORE
     public partial class Register : Form
     {
         private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" +
-                                   Path.Combine(Application.StartupPath, "Appsdevdatabase.accdb") + ";";
-
+                                Application.StartupPath + @"\Appsdevdatabase.accdb;";
 
         public Register()
         {
@@ -24,17 +23,25 @@ namespace BOOKSTORE
             txtPassword.UseSystemPasswordChar = true;
             txtConfirmPassword.UseSystemPasswordChar = true;
         }
-
-        private void button1_Click(object sender, EventArgs e)
+      
+        private void chkShowPassword_CheckedChanged(object sender, EventArgs e)
         {
-          
+            bool show = chkShowPassword.Checked;
+
+            txtPassword.UseSystemPasswordChar = !show;
+            txtConfirmPassword.UseSystemPasswordChar = !show;
+        }
+   
+
+        private void btn_Register_Click(object sender, EventArgs e)
+        {
             if (txtPassword.Text != txtConfirmPassword.Text)
             {
                 MessageBox.Show("Passwords don't match!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            
+
             if (string.IsNullOrWhiteSpace(txtUsername.Text) ||
                 string.IsNullOrWhiteSpace(txtEmail.Text) ||
                 string.IsNullOrWhiteSpace(txtPassword.Text))
@@ -43,7 +50,7 @@ namespace BOOKSTORE
                 return;
             }
 
-           
+
             if (!txtEmail.Text.Contains("@") || !txtEmail.Text.Contains("."))
             {
                 MessageBox.Show("Please enter a valid email address!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -56,7 +63,7 @@ namespace BOOKSTORE
                 {
                     connection.Open();
 
-                    
+
                     string checkEmailQuery = "SELECT COUNT(*) FROM Users WHERE Email = ?";
                     using (OleDbCommand checkCommand = new OleDbCommand(checkEmailQuery, connection))
                     {
@@ -70,7 +77,7 @@ namespace BOOKSTORE
                         }
                     }
 
-                   
+
                     string insertQuery = "INSERT INTO Users (Username, Email, [Password]) VALUES (?, ?, ?)";
                     using (OleDbCommand command = new OleDbCommand(insertQuery, connection))
                     {
@@ -83,8 +90,8 @@ namespace BOOKSTORE
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("Account created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            Login loginForm = new Login(); 
-                            loginForm.Show();                   
+                            Login loginForm = new Login();
+                            loginForm.Show();
                             this.Hide();
                         }
                         else
@@ -100,18 +107,9 @@ namespace BOOKSTORE
             }
         }
 
-       
-        private void chkShowPassword_CheckedChanged(object sender, EventArgs e)
+        private void btn_back_Click(object sender, EventArgs e)
         {
-            bool show = chkShowPassword.Checked;
-
-            txtPassword.UseSystemPasswordChar = !show;
-            txtConfirmPassword.UseSystemPasswordChar = !show;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Form1 form = new Form1(); //Hides
+            Form1 form = new Form1();
             form.Show();
             this.Hide();
         }

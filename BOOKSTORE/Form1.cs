@@ -18,24 +18,18 @@ namespace BOOKSTORE
             InitializeComponent();
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_Login_Click(object sender, EventArgs e)
         {
-             Login form = new Login(); //Hides
+            Login form = new Login();
             form.Show();
             this.Hide();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_Register_Click(object sender, EventArgs e)
         {
             Register form = new Register();
             form.Show();
             this.Hide();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

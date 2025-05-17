@@ -30,7 +30,7 @@ namespace BOOKSTORE
 
         private List<Book> LoadBooksFromDatabase()
         {
-            List<Book> books = new List<Book>();//
+            List<Book> books = new List<Book>();
 
             using (OleDbConnection conn = new OleDbConnection(connectionString))
             {
@@ -83,58 +83,8 @@ namespace BOOKSTORE
                 stock: book.Stock,
                 description: book.Description
             );
-
-            // Style the card
-           // bookCard.Size = new Size(200, 350); // Adjust size as needed
-           // bookCard.Margin = new Padding(10);
-
-            // Handle button clicks
-
             flowLayoutPanel2.Controls.Add(bookCard);
-        }
-
-        private void EditBook(int bookID)
-        {
-            // Implement edit functionality
-            MessageBox.Show($"Editing book ID: {bookID}");
-        }
-
-        private void DeleteBook(int bookID)
-        {
-            if (MessageBox.Show("Delete this book?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                using (OleDbConnection conn = new OleDbConnection(connectionString))
-                {
-                    conn.Open();
-                    string query = "DELETE FROM Books WHERE ID = @BookID";
-                    using (OleDbCommand cmd = new OleDbCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@BookID", bookID);
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-                // Refresh the book display
-                flowLayoutPanel1.Controls.Clear();
-                Admin_Main_Load(null, EventArgs.Empty);
-            }
-        }
-
-
-        private void btn_Explore_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_Update_Click(object sender, EventArgs e)
-        {
-
-        }     
-
-        private void btn_Delete_Click(object sender, EventArgs e)
-        {
-
-        }
-   
+        }  
 
         private void Add_Click(object sender, EventArgs e)
         {

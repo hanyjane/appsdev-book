@@ -32,9 +32,9 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.purchaseButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panelCartItems = new System.Windows.Forms.FlowLayoutPanel();
             this.LogOut = new System.Windows.Forms.Label();
             this.ViewCart = new System.Windows.Forms.Label();
-            this.panelCartItems = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,6 +82,19 @@
             this.panel1.Size = new System.Drawing.Size(867, 535);
             this.panel1.TabIndex = 21;
             // 
+            // panelCartItems
+            // 
+            this.panelCartItems.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
+            this.panelCartItems.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelCartItems.AutoScroll = true;
+            this.panelCartItems.BackColor = System.Drawing.Color.Transparent;
+            this.panelCartItems.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panelCartItems.ForeColor = System.Drawing.Color.Transparent;
+            this.panelCartItems.Location = new System.Drawing.Point(167, 145);
+            this.panelCartItems.Name = "panelCartItems";
+            this.panelCartItems.Size = new System.Drawing.Size(525, 274);
+            this.panelCartItems.TabIndex = 0;
+            // 
             // LogOut
             // 
             this.LogOut.AutoSize = true;
@@ -108,19 +121,6 @@
             this.ViewCart.Size = new System.Drawing.Size(60, 24);
             this.ViewCart.TabIndex = 36;
             this.ViewCart.Text = "Cart";
-            // 
-            // panelCartItems
-            // 
-            this.panelCartItems.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
-            this.panelCartItems.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panelCartItems.AutoScroll = true;
-            this.panelCartItems.BackColor = System.Drawing.Color.Transparent;
-            this.panelCartItems.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panelCartItems.ForeColor = System.Drawing.Color.Transparent;
-            this.panelCartItems.Location = new System.Drawing.Point(167, 145);
-            this.panelCartItems.Name = "panelCartItems";
-            this.panelCartItems.Size = new System.Drawing.Size(525, 274);
-            this.panelCartItems.TabIndex = 0;
             // 
             // Cart
             // 

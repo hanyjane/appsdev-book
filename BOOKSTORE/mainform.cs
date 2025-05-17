@@ -11,34 +11,25 @@ namespace BOOKSTORE
 {
     public partial class mainform : Form
     {
-        // Database connection and user information
-        private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" +
-                                   Path.Combine(Application.StartupPath, "Appsdevdatabase.accdb") + ";";
-        private int currentUserId;
 
+        private string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" +
+                                Application.StartupPath + @"\Appsdevdatabase.accdb;";
+        private int currentUserId;
         private Cart cartForm = null;
 
-
-        // Constructor
+      
         public mainform(int userId)
         {
             InitializeComponent();
             currentUserId = userId;
             this.Load += mainform_Load;
-
         }
 
-        public mainform()
-        {
-        }
-
-        // Form load event handler
         private void mainform_Load(object sender, EventArgs e)
         {
             LoadAllBooks();
         }
-
-        // Load all books from database and display them
+    
         private void LoadAllBooks()
         {
             flowLayoutPanel1.Controls.Clear();
@@ -95,10 +86,9 @@ namespace BOOKSTORE
             return books;
         }
 
-        // Create a UI panel for a book
+    
         private void CreateBookPanel(Book book)
-        {
-            // Main panel for the book
+        {    
             Panel bookPanel = new Panel
             {
                 Size = new Size(150, 280),
@@ -106,7 +96,7 @@ namespace BOOKSTORE
                 Margin = new Padding(10),
             };
 
-            // Book cover image
+          
             PictureBox coverPicture = new PictureBox
             {
                 Size = new Size(100, 120),
@@ -123,7 +113,7 @@ namespace BOOKSTORE
                 }
             }
 
-            // Book title label
+           
             Label titleLabel = new Label
             {
                 Text = book.Title,
@@ -132,7 +122,7 @@ namespace BOOKSTORE
                 Font = new Font("Times New Roman", 9, FontStyle.Bold)
             };
 
-            // Author label
+          
             Label authorLabel = new Label
             {
                 Text = "By " + book.Author,
@@ -141,7 +131,7 @@ namespace BOOKSTORE
                 Font = new Font("Times New Roman", 9, FontStyle.Italic)
             };
 
-            // Price label
+            
             Label priceLabel = new Label
             {
                 Text = "₱" + book.Price.ToString("F2"),
@@ -150,7 +140,7 @@ namespace BOOKSTORE
                 ForeColor = Color.Green
             };
 
-            // Stock label
+           
             Label stockLabel = new Label
             {
                 Text = "Stock: " + book.Stock,
@@ -158,33 +148,29 @@ namespace BOOKSTORE
                 Size = new Size(130, 20)
             };
 
-            // Add to cart button
+           
             Button addToCartButton = new Button
             {
                 Text = book.Stock > 0 ? "Add to Cart" : "No Stock",
                 Size = new Size(120, 25),
                 Location = new Point(15, 230),
                 Enabled = book.Stock > 0,
-                Tag = book // Store book reference for event handling
+                Tag = book 
             };
 
             addToCartButton.Click += AddToCartButton_Click;
-
-            // Add controls to the panel
+    
             bookPanel.Controls.Add(coverPicture);
             bookPanel.Controls.Add(titleLabel);
             bookPanel.Controls.Add(authorLabel);
             bookPanel.Controls.Add(priceLabel);
             bookPanel.Controls.Add(stockLabel);
             bookPanel.Controls.Add(addToCartButton);
-
-            // Add panel to the flow layout
+      
             flowLayoutPanel1.Controls.Add(bookPanel);
         }
             
 
-
-        // Add to cart button click handler
         private void AddToCartButton_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
@@ -195,8 +181,7 @@ namespace BOOKSTORE
                 using (OleDbConnection conn = new OleDbConnection(connectionString))
                 {
                     conn.Open();
-
-                    // Check if item already exists in cart
+         
                     string checkQuery = "SELECT Quantity FROM CartItems WHERE UserId = ? AND BookId = ?";
                     using (OleDbCommand checkCmd = new OleDbCommand(checkQuery, conn))
                     {
@@ -205,7 +190,7 @@ namespace BOOKSTORE
 
                         object result = checkCmd.ExecuteScalar();
 
-                        if (result != null) // Item exists - update quantity
+                        if (result != null) 
                         {
                             int currentQuantity = Convert.ToInt32(result);
                             string updateQuery = "UPDATE CartItems SET Quantity = ? WHERE UserId = ? AND BookId = ?";
@@ -217,7 +202,7 @@ namespace BOOKSTORE
                                 updateCmd.ExecuteNonQuery();
                             }
                         }
-                        else // Item doesn't exist - insert new
+                        else 
                         {
                             string insertQuery = "INSERT INTO CartItems (UserId, BookId, Quantity) VALUES (?, ?, ?)";
                             using (OleDbCommand insertCmd = new OleDbCommand(insertQuery, conn))
@@ -231,7 +216,6 @@ namespace BOOKSTORE
                     }
                 }
 
-                // Refresh cart if open
                 if (cartForm != null && !cartForm.IsDisposed)
                 {
                     cartForm.ReloadCart();
@@ -239,8 +223,6 @@ namespace BOOKSTORE
             }
         }
 
-
-        // View cart button click handler
         private void ViewCart_Click(object sender, EventArgs e)
         {
             if (cartForm == null || cartForm.IsDisposed)
@@ -254,7 +236,6 @@ namespace BOOKSTORE
             }
         }
 
-        // Load books by category
         private void LoadBooksByCategory(string category)
         {
             flowLayoutPanel1.Controls.Clear();
@@ -266,7 +247,6 @@ namespace BOOKSTORE
             }
         }
 
-        // Load books by author
         private List<Book> LoadBooksByAuthor(string author)
         {
             List<Book> books = new List<Book>();
@@ -298,11 +278,9 @@ namespace BOOKSTORE
                     }
                 }
             }
-
             return books;
         }
 
-        // Load books by price range
         private List<Book> LoadBooksByPriceRange(decimal minPrice, decimal maxPrice)
         {
             List<Book> books = new List<Book>();
@@ -393,7 +371,7 @@ namespace BOOKSTORE
         }
 
         // Logout button
-        private void label4_Click(object sender, EventArgs e)
+        private void LogOut_Click(object sender, EventArgs e)
         {
             Login loginForm = new Login();
             loginForm.Show();
