@@ -29,27 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cart));
-            this.panelCartItems = new System.Windows.Forms.FlowLayoutPanel();
             this.lblTotal = new System.Windows.Forms.Label();
             this.purchaseButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.LogOut = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.ViewCart = new System.Windows.Forms.Label();
+            this.panelCartItems = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panelCartItems
-            // 
-            this.panelCartItems.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
-            this.panelCartItems.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panelCartItems.AutoScroll = true;
-            this.panelCartItems.BackColor = System.Drawing.Color.Transparent;
-            this.panelCartItems.ForeColor = System.Drawing.Color.Transparent;
-            this.panelCartItems.Location = new System.Drawing.Point(144, 154);
-            this.panelCartItems.Name = "panelCartItems";
-            this.panelCartItems.Size = new System.Drawing.Size(704, 325);
-            this.panelCartItems.TabIndex = 0;
             // 
             // lblTotal
             // 
@@ -58,7 +45,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblTotal.Location = new System.Drawing.Point(562, 490);
+            this.lblTotal.Location = new System.Drawing.Point(516, 495);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(53, 19);
             this.lblTotal.TabIndex = 1;
@@ -67,7 +54,7 @@
             // purchaseButton
             // 
             this.purchaseButton.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.purchaseButton.Location = new System.Drawing.Point(434, 485);
+            this.purchaseButton.Location = new System.Drawing.Point(375, 490);
             this.purchaseButton.Name = "purchaseButton";
             this.purchaseButton.Size = new System.Drawing.Size(122, 31);
             this.purchaseButton.TabIndex = 2;
@@ -84,12 +71,11 @@
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.panelCartItems);
             this.panel1.Controls.Add(this.purchaseButton);
             this.panel1.Controls.Add(this.LogOut);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.ViewCart);
             this.panel1.Controls.Add(this.lblTotal);
-            this.panel1.Controls.Add(this.panelCartItems);
             this.panel1.ForeColor = System.Drawing.Color.Transparent;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -110,20 +96,6 @@
             this.LogOut.Text = "logout";
             this.LogOut.Click += new System.EventHandler(this.LogOut_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Stencil", 15F);
-            this.label3.ForeColor = System.Drawing.Color.AliceBlue;
-            this.label3.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label3.Location = new System.Drawing.Point(354, 88);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 24);
-            this.label3.TabIndex = 37;
-            this.label3.Text = "Explore";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
             // ViewCart
             // 
             this.ViewCart.AutoSize = true;
@@ -131,11 +103,24 @@
             this.ViewCart.Font = new System.Drawing.Font("Stencil", 15F);
             this.ViewCart.ForeColor = System.Drawing.Color.AliceBlue;
             this.ViewCart.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.ViewCart.Location = new System.Drawing.Point(542, 88);
+            this.ViewCart.Location = new System.Drawing.Point(467, 87);
             this.ViewCart.Name = "ViewCart";
-            this.ViewCart.Size = new System.Drawing.Size(108, 24);
+            this.ViewCart.Size = new System.Drawing.Size(60, 24);
             this.ViewCart.TabIndex = 36;
-            this.ViewCart.Text = "viewcart";
+            this.ViewCart.Text = "Cart";
+            // 
+            // panelCartItems
+            // 
+            this.panelCartItems.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
+            this.panelCartItems.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelCartItems.AutoScroll = true;
+            this.panelCartItems.BackColor = System.Drawing.Color.Transparent;
+            this.panelCartItems.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panelCartItems.ForeColor = System.Drawing.Color.Transparent;
+            this.panelCartItems.Location = new System.Drawing.Point(214, 174);
+            this.panelCartItems.Name = "panelCartItems";
+            this.panelCartItems.Size = new System.Drawing.Size(564, 310);
+            this.panelCartItems.TabIndex = 0;
             // 
             // Cart
             // 
@@ -145,7 +130,9 @@
             this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Cart";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cart";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -154,13 +141,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel panelCartItems;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Button purchaseButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label ViewCart;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label LogOut;
+        private System.Windows.Forms.FlowLayoutPanel panelCartItems;
     }
 }

@@ -90,7 +90,7 @@ namespace BOOKSTORE
 
             // Handle button clicks
 
-            flowLayoutPanel1.Controls.Add(bookCard);
+            flowLayoutPanel2.Controls.Add(bookCard);
         }
 
         private void EditBook(int bookID)

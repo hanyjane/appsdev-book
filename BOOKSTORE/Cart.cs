@@ -84,7 +84,8 @@ namespace BOOKSTORE
             {
                 Size = new Size(500, 100),
                 BorderStyle = BorderStyle.FixedSingle,
-                Margin = new Padding(0, 0, 0, 10) // Add some space between items
+                Margin = new Padding(0, 0, 0, 10), // Add some space between items
+                BackColor = Color.MidnightBlue,
             };
 
             // Add book cover image
@@ -105,7 +106,8 @@ namespace BOOKSTORE
             {
                 Text = $"{title} by {author}",
                 Location = new Point(80, 10),
-                AutoSize = true
+                AutoSize = true,
+                ForeColor = Color.AliceBlue,
             };
 
             // Add quantity label
@@ -113,7 +115,8 @@ namespace BOOKSTORE
             {
                 Text = $"Quantity: {quantity}",
                 Location = new Point(80, 35),
-                AutoSize = true
+                AutoSize = true,
+                ForeColor = Color.AliceBlue,
             };
 
             // Add price label
@@ -166,6 +169,7 @@ namespace BOOKSTORE
 
             // Add the panel to the cart items container
             panelCartItems.Controls.Add(itemPanel);
+            panelCartItems.Anchor = AnchorStyles.None;
         }
 
         // Event handler for increasing quantity

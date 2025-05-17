@@ -103,7 +103,7 @@ namespace BOOKSTORE
             {
                 Size = new Size(150, 280),
                 BackColor = Color.AliceBlue,
-                Margin = new Padding(10)
+                Margin = new Padding(10),
             };
 
             // Book cover image
@@ -181,6 +181,7 @@ namespace BOOKSTORE
             // Add panel to the flow layout
             flowLayoutPanel1.Controls.Add(bookPanel);
         }
+            
 
 
         // Add to cart button click handler
