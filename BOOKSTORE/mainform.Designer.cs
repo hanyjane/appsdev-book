@@ -55,7 +55,7 @@
             // 
             // btn_Fiction
             // 
-            this.btn_Fiction.Location = new System.Drawing.Point(516, 277);
+            this.btn_Fiction.Location = new System.Drawing.Point(564, 277);
             this.btn_Fiction.Name = "btn_Fiction";
             this.btn_Fiction.Size = new System.Drawing.Size(82, 32);
             this.btn_Fiction.TabIndex = 0;
@@ -65,7 +65,7 @@
             // 
             // btn_Romance
             // 
-            this.btn_Romance.Location = new System.Drawing.Point(252, 278);
+            this.btn_Romance.Location = new System.Drawing.Point(300, 278);
             this.btn_Romance.Name = "btn_Romance";
             this.btn_Romance.Size = new System.Drawing.Size(82, 32);
             this.btn_Romance.TabIndex = 1;
@@ -75,7 +75,7 @@
             // 
             // btn_Mystery
             // 
-            this.btn_Mystery.Location = new System.Drawing.Point(428, 277);
+            this.btn_Mystery.Location = new System.Drawing.Point(476, 277);
             this.btn_Mystery.Name = "btn_Mystery";
             this.btn_Mystery.Size = new System.Drawing.Size(82, 32);
             this.btn_Mystery.TabIndex = 2;
@@ -85,7 +85,7 @@
             // 
             // btn_Fantasy
             // 
-            this.btn_Fantasy.Location = new System.Drawing.Point(164, 277);
+            this.btn_Fantasy.Location = new System.Drawing.Point(212, 277);
             this.btn_Fantasy.Name = "btn_Fantasy";
             this.btn_Fantasy.Size = new System.Drawing.Size(82, 32);
             this.btn_Fantasy.TabIndex = 3;
@@ -100,14 +100,14 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.MidnightBlue;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(76, 316);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(145, 316);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(859, 227);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(734, 227);
             this.flowLayoutPanel1.TabIndex = 20;
             // 
             // btn_Horror
             // 
-            this.btn_Horror.Location = new System.Drawing.Point(340, 278);
+            this.btn_Horror.Location = new System.Drawing.Point(388, 278);
             this.btn_Horror.Name = "btn_Horror";
             this.btn_Horror.Size = new System.Drawing.Size(82, 32);
             this.btn_Horror.TabIndex = 21;
@@ -124,7 +124,7 @@
             // 
             // txtMinPrice
             // 
-            this.txtMinPrice.Location = new System.Drawing.Point(753, 285);
+            this.txtMinPrice.Location = new System.Drawing.Point(754, 285);
             this.txtMinPrice.Name = "txtMinPrice";
             this.txtMinPrice.Size = new System.Drawing.Size(49, 20);
             this.txtMinPrice.TabIndex = 23;
@@ -146,7 +146,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(646, 287);
+            this.label2.Location = new System.Drawing.Point(652, 287);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 15);
             this.label2.TabIndex = 26;
@@ -154,7 +154,7 @@
             // 
             // txtMaxPrice
             // 
-            this.txtMaxPrice.Location = new System.Drawing.Point(808, 284);
+            this.txtMaxPrice.Location = new System.Drawing.Point(809, 284);
             this.txtMaxPrice.Name = "txtMaxPrice";
             this.txtMaxPrice.Size = new System.Drawing.Size(49, 20);
             this.txtMaxPrice.TabIndex = 27;
@@ -172,7 +172,7 @@
             // 
             // btn_minmaxPrice
             // 
-            this.btn_minmaxPrice.Location = new System.Drawing.Point(885, 284);
+            this.btn_minmaxPrice.Location = new System.Drawing.Point(864, 284);
             this.btn_minmaxPrice.Name = "btn_minmaxPrice";
             this.btn_minmaxPrice.Size = new System.Drawing.Size(48, 20);
             this.btn_minmaxPrice.TabIndex = 29;
@@ -182,7 +182,7 @@
             // 
             // btn_All
             // 
-            this.btn_All.Location = new System.Drawing.Point(76, 277);
+            this.btn_All.Location = new System.Drawing.Point(124, 277);
             this.btn_All.Name = "btn_All";
             this.btn_All.Size = new System.Drawing.Size(82, 32);
             this.btn_All.TabIndex = 31;

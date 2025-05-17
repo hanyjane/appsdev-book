@@ -45,7 +45,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblTotal.Location = new System.Drawing.Point(516, 495);
+            this.lblTotal.Location = new System.Drawing.Point(314, 430);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(53, 19);
             this.lblTotal.TabIndex = 1;
@@ -54,7 +54,7 @@
             // purchaseButton
             // 
             this.purchaseButton.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.purchaseButton.Location = new System.Drawing.Point(375, 490);
+            this.purchaseButton.Location = new System.Drawing.Point(186, 422);
             this.purchaseButton.Name = "purchaseButton";
             this.purchaseButton.Size = new System.Drawing.Size(122, 31);
             this.purchaseButton.TabIndex = 2;
@@ -79,19 +79,19 @@
             this.panel1.ForeColor = System.Drawing.Color.Transparent;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1000, 600);
+            this.panel1.Size = new System.Drawing.Size(867, 535);
             this.panel1.TabIndex = 21;
             // 
             // LogOut
             // 
             this.LogOut.AutoSize = true;
             this.LogOut.BackColor = System.Drawing.Color.Transparent;
-            this.LogOut.Font = new System.Drawing.Font("Stencil", 15F);
+            this.LogOut.Font = new System.Drawing.Font("Stencil", 13F);
             this.LogOut.ForeColor = System.Drawing.Color.MidnightBlue;
             this.LogOut.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.LogOut.Location = new System.Drawing.Point(887, 20);
+            this.LogOut.Location = new System.Drawing.Point(766, 23);
             this.LogOut.Name = "LogOut";
-            this.LogOut.Size = new System.Drawing.Size(85, 24);
+            this.LogOut.Size = new System.Drawing.Size(76, 21);
             this.LogOut.TabIndex = 46;
             this.LogOut.Text = "logout";
             this.LogOut.Click += new System.EventHandler(this.LogOut_Click);
@@ -103,7 +103,7 @@
             this.ViewCart.Font = new System.Drawing.Font("Stencil", 15F);
             this.ViewCart.ForeColor = System.Drawing.Color.AliceBlue;
             this.ViewCart.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.ViewCart.Location = new System.Drawing.Point(467, 87);
+            this.ViewCart.Location = new System.Drawing.Point(407, 80);
             this.ViewCart.Name = "ViewCart";
             this.ViewCart.Size = new System.Drawing.Size(60, 24);
             this.ViewCart.TabIndex = 36;
@@ -117,9 +117,9 @@
             this.panelCartItems.BackColor = System.Drawing.Color.Transparent;
             this.panelCartItems.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panelCartItems.ForeColor = System.Drawing.Color.Transparent;
-            this.panelCartItems.Location = new System.Drawing.Point(214, 174);
+            this.panelCartItems.Location = new System.Drawing.Point(167, 145);
             this.panelCartItems.Name = "panelCartItems";
-            this.panelCartItems.Size = new System.Drawing.Size(564, 310);
+            this.panelCartItems.Size = new System.Drawing.Size(525, 274);
             this.panelCartItems.TabIndex = 0;
             // 
             // Cart
@@ -127,7 +127,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.ClientSize = new System.Drawing.Size(984, 561);
+            this.ClientSize = new System.Drawing.Size(847, 485);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.MidnightBlue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
