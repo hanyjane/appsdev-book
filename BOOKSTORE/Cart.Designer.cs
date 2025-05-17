@@ -46,9 +46,9 @@
             this.panelCartItems.AutoScroll = true;
             this.panelCartItems.BackColor = System.Drawing.Color.Transparent;
             this.panelCartItems.ForeColor = System.Drawing.Color.Transparent;
-            this.panelCartItems.Location = new System.Drawing.Point(141, 203);
+            this.panelCartItems.Location = new System.Drawing.Point(144, 154);
             this.panelCartItems.Name = "panelCartItems";
-            this.panelCartItems.Size = new System.Drawing.Size(704, 305);
+            this.panelCartItems.Size = new System.Drawing.Size(704, 325);
             this.panelCartItems.TabIndex = 0;
             // 
             // lblTotal
@@ -56,18 +56,18 @@
             this.lblTotal.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
             this.lblTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.lblTotal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblTotal.Location = new System.Drawing.Point(388, 175);
+            this.lblTotal.Location = new System.Drawing.Point(562, 490);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(44, 15);
+            this.lblTotal.Size = new System.Drawing.Size(53, 19);
             this.lblTotal.TabIndex = 1;
             this.lblTotal.Text = "lblTotal";
             // 
             // purchaseButton
             // 
             this.purchaseButton.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.purchaseButton.Location = new System.Drawing.Point(592, 159);
+            this.purchaseButton.Location = new System.Drawing.Point(434, 485);
             this.purchaseButton.Name = "purchaseButton";
             this.purchaseButton.Size = new System.Drawing.Size(122, 31);
             this.purchaseButton.TabIndex = 2;
@@ -84,11 +84,11 @@
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.purchaseButton);
             this.panel1.Controls.Add(this.LogOut);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.ViewCart);
             this.panel1.Controls.Add(this.lblTotal);
-            this.panel1.Controls.Add(this.purchaseButton);
             this.panel1.Controls.Add(this.panelCartItems);
             this.panel1.ForeColor = System.Drawing.Color.Transparent;
             this.panel1.Location = new System.Drawing.Point(0, 0);

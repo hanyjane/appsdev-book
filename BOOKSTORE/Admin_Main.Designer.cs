@@ -36,9 +36,8 @@
             this.LogOut = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_Update = new System.Windows.Forms.Button();
-            this.btn_Delete = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
@@ -133,26 +132,6 @@
             this.label1.Text = "Welcome back, \r\nADMIN!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btn_Update
-            // 
-            this.btn_Update.Location = new System.Drawing.Point(46, 221);
-            this.btn_Update.Name = "btn_Update";
-            this.btn_Update.Size = new System.Drawing.Size(95, 26);
-            this.btn_Update.TabIndex = 1;
-            this.btn_Update.Text = "Update";
-            this.btn_Update.UseVisualStyleBackColor = true;
-            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
-            // 
-            // btn_Delete
-            // 
-            this.btn_Delete.Location = new System.Drawing.Point(46, 251);
-            this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(104, 26);
-            this.btn_Delete.TabIndex = 3;
-            this.btn_Delete.Text = "Delete";
-            this.btn_Delete.UseVisualStyleBackColor = true;
-            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
-            // 
             // panel2
             // 
             this.panel2.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
@@ -161,8 +140,7 @@
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.btn_Delete);
-            this.panel2.Controls.Add(this.btn_Update);
+            this.panel2.Controls.Add(this.flowLayoutPanel2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox4);
             this.panel2.Controls.Add(this.LogOut);
@@ -172,6 +150,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1000, 600);
             this.panel2.TabIndex = 21;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
+            this.flowLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.flowLayoutPanel2.AutoScroll = true;
+            this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(122, 299);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(747, 244);
+            this.flowLayoutPanel2.TabIndex = 43;
             // 
             // Admin_Main
             // 
@@ -200,8 +190,7 @@
         private System.Windows.Forms.Label LogOut;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_Update;
-        private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
     }
 }
